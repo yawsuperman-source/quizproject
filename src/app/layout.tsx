@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased min-h-screen flex flex-col')}>
+      <body className={cn('font-body antialiased min-h-screen flex flex-col')} suppressHydrationWarning>
         <Providers>
           <Header />
           <main className="flex-grow">{children}</main>
