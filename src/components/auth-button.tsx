@@ -22,8 +22,9 @@ export function AuthButton() {
 
   const handleSignOut = async () => {
     await signOutUser();
+    localStorage.removeItem('quizmaster_user');
+    window.dispatchEvent(new Event('authChange'));
     router.push('/');
-    router.refresh();
   };
 
   if (!user) {

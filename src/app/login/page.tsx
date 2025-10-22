@@ -47,12 +47,12 @@ export default function LoginPage() {
 
     if (result.success && result.user) {
       localStorage.setItem('quizmaster_user', result.user);
+      window.dispatchEvent(new Event('authChange'));
       toast({
         title: 'Login Successful',
         description: "Welcome back!",
       });
       router.push('/');
-      router.refresh();
     } else {
       toast({
         variant: 'destructive',

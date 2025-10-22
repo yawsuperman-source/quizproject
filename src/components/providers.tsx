@@ -1,12 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, ReactNode } from 'react';
-import { auth } from '@/lib/firebase';
-import type { User as FirebaseUser } from 'firebase/auth';
-import { onAuthStateChanged } from 'firebase/auth';
 import { AuthContext } from '@/hooks/use-auth';
 import type { User } from '@/lib/types';
-import { checkUserRole, getMockUserById } from '@/lib/auth';
+import { checkUserRole } from '@/lib/auth';
 import { Skeleton } from './ui/skeleton';
 
 export function Providers({ children }: { children: ReactNode }) {
@@ -15,30 +12,8 @@ export function Providers({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // In a real app, onAuthStateChanged would be sufficient.
-    // For mock, we check if there's a user in localStorage.
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser: FirebaseUser | null) => {
-        if (firebaseUser) {
-            // In a real app, you might fetch additional user profile data from Firestore.
-            // For mock, we'll use our mock data.
-            const fullUser = await getMockUserById(firebaseUser.uid);
-            if(fullUser) {
-                const role = await checkUserRole(fullUser.id);
-                setUser({ ...fullUser, id: firebaseUser.uid });
-                setIsAdmin(role === 'admin');
-            } else {
-                 setUser(null);
-                 setIsAdmin(false);
-            }
-        } else {
-            setUser(null);
-            setIsAdmin(false);
-        }
-        setLoading(false);
-    });
-
-    // Fallback for mock environment if onAuthStateChanged doesn't fire as expected
-    const checkMockAuth = async () => {
+    const checkAuth = async () => {
+        setLoading(true);
         try {
             const storedUser = localStorage.getItem('quizmaster_user');
             if (storedUser) {
@@ -46,19 +21,33 @@ export function Providers({ children }: { children: ReactNode }) {
                 const role = await checkUserRole(parsedUser.id);
                 setUser(parsedUser);
                 setIsAdmin(role === 'admin');
+            } else {
+                setUser(null);
+                setIsAdmin(false);
             }
         } catch (error) {
-            console.error("Failed to parse mock user from local storage", error);
+            console.error("Failed to parse user from local storage", error);
+            setUser(null);
+            setIsAdmin(false);
+        } finally {
+            setLoading(false);
         }
-        setTimeout(() => setLoading(false), 500);
     };
 
-    if (process.env.NODE_ENV === 'development') {
-        checkMockAuth();
-    }
+    checkAuth();
     
+    const handleStorageChange = () => {
+        checkAuth();
+    };
 
-    return () => unsubscribe();
+    window.addEventListener('storage', handleStorageChange);
+    // Also listen for a custom event that we can dispatch on login/logout
+    window.addEventListener('authChange', handleStorageChange);
+
+    return () => {
+        window.removeEventListener('storage', handleStorageChange);
+        window.removeEventListener('authChange', handleStorageChange);
+    };
   }, []);
 
   if (loading) {
