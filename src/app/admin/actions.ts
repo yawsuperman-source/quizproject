@@ -5,7 +5,8 @@ import { z } from 'zod';
 import { 
     addQuestion as addMockQuestion, 
     updateQuestion as updateMockQuestion,
-    deleteQuestion as deleteMockQuestion
+    deleteQuestion as deleteMockQuestion,
+    addSubject as addMockSubject
 } from '@/lib/data';
 import type { Question } from '@/lib/types';
 
@@ -16,6 +17,25 @@ const questionSchema = z.object({
   subjectId: z.string().min(1, "A subject must be selected."),
   explanation: z.string().min(10, "Explanation is too short."),
 });
+
+const subjectSchema = z.object({
+    name: z.string().min(2, "Subject name is too short."),
+});
+
+export async function addSubjectAction(name: string) {
+    const validation = subjectSchema.safeParse({ name });
+    if (!validation.success) {
+        return { success: false, error: validation.error.flatten().fieldErrors };
+    }
+
+    try {
+        await addMockSubject(name);
+        revalidatePath('/admin');
+        return { success: true };
+    } catch(e: any) {
+        return { success: false, error: { form: e.message || "Failed to add subject." } };
+    }
+}
 
 export async function addQuestionAction(data: Omit<Question, 'id'>) {
     const validation = questionSchema.safeParse(data);

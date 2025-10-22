@@ -3,7 +3,7 @@
 
 import type { Subject, Question, User, AnswerFilter, UserAnswer } from './types';
 
-export const subjects: Subject[] = [
+export let subjects: Subject[] = [
   { id: 'js', name: 'JavaScript' },
   { id: 'react', name: 'React' },
   { id: 'nextjs', name: 'Next.js' },
@@ -92,6 +92,19 @@ export let userAnswers: Record<string, UserAnswer[]> = {
 
 export async function getSubjects(): Promise<Subject[]> {
   return Promise.resolve(subjects);
+}
+
+export async function addSubject(name: string): Promise<Subject> {
+    const newSubject: Subject = {
+        id: name.toLowerCase().replace(/\s+/g, '-'),
+        name,
+    };
+    // check for uniqueness
+    if (subjects.find(s => s.id === newSubject.id)) {
+        throw new Error("Subject with this name already exists.");
+    }
+    subjects.push(newSubject);
+    return Promise.resolve(newSubject);
 }
 
 export async function getQuestions(
