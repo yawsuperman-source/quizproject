@@ -45,7 +45,8 @@ export default function LoginPage() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const result = await signInUser(values);
 
-    if (result.success) {
+    if (result.success && result.user) {
+      localStorage.setItem('quizmaster_user', result.user);
       toast({
         title: 'Login Successful',
         description: "Welcome back!",
