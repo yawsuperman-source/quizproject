@@ -1,4 +1,3 @@
-
 [
   {
     "id": "js",
@@ -15,5 +14,9 @@
   {
     "id": "css",
     "name": "CSS"
+  },
+  {
+    "id": "pediatrics",
+    "name": "pediatrics"
   }
 ]
