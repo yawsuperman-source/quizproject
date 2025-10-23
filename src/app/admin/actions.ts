@@ -6,7 +6,8 @@ import {
     addQuestion as addQuestionToDb, 
     updateQuestion as updateQuestionInDb,
     deleteQuestion as deleteQuestionFromDb,
-    addSubject as addSubjectToDb
+    addSubject as addSubjectToDb,
+    getSubjects
 } from '@/lib/data';
 import type { Question } from '@/lib/types';
 
@@ -21,6 +22,57 @@ const questionSchema = z.object({
 const subjectSchema = z.object({
     name: z.string().min(2, "Subject name is too short."),
 });
+
+const csvQuestionSchema = z.object({
+    questionText: z.string().min(1, "questionText is required"),
+    options: z.string().min(1, "options are required"),
+    correctAnswer: z.string().min(1, "correctAnswer is required"),
+    subjectName: z.string().min(1, "subjectName is required"),
+    explanation: z.string().min(1, "explanation is required"),
+});
+
+export async function addQuestionsFromCsvAction(data: unknown[]) {
+    try {
+        const subjects = await getSubjects();
+        const subjectMap = new Map(subjects.map(s => [s.name.toLowerCase(), s.id]));
+
+        const validatedQuestions = z.array(csvQuestionSchema).parse(data);
+
+        const questionsToAdd = validatedQuestions.map(q => {
+            const subjectId = subjectMap.get(q.subjectName.toLowerCase());
+            if (!subjectId) {
+                throw new Error(`Subject "${q.subjectName}" not found. Please create it first.`);
+            }
+
+            const options = q.options.split('|').map(opt => opt.trim());
+            if (!options.includes(q.correctAnswer)) {
+                throw new Error(`Correct answer "${q.correctAnswer}" is not in the options for question "${q.questionText}".`);
+            }
+
+            return {
+                questionText: q.questionText,
+                options,
+                correctAnswer: q.correctAnswer,
+                subjectId,
+                explanation: q.explanation
+            };
+        });
+
+        for (const question of questionsToAdd) {
+            await addQuestionToDb(question);
+        }
+
+        revalidatePath('/admin');
+        return { success: true, count: questionsToAdd.length };
+
+    } catch (e: any) {
+        if (e instanceof z.ZodError) {
+             return { success: false, error: { form: "CSV data is invalid. Please check the format.", details: e.flatten().fieldErrors } };
+        }
+        return { success: false, error: { form: e.message || "Failed to import questions." } };
+    }
+}
+
 
 export async function addSubjectAction(name: string) {
     const validation = subjectSchema.safeParse({ name });
