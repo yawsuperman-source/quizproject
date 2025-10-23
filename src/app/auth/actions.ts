@@ -22,7 +22,8 @@ export async function signUpUser(values: z.infer<typeof signUpSchema>) {
             uid: values.uid,
             email: values.email,
             displayName: values.displayName,
-            isAdmin: values.email === 'admin@quizmaster.com', // Make admin if it's the admin email
+            // Check if the email is the admin email.
+            isAdmin: values.email === 'admin@quizmaster.com',
             photoURL: null,
         });
     }
