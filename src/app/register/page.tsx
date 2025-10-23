@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -37,6 +38,7 @@ const formSchema = z.object({
 export default function RegisterPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const auth = getAuth();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,19 +50,37 @@ export default function RegisterPage() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const result = await signUpUser(values);
+    try {
+      // 1. Create user with Firebase Auth on the client
+      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      await updateProfile(userCredential.user, { displayName: values.displayName });
 
-    if (result.success) {
-      toast({
-        title: 'Registration Successful',
-        description: 'Welcome to QuizMaster! Please log in.',
+      // 2. Call server action to add user to mock DB for isAdmin property
+      const serverResult = await signUpUser({ 
+        uid: userCredential.user.uid,
+        email: values.email,
+        displayName: values.displayName 
       });
-      router.push('/login');
-    } else {
+
+      if (serverResult.success) {
+        toast({
+          title: 'Registration Successful',
+          description: 'Welcome to QuizMaster! Please log in.',
+        });
+        router.push('/login');
+      } else {
+        // This part handles if the server-side action fails for some reason
+         throw new Error(serverResult.error || 'Failed to save user data.');
+      }
+    } catch (error: any) {
+      let errorMessage = 'An unknown error occurred.';
+       if (error.code === 'auth/email-already-in-use') {
+        errorMessage = 'This email address is already in use.';
+      }
       toast({
         variant: 'destructive',
         title: 'Registration Failed',
-        description: result.error || 'An unknown error occurred.',
+        description: errorMessage,
       });
     }
   }
