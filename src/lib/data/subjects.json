@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": "js",
+    "name": "JavaScript"
+  },
+  {
+    "id": "react",
+    "name": "React"
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js"
+  },
+  {
+    "id": "css",
+    "name": "CSS"
+  }
+]

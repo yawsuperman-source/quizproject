@@ -1,0 +1,81 @@
+
+[
+  {
+    "id": "js1",
+    "subjectId": "js",
+    "questionText": "What is the output of `typeof null` in JavaScript?",
+    "options": [
+      "'object'",
+      "'null'",
+      "'undefined'",
+      "'string'"
+    ],
+    "correctAnswer": "'object'",
+    "explanation": "This is a long-standing bug in JavaScript. The `typeof` operator returns 'object' for `null` due to how JavaScript was originally implemented. `null` is a primitive value, but this quirk remains for historical reasons."
+  },
+  {
+    "id": "js2",
+    "subjectId": "js",
+    "questionText": "Which of the following is NOT a JavaScript data type?",
+    "options": [
+      "Symbol",
+      "BigInt",
+      "Tuple",
+      "Undefined"
+    ],
+    "correctAnswer": "Tuple",
+    "explanation": "JavaScript has several primitive data types: String, Number, BigInt, Boolean, Undefined, Symbol, and Null. 'Tuple' is a data structure in other languages like Python and TypeScript, but not a primitive type in JavaScript."
+  },
+  {
+    "id": "react1",
+    "subjectId": "react",
+    "questionText": "What is JSX?",
+    "options": [
+      "A JavaScript library",
+      "A syntax extension for JavaScript",
+      "A CSS preprocessor",
+      "A database query language"
+    ],
+    "correctAnswer": "A syntax extension for JavaScript",
+    "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls."
+  },
+  {
+    "id": "react2",
+    "subjectId": "react",
+    "questionText": "How do you pass data from a parent component to a child component in React?",
+    "options": [
+      "Using state",
+      "Using props",
+      "Using context",
+      "Using Redux"
+    ],
+    "correctAnswer": "Using props",
+    "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child."
+  },
+  {
+    "id": "nextjs1",
+    "subjectId": "nextjs",
+    "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+    "options": [
+      "Faster client-side navigation",
+      "Improved SEO and initial page load",
+      "Smaller bundle sizes",
+      "Easier state management"
+    ],
+    "correctAnswer": "Improved SEO and initial page load",
+    "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load."
+  },
+  {
+    "id": "css1",
+    "subjectId": "css",
+    "questionText": "What does the `box-sizing: border-box;` property do?",
+    "options": [
+      "It includes padding and border in the element's total width and height.",
+      "It makes the element a flex container.",
+      "It adds a shadow to the box.",
+      "It changes the element's display to block."
+    ],
+    "correctAnswer": "It includes padding and border in the element's total width and height.",
+    "explanation": "By default, an element's width and height are calculated as `content`. `border-box` tells the browser to account for any border and padding in the values you specify for an element's width and height."
+  }
+]

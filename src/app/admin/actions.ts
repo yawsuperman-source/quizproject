@@ -3,10 +3,10 @@
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import { 
-    addQuestion as addMockQuestion, 
-    updateQuestion as updateMockQuestion,
-    deleteQuestion as deleteMockQuestion,
-    addSubject
+    addQuestion as addQuestionToDb, 
+    updateQuestion as updateQuestionInDb,
+    deleteQuestion as deleteQuestionFromDb,
+    addSubject as addSubjectToDb
 } from '@/lib/data';
 import type { Question } from '@/lib/types';
 
@@ -29,9 +29,9 @@ export async function addSubjectAction(name: string) {
     }
 
     try {
-        await addSubject(name);
+        await addSubjectToDb(name);
         revalidatePath('/admin');
-        revalidatePath('/quiz/select'); // Revalidate quiz select page
+        revalidatePath('/quiz/select');
         return { success: true };
     } catch(e: any) {
         return { success: false, error: { form: e.message || "Failed to add subject." } };
@@ -50,7 +50,7 @@ export async function addQuestionAction(data: Omit<Question, 'id'>) {
     }
 
     try {
-        await addMockQuestion(data);
+        await addQuestionToDb(data);
         revalidatePath('/admin');
         return { success: true };
     } catch(e) {
@@ -65,7 +65,7 @@ export async function updateQuestionAction(id: string, data: Partial<Question>) 
     }
 
     try {
-        const result = await updateMockQuestion(id, data);
+        const result = await updateQuestionInDb(id, data);
         if (!result) throw new Error("Question not found");
         revalidatePath('/admin');
         return { success: true };
@@ -76,7 +76,7 @@ export async function updateQuestionAction(id: string, data: Partial<Question>) 
 
 export async function deleteQuestionAction(id: string) {
     try {
-        const success = await deleteMockQuestion(id);
+        const success = await deleteQuestionFromDb(id);
         if(!success) throw new Error("Failed to delete");
         revalidatePath('/admin');
         return { success: true };
