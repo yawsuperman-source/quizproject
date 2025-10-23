@@ -1,8 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
 import { users } from '@/lib/data';
 
 const signUpSchema = z.object({
@@ -22,15 +20,16 @@ async function mockSignUp(data: z.infer<typeof signUpSchema>) {
     if (existingUser) {
         throw new Error('auth/email-already-in-use');
     }
+    const newId = `mock-uid-${Date.now()}`;
     const newUser = {
-        id: `mock-uid-${Date.now()}`,
-        uid: `mock-uid-${Date.now()}`,
+        id: newId,
+        uid: newId,
         email: data.email,
         displayName: data.displayName,
         isAdmin: false,
         photoURL: null,
     };
-    users.push(newUser); // This adds the user to the in-memory array for persistence during mock sessions
+    users.push(newUser);
     return { user: newUser };
 }
 
@@ -48,13 +47,7 @@ async function mockSignIn(data: z.infer<typeof signInSchema>) {
 
 export async function signUpUser(values: z.infer<typeof signUpSchema>) {
   try {
-    // In a real application, you would use Firebase Auth.
-    // const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
-    // await updateProfile(userCredential.user, { displayName: values.displayName });
-    // Also, you'd create a user document in Firestore here.
-
     const { user } = await mockSignUp(values);
-
     return { success: true, userId: user.uid };
   } catch (error: any) {
     let errorMessage = "An unexpected error occurred.";
@@ -67,18 +60,12 @@ export async function signUpUser(values: z.infer<typeof signUpSchema>) {
 
 export async function signInUser(values: z.infer<typeof signInSchema>) {
   try {
-    // In a real application, you would use Firebase Auth.
-    // const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password);
-    
-    // For mock purposes:
     const { user } = await mockSignIn(values);
     
-    // We can't set server-side session easily without a proper backend or NextAuth,
-    // so we'll store a mock user in localStorage on the client after successful login.
-    // This is NOT secure and only for demonstration.
     return { success: true, user: JSON.stringify(user) };
 
-  } catch (error: any) {
+  } catch (error: any)
+{
     let errorMessage = "Invalid email or password.";
     if (error.message.includes('auth/user-not-found') || error.message.includes('auth/wrong-password')) {
       errorMessage = "Invalid email or password.";
@@ -89,8 +76,6 @@ export async function signInUser(values: z.infer<typeof signInSchema>) {
 
 export async function signOutUser() {
   try {
-    // await signOut(auth);
-    // For mock purposes:
     console.log("Signing out user.");
     return { success: true };
   } catch (error) {
