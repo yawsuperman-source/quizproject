@@ -28,6 +28,7 @@ export default function PlayQuizPage() {
     nextQuestion,
     recordAnswer,
     isQuizFinished,
+    endQuiz,
   } = useQuizStore();
 
   const [loading, setLoading] = useState(true);
@@ -144,16 +145,19 @@ export default function PlayQuizPage() {
             />
         )}
 
-        <div className="flex justify-end">
-          {isSubmitted ? (
-            <Button onClick={handleNext} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
-            </Button>
-          ) : (
-            <Button onClick={handleSubmit} size="lg">
-              Submit Answer
-            </Button>
-          )}
+        <div className="flex justify-between items-center">
+          <Button onClick={endQuiz} variant="destructive" size="lg">End Quiz</Button>
+          <div className="flex justify-end">
+            {isSubmitted ? (
+              <Button onClick={handleNext} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
+              </Button>
+            ) : (
+              <Button onClick={handleSubmit} size="lg">
+                Submit Answer
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>

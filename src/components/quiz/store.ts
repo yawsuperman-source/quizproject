@@ -13,6 +13,7 @@ type QuizState = {
   setQuestions: (questions: Question[]) => void;
   nextQuestion: () => void;
   recordAnswer: (isCorrect: boolean) => void;
+  endQuiz: () => void;
   resetQuiz: () => void;
 };
 
@@ -49,6 +50,8 @@ const useQuizStore = create<QuizState>((set, get) => ({
     correctAnswers: state.correctAnswers + (isCorrect ? 1 : 0),
     incorrectAnswers: state.incorrectAnswers + (isCorrect ? 0 : 1),
   })),
+
+  endQuiz: () => set({ isQuizFinished: true }),
   
   resetQuiz: () => set({
     subjectIds: [],
