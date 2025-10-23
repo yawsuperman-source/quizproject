@@ -77,7 +77,7 @@ export default function RegisterPage() {
        if (error.code === 'auth/email-already-in-use') {
         errorMessage = 'This email address is already in use.';
       } else if (error.code === 'auth/configuration-not-found') {
-        errorMessage = "Email/Password sign-up is not enabled for this project. Please use Google sign-up or contact an administrator.";
+        errorMessage = "Email/Password sign-up is not enabled for this project. Please use Google sign-up or contact an administrator to enable it in the Firebase console.";
       } else {
         console.error("Registration Error:", error);
         errorMessage = error.message;
@@ -112,10 +112,14 @@ export default function RegisterPage() {
          throw new Error(serverResult.error || 'Failed to save user data.');
       }
     } catch (error: any) {
+       let errorMessage = error.message || "An unexpected error occurred.";
+       if (error.code === 'auth/configuration-not-found') {
+        errorMessage = "Google Sign-In is not enabled for this project. Please contact an administrator to enable it in the Firebase console.";
+      }
       toast({
         variant: 'destructive',
         title: 'Google Sign-Up Failed',
-        description: error.message || "An unexpected error occurred.",
+        description: errorMessage,
       });
     }
   }
@@ -188,7 +192,7 @@ export default function RegisterPage() {
                   )}
                 />
                  <p className="text-xs text-muted-foreground">
-                  Note: Email/Password sign-up might be disabled by the project administrator.
+                  Note: Email/Password sign-up might be disabled by the project administrator. If it fails, please use Google Sign-In.
                 </p>
                 <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
                   {form.formState.isSubmitting ? 'Creating Account...' : 'Create Account with Email'}

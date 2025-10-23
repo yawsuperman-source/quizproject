@@ -57,7 +57,7 @@ export default function LoginPage() {
       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
         errorMessage = "Invalid email or password.";
       } else if (error.code === 'auth/configuration-not-found') {
-        errorMessage = "Email/Password sign-in is not enabled for this project. Please use Google sign-in or contact an administrator.";
+        errorMessage = "Email/Password sign-in is not enabled for this project. Please use Google sign-in or contact an administrator to enable it in the Firebase console.";
       }
       toast({
         variant: 'destructive',
@@ -86,10 +86,14 @@ export default function LoginPage() {
       });
       router.push('/');
     } catch (error: any) {
+       let errorMessage = error.message || "An unexpected error occurred.";
+       if (error.code === 'auth/configuration-not-found') {
+        errorMessage = "Google Sign-In is not enabled for this project. Please contact an administrator to enable it in the Firebase console.";
+      }
       toast({
         variant: 'destructive',
         title: 'Google Sign-In Failed',
-        description: error.message || "An unexpected error occurred.",
+        description: errorMessage,
       });
     }
   }
@@ -149,7 +153,7 @@ export default function LoginPage() {
                   )}
                 />
                 <p className="text-xs text-muted-foreground">
-                  Note: Email/Password sign-in might be disabled by the project administrator.
+                  Note: Email/Password sign-in might be disabled by the project administrator. If it fails, please use Google Sign-In.
                 </p>
                 <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
                   {form.formState.isSubmitting ? 'Signing In...' : 'Sign In with Email'}
