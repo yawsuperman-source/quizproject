@@ -21,6 +21,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useToast } from '@/hooks/use-toast';
 import { signUpUser } from '../auth/actions';
 import { Logo } from '@/components/logo';
+import { app } from '@/lib/firebase';
 
 
 const formSchema = z.object({
@@ -38,7 +39,7 @@ const formSchema = z.object({
 export default function RegisterPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const auth = getAuth();
+  const auth = getAuth(app);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -76,6 +77,8 @@ export default function RegisterPage() {
       let errorMessage = 'An unknown error occurred.';
        if (error.code === 'auth/email-already-in-use') {
         errorMessage = 'This email address is already in use.';
+      } else {
+        console.error("Registration Error:", error);
       }
       toast({
         variant: 'destructive',
