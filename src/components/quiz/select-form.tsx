@@ -11,9 +11,12 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import type { Subject, AnswerFilter } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+
+type SubjectWithCount = Subject & { questionCount: number };
 
 type SelectFormProps = {
-  subjects: Subject[];
+  subjects: SubjectWithCount[];
 };
 
 export function SelectForm({ subjects }: SelectFormProps) {
@@ -62,9 +65,11 @@ export function SelectForm({ subjects }: SelectFormProps) {
                   <Checkbox
                     id={subject.id}
                     onCheckedChange={() => handleSubjectChange(subject.id)}
+                    disabled={subject.questionCount === 0}
                   />
-                  <Label htmlFor={subject.id} className="text-base">
+                  <Label htmlFor={subject.id} className="text-base flex items-center gap-2">
                     {subject.name}
+                    <Badge variant="secondary" className={subject.questionCount === 0 ? 'text-muted-foreground' : ''}>{subject.questionCount}</Badge>
                   </Label>
                 </div>
               ))}
