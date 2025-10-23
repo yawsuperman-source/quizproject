@@ -31,6 +31,7 @@ export async function addSubjectAction(name: string) {
     try {
         await addMockSubject(name);
         revalidatePath('/admin');
+        revalidatePath('/quiz/select'); // Revalidate quiz select page
         return { success: true };
     } catch(e: any) {
         return { success: false, error: { form: e.message || "Failed to add subject." } };
