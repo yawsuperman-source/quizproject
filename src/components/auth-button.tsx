@@ -12,18 +12,17 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { signOutUser } from '@/app/auth/actions';
+import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from 'next/navigation';
 import { User, LogOut, LayoutDashboard } from 'lucide-react';
 
 export function AuthButton() {
   const { user, isAdmin } = useAuth();
   const router = useRouter();
+  const auth = getAuth();
 
   const handleSignOut = async () => {
-    await signOutUser();
-    localStorage.removeItem('quizmaster_user');
-    window.dispatchEvent(new Event('authChange'));
+    await signOut(auth);
     router.push('/');
   };
 
@@ -56,9 +55,11 @@ export function AuthButton() {
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">{user.displayName || user.email}</p>
-            <p className="text-xs leading-none text-muted-foreground">
-              {user.displayName ? user.email : ''}
-            </p>
+            {user.displayName && user.email && (
+              <p className="text-xs leading-none text-muted-foreground">
+                {user.email}
+              </p>
+            )}
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />

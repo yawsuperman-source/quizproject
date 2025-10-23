@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { auth } from '@/lib/firebase-admin';
 import { users } from '@/lib/data';
 
 const signUpSchema = z.object({
@@ -14,69 +15,53 @@ const signInSchema = z.object({
   password: z.string().min(6),
 });
 
-// Mock user creation
-async function mockSignUp(data: z.infer<typeof signUpSchema>) {
-    const existingUser = users.find(u => u.email === data.email);
-    if (existingUser) {
-        throw new Error('auth/email-already-in-use');
-    }
-    const newId = `mock-uid-${Date.now()}`;
-    const newUser = {
-        id: newId,
-        uid: newId,
-        email: data.email,
-        displayName: data.displayName,
-        isAdmin: false,
-        photoURL: null,
-    };
-    users.push(newUser);
-    return { user: newUser };
-}
-
-
-// Mock user sign-in
-async function mockSignIn(data: z.infer<typeof signInSchema>) {
-    const user = users.find(u => u.email === data.email);
-    if (!user) {
-        throw new Error('auth/user-not-found');
-    }
-    // In a real app, you'd check the password
-    return { user };
-}
-
-
 export async function signUpUser(values: z.infer<typeof signUpSchema>) {
   try {
-    const { user } = await mockSignUp(values);
-    return { success: true, userId: user.uid };
+    const userRecord = await auth.createUser({
+        email: values.email,
+        password: values.password,
+        displayName: values.displayName,
+    });
+    // Add user to mock DB for isAdmin property
+    users.push({
+        id: userRecord.uid,
+        uid: userRecord.uid,
+        email: values.email,
+        displayName: values.displayName,
+        isAdmin: false,
+        photoURL: null,
+    });
+    return { success: true, userId: userRecord.uid };
   } catch (error: any) {
     let errorMessage = "An unexpected error occurred.";
-    if (error.message.includes('auth/email-already-in-use')) {
+    if (error.code === 'auth/email-already-exists') {
       errorMessage = "This email is already in use.";
     }
     return { success: false, error: errorMessage };
   }
 }
 
+// This action is now for server-side validation, client will handle sign-in state
 export async function signInUser(values: z.infer<typeof signInSchema>) {
   try {
-    const { user } = await mockSignIn(values);
-    
+    // We don't actually sign in here on the server.
+    // The client will use the Firebase SDK to sign in and get a token.
+    // This is just to check if the user exists for the purpose of the flow.
+    // In a real app, you might not even need this server action if login is purely client-side.
+    const user = await auth.getUserByEmail(values.email);
     return { success: true, user: JSON.stringify(user) };
-
-  } catch (error: any)
-{
+  } catch (error: any) {
     let errorMessage = "Invalid email or password.";
-    if (error.message.includes('auth/user-not-found') || error.message.includes('auth/wrong-password')) {
+    if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
       errorMessage = "Invalid email or password.";
     }
     return { success: false, error: errorMessage };
   }
 }
 
+// This action is now a placeholder as client will handle sign-out state
 export async function signOutUser() {
   try {
-    console.log("Signing out user.");
     return { success: true };
   } catch (error) {
     return { success: false, error: 'Failed to sign out.' };

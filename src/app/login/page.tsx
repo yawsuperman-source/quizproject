@@ -18,8 +18,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { signInUser } from '../auth/actions';
 import { Logo } from '@/components/logo';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const formSchema = z.object({
   email: z.string().email({
@@ -33,6 +33,7 @@ const formSchema = z.object({
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const auth = getAuth();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,21 +44,22 @@ export default function LoginPage() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const result = await signInUser(values);
-
-    if (result.success && result.user) {
-      localStorage.setItem('quizmaster_user', result.user);
-      window.dispatchEvent(new Event('authChange'));
+    try {
+      await signInWithEmailAndPassword(auth, values.email, values.password);
       toast({
         title: 'Login Successful',
         description: "Welcome back!",
       });
       router.push('/');
-    } else {
+    } catch (error: any) {
+      let errorMessage = "Invalid email or password.";
+      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+        errorMessage = "Invalid email or password.";
+      }
       toast({
         variant: 'destructive',
         title: 'Login Failed',
-        description: result.error || 'An unknown error occurred.',
+        description: errorMessage,
       });
     }
   }
