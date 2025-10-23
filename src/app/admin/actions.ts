@@ -6,7 +6,7 @@ import {
     addQuestion as addMockQuestion, 
     updateQuestion as updateMockQuestion,
     deleteQuestion as deleteMockQuestion,
-    addSubject as addMockSubject
+    addSubject
 } from '@/lib/data';
 import type { Question } from '@/lib/types';
 
@@ -29,7 +29,7 @@ export async function addSubjectAction(name: string) {
     }
 
     try {
-        await addMockSubject(name);
+        await addSubject(name);
         revalidatePath('/admin');
         revalidatePath('/quiz/select'); // Revalidate quiz select page
         return { success: true };
