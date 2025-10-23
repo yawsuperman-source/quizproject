@@ -39,7 +39,7 @@ export function FeedbackDisplay({
             <CardTitle className="text-lg font-headline">Explanation</CardTitle>
         </CardHeader>
         <CardContent>
-            <p className="text-sm">{explanation}</p>
+            <p className="text-sm whitespace-pre-wrap">{explanation}</p>
         </CardContent>
       </Card>
     </div>

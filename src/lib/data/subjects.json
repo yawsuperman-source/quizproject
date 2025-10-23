@@ -18,5 +18,9 @@
   {
     "id": "pediatrics",
     "name": "pediatrics"
+  },
+  {
+    "id": "paediatrics",
+    "name": "Paediatrics"
   }
 ]

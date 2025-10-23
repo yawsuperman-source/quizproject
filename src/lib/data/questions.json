@@ -101,5 +101,75 @@
     "subjectId": "pediatrics",
     "explanation": "n999j9j 9j9j 9j9j9j 9j9j9",
     "id": "q-1761189339727"
+  },
+  {
+    "questionText": "The commonest cause of diarrhea in children is",
+    "options": [
+      "Viral infections",
+      "Bacterial infections",
+      "Protozoal infestations",
+      "Medications",
+      "None of the above"
+    ],
+    "correctAnswer": "Viral infections",
+    "subjectId": "paediatrics",
+    "explanation": "• \tViral infections are the leading cause, especially in children under five. Rotavirus is the most frequent culprit globally, followed by norovirus and adenovirus.\n Why Viral Diarrhea Is So Common in Kids\n \tChildren’s immune systems are still developing.\n \tViruses spread easily in daycare and school settings.\n \tPoor hand hygiene and close contact increase transmission.\n \tBacterial infections (e.g., Salmonella, Shigella, E. coli) are less common but can cause more severe symptoms like bloody diarrhea or high fever.\n• \tProtozoal infestations, such as Giardia lamblia, tend to cause chronic diarrhea and are more prevalent in areas with poor water sanitation.\n• \tMedications, particularly antibiotics, can disrupt gut flora and lead to diarrhea, but this is a less frequent cause compared to infections.",
+    "id": "q-1761204734338"
+  },
+  {
+    "questionText": "Which of the following is not true concerning diarrhea in children?",
+    "options": [
+      "It is often self-limiting",
+      "Antibiotics is the mainstay treatment",
+      "Fluid loss occur quickly compared to adults",
+      "The commonest complication is dehydration",
+      "Giving antibiotics in all cases of diarrhea may worsen or prolong the condition"
+    ],
+    "correctAnswer": "Antibiotics is the mainstay treatment",
+    "subjectId": "paediatrics",
+    "explanation": "• \ta. It is often self-limiting \nTrue. Most cases of childhood diarrhea, especially viral, resolve on their own with supportive care like hydration.\n• \tb. Antibiotics is the mainstay treatment \nThis is not true — and thus the correct answer to the question. Antibiotics are not routinely used in childhood diarrhea and may even worsen outcomes if used unnecessarily.\n• \tc. Fluid loss occurs quickly compared to adults \nTrue. Children have a higher surface area-to-volume ratio and lower fluid reserves, making them more vulnerable to dehydration.\n• \td. The commonest complication is dehydration \nTrue. Dehydration is the most serious and frequent complication of diarrhea in children and can be life-threatening if not managed promptly.\n• \te. Giving antibiotics in all cases of diarrhea may worsen or prolong the condition \nTrue. Overuse of antibiotics can disrupt gut flora and lead to complications like antibiotic-associated diarrhea or resistance.",
+    "id": "q-1761204734341"
+  },
+  {
+    "questionText": "The most common infectious agent in acute diarrhea among children is",
+    "options": [
+      "Rotavirus",
+      "Entamoeba histolytica",
+      "Norovirus",
+      "Shigella species",
+      "Campylobacter"
+    ],
+    "correctAnswer": "Rotavirus",
+    "subjectId": "paediatrics",
+    "explanation": "• \ta. Rotavirus \nCorrect. Rotavirus is the leading cause of acute diarrhea in children under five, especially in settings without widespread vaccination.\n• \tb. Entamoeba histolytica\nThis protozoan causes amoebiasis, which can lead to bloody diarrhea, but it's not the most common cause overall.\n• \tc. Norovirus\nNorovirus is a common cause of gastroenteritis in older children and adults, but rotavirus is more prevalent in younger children.\n• \td. Shigella species\nShigella is a bacterial cause of dysentery (bloody diarrhea), but it's less common than viral causes.\n• \te. Campylobacter\nAnother bacterial cause, often linked to foodborne illness, but again, not the most common in children.",
+    "id": "q-1761204734343"
+  },
+  {
+    "questionText": "The commonest protozoan causing acute diarrhea in children is",
+    "options": [
+      "Giardia intestinalis",
+      "Entamoeba histolytica",
+      "Cryptosporidium species",
+      "Entamoeba coli",
+      "Schistosoma haematobium"
+    ],
+    "correctAnswer": "Cryptosporidium species",
+    "subjectId": "paediatrics",
+    "explanation": "Cryptosporidium species (particularly C. parvum and C. hominis) are the most common protozoan parasites causing acute diarrhea in children worldwide, especially in low-resource settings and during outbreaks (e.g., via contaminated water or person-to-person transmission in daycares). It is a leading cause of moderate-to-severe diarrheal disease in children under 5 years, per WHO and CDC data.\n\nGiardia intestinalis (a) is common but typically causes chronic or subacute diarrhea with malabsorption, not acute watery diarrhea as the primary presentation.\n\nEntamoeba histolytica (b) causes dysentery (bloody diarrhea), not typical acute watery diarrhea, and is less common in children overall.\n\nEntamoeba coli (d) is a non-pathogenic commensal and does not cause disease.",
+    "id": "q-1761204734344"
+  },
+  {
+    "questionText": "Which of these drugs commonly causes acute diarrhea?",
+    "options": [
+      "Morphine",
+      "Codeine",
+      "Penicillin",
+      "Metronidazole",
+      "Ibuprofen"
+    ],
+    "correctAnswer": "Penicillin",
+    "subjectId": "paediatrics",
+    "explanation": "• \ta. Morphine\nMorphine typically causes constipation, not diarrhea.\n• \tb. Codeine\nLike morphine, codeine is an opioid and more likely to cause constipation.\n• \tc. Penicillin \nCorrect. Penicillin and other antibiotics can disrupt normal gut flora, leading to antibiotic-associated diarrhea.\n• \td. Metronidazole\nWhile it can cause gastrointestinal upset, diarrhea is not its most common side effect.\n• \te. Ibuprofen\nMore likely to cause gastric irritation or ulcers, not typically diarrhea.",
+    "id": "q-1761204734345"
   }
 ]
