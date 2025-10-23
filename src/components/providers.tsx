@@ -3,7 +3,6 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { AuthContext } from '@/hooks/use-auth';
 import type { User } from '@/lib/types';
-import { checkUserRole } from '@/lib/auth';
 import { Skeleton } from './ui/skeleton';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from '@/lib/firebase';
@@ -18,14 +17,15 @@ export function Providers({ children }: { children: ReactNode }) {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       setLoading(true);
       if (firebaseUser) {
-        const role = await checkUserRole(firebaseUser.uid);
+        // Direct check for admin email, removing the dependency on checkUserRole
+        const isAdminUser = firebaseUser.email === 'admin@quizmaster.com';
         const appUser: User = {
           ...firebaseUser,
           id: firebaseUser.uid,
-          isAdmin: role === 'admin'
+          isAdmin: isAdminUser
         };
         setUser(appUser);
-        setIsAdmin(role === 'admin');
+        setIsAdmin(isAdminUser);
       } else {
         setUser(null);
         setIsAdmin(false);
