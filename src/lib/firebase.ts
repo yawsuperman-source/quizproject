@@ -20,8 +20,8 @@ const db = getFirestore(app);
 // It's safe to run this on every re-render, since it will only connect once.
 if (process.env.NODE_ENV === 'development') {
     try {
-        connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
-        connectFirestoreEmulator(db, '127.0.0.1', 8080);
+        connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
+        connectFirestoreEmulator(db, 'localhost', 8080);
     } catch (e: any) {
         if (!e.message.includes('already connected')) {
           console.error(e);
