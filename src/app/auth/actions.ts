@@ -30,7 +30,7 @@ async function mockSignUp(data: z.infer<typeof signUpSchema>) {
         isAdmin: false,
         photoURL: null,
     };
-    users.push(newUser);
+    users.push(newUser); // This adds the user to the in-memory array for persistence during mock sessions
     return { user: newUser };
 }
 
