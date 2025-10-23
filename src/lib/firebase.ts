@@ -1,7 +1,7 @@
 'use client';
 import { initializeApp, getApps, getApp, FirebaseOptions } from "firebase/app";
-import { getAuth, connectAuthEmulator } from "firebase/auth";
-import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,21 +12,9 @@ const firebaseConfig: FirebaseOptions = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
+// Initialize Firebase for client-side
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 const db = getFirestore(app);
-
-if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
-    // It's safe to run this on every re-render, since it will only connect once.
-    try {
-        connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
-        connectFirestoreEmulator(db, 'localhost', 8080);
-    } catch (e: any) {
-        if (!e.message.includes('already connected')) {
-          console.error(e);
-        }
-    }
-}
 
 export { app, auth, db };
