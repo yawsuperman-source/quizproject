@@ -17,8 +17,8 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// It's safe to run this on every re-render, since it will only connect once.
-if (process.env.NODE_ENV === 'development') {
+if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    // It's safe to run this on every re-render, since it will only connect once.
     try {
         connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
         connectFirestoreEmulator(db, 'localhost', 8080);
@@ -28,6 +28,5 @@ if (process.env.NODE_ENV === 'development') {
         }
     }
 }
-
 
 export { app, auth, db };
