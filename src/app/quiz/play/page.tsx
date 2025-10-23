@@ -6,7 +6,6 @@ import useQuizStore from '@/components/quiz/store';
 import { getQuizQuestions, saveUserAnswer } from '@/lib/actions';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
-import { answerExplanationWithLLM } from '@/ai/flows/answer-explanation-with-llm';
 
 import { QuestionDisplay } from '@/components/quiz/question-display';
 import { FeedbackDisplay } from '@/components/quiz/feedback-display';
@@ -34,8 +33,6 @@ export default function PlayQuizPage() {
   const [loading, setLoading] = useState(true);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [llmExplanation, setLlmExplanation] = useState<string | null>(null);
-  const [isLoadingExplanation, setIsLoadingExplanation] = useState(false);
 
   useEffect(() => {
     if (subjectIds.length === 0) {
@@ -89,28 +86,11 @@ export default function PlayQuizPage() {
     if(user) {
         saveUserAnswer(user.id, currentQuestion.id, isCorrect);
     }
-
-    setIsLoadingExplanation(true);
-    try {
-        const explanationResult = await answerExplanationWithLLM({
-            question: currentQuestion.questionText,
-            correctAnswer: currentQuestion.correctAnswer,
-            userAnswer: selectedAnswer,
-            explanation: currentQuestion.explanation,
-        });
-        setLlmExplanation(explanationResult.llmExplanation);
-    } catch (error) {
-        console.error("Error fetching LLM explanation:", error);
-        setLlmExplanation("Could not load AI explanation. Using default: " + currentQuestion.explanation);
-    } finally {
-        setIsLoadingExplanation(false);
-    }
   };
 
   const handleNext = () => {
     setIsSubmitted(false);
     setSelectedAnswer(null);
-    setLlmExplanation(null);
     nextQuestion();
   };
 
@@ -160,8 +140,7 @@ export default function PlayQuizPage() {
             <FeedbackDisplay 
                 isCorrect={selectedAnswer === currentQuestion.correctAnswer}
                 correctAnswer={currentQuestion.correctAnswer}
-                llmExplanation={llmExplanation}
-                isLoadingExplanation={isLoadingExplanation}
+                explanation={currentQuestion.explanation}
             />
         )}
 

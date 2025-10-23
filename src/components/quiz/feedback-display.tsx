@@ -2,20 +2,18 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { CheckCircle2, XCircle, Lightbulb, Loader2 } from 'lucide-react';
+import { CheckCircle2, XCircle, Lightbulb } from 'lucide-react';
 
 type FeedbackDisplayProps = {
   isCorrect: boolean;
   correctAnswer: string;
-  llmExplanation: string | null;
-  isLoadingExplanation: boolean;
+  explanation: string;
 };
 
 export function FeedbackDisplay({
   isCorrect,
   correctAnswer,
-  llmExplanation,
-  isLoadingExplanation
+  explanation
 }: FeedbackDisplayProps) {
 
   const isCode = correctAnswer.startsWith("'") && correctAnswer.endsWith("'");
@@ -41,15 +39,7 @@ export function FeedbackDisplay({
             <CardTitle className="text-lg font-headline">Explanation</CardTitle>
         </CardHeader>
         <CardContent>
-            {isLoadingExplanation && (
-                <div className="flex items-center gap-2 text-muted-foreground">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span>Generating AI-powered explanation...</span>
-                </div>
-            )}
-            {llmExplanation && (
-                 <p className="text-sm">{llmExplanation}</p>
-            )}
+            <p className="text-sm">{explanation}</p>
         </CardContent>
       </Card>
     </div>
