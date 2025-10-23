@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -28,9 +27,8 @@ type SubjectsManagementProps = {
   subjects: Subject[];
 };
 
-export function SubjectsManagement({ subjects: initialSubjects }: SubjectsManagementProps) {
+export function SubjectsManagement({ subjects }: SubjectsManagementProps) {
   const { toast } = useToast();
-  const [subjects, setSubjects] = useState(initialSubjects);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,8 +39,6 @@ export function SubjectsManagement({ subjects: initialSubjects }: SubjectsManage
     const result = await addSubjectAction(values.name);
     if (result.success) {
       toast({ title: 'Subject added successfully.' });
-      // This is a mock update. In a real app, you'd likely get the new list from the server.
-      setSubjects([...subjects, { id: values.name.toLowerCase(), name: values.name }]);
       form.reset();
     } else {
       toast({

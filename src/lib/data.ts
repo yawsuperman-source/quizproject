@@ -95,14 +95,14 @@ export async function getSubjects(): Promise<Subject[]> {
 }
 
 export async function addSubject(name: string): Promise<Subject> {
-    const newSubject: Subject = {
-        id: name.toLowerCase().replace(/\s+/g, '-'),
-        name,
-    };
-    // check for uniqueness
-    if (subjects.find(s => s.id === newSubject.id)) {
+    const newSubjectId = name.toLowerCase().replace(/\s+/g, '-');
+    if (subjects.some(s => s.id === newSubjectId || s.name.toLowerCase() === name.toLowerCase())) {
         throw new Error("Subject with this name already exists.");
     }
+    const newSubject: Subject = {
+        id: newSubjectId,
+        name,
+    };
     subjects.push(newSubject);
     return Promise.resolve(newSubject);
 }
