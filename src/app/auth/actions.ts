@@ -13,20 +13,29 @@ const signUpSchema = z.object({
 // It only adds the user to our mock database for role-based logic.
 export async function signUpUser(values: z.infer<typeof signUpSchema>) {
   try {
-    // Add user to mock DB for isAdmin property
+    // Add or update user in mock DB for isAdmin property
     // In a real app, this would be a 'users' collection in Firestore.
-    const existingUser = users.find(u => u.uid === values.uid);
-    if (!existingUser) {
+    let existingUser = users.find(u => u.uid === values.uid);
+    const isAdmin = values.email === 'admin@quizmaster.com';
+
+    if (existingUser) {
+        // Update existing user's details, just in case they changed
+        existingUser.displayName = values.displayName;
+        existingUser.email = values.email;
+        existingUser.isAdmin = isAdmin;
+    } else {
+        // Create new user entry
         users.push({
             id: values.uid,
             uid: values.uid,
             email: values.email,
             displayName: values.displayName,
-            // Check if the email is the admin email.
-            isAdmin: values.email === 'admin@quizmaster.com',
+            isAdmin: isAdmin,
             photoURL: null,
         });
     }
+
+    console.log("Current users in mock DB:", users);
 
     return { success: true, userId: values.uid };
   } catch (error: any) {

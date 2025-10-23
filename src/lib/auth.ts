@@ -6,9 +6,10 @@ import type { User } from './types';
 // Mock function to check user role. In a real app, this might involve checking custom claims or a Firestore document.
 export async function checkUserRole(userId: string): Promise<'admin' | 'user'> {
   console.log(`Checking role for user: ${userId}`);
-  // In our mock data, we need to find the user by their ID (which is the uid from Firebase Auth)
+  // Find the user by their Firebase UID in our mock database.
   const user = users.find((u) => u.uid === userId);
-  // The isAdmin flag is set during the mock sign-up process based on the email.
+  
+  // The isAdmin flag is set when the user is first created in the signUpUser action.
   return user?.isAdmin ? 'admin' : 'user';
 }
 
