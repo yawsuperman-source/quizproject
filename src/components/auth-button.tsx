@@ -52,6 +52,15 @@ export function AuthButton() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
+        {isAdmin && (
+            <>
+                <DropdownMenuItem onClick={() => router.push('/admin')}>
+                    <LayoutDashboard className="mr-2 h-4 w-4" />
+                    <span>Admin Panel</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+            </>
+        )}
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">{user.displayName || user.email}</p>
@@ -63,17 +72,10 @@ export function AuthButton() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        {isAdmin && (
-          <DropdownMenuItem onClick={() => router.push('/admin')}>
-            <LayoutDashboard className="mr-2 h-4 w-4" />
-            <span>Admin Panel</span>
-          </DropdownMenuItem>
-        )}
         <DropdownMenuItem disabled>
           <User className="mr-2 h-4 w-4" />
           <span>Profile</span>
         </DropdownMenuItem>
-        <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut}>
           <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>
