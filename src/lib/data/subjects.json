@@ -22,5 +22,13 @@
   {
     "id": "paediatrics",
     "name": "Paediatrics"
+  },
+  {
+    "id": "general-surgery",
+    "name": "General Surgery"
+  },
+  {
+    "id": "public-health-&-immunology",
+    "name": "Public Health & Immunology"
   }
 ]

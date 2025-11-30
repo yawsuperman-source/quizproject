@@ -58,10 +58,12 @@ export function QuestionDisplay({
               <Label
                 key={index}
                 htmlFor={`option-${index}`}
-                className={`flex items-center space-x-3 p-4 border rounded-md transition-all cursor-pointer hover:bg-secondary/50 ${itemClass} ${isSubmitted ? 'cursor-not-allowed' : ''}`}
-              >
+                className={`flex items-center space-x-3 p-4 border rounded-md transition-all cursor-pointer hover:bg-secondary/50 ${itemClass} ${isSubmitted ? 'cursor-not-allowed' : ''}`}>
                 <RadioGroupItem value={option} id={`option-${index}`} />
-                <span className={isCode ? 'font-code' : 'font-body'}>{option}</span>
+                <div className="flex items-center space-x-2">
+                  <span className="font-semibold">{String.fromCharCode(97 + index)}.</span>
+                  <span className={isCode ? 'font-code' : 'font-body'}>{option}</span>
+                </div>
               </Label>
             )
           })}

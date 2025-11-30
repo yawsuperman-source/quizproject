@@ -147,6 +147,20 @@ export async function addSubject(name: string): Promise<Subject> {
     return newSubject;
 }
 
+export async function deleteSubject(id: string): Promise<boolean> {
+  const subjects = await readSubjects();
+  const initialLength = subjects.length;
+  const updatedSubjects = subjects.filter(s => s.id !== id);
+  const success = updatedSubjects.length < initialLength;
+  if(success) {
+      await writeSubjects(updatedSubjects);
+      const questions = await readQuestions();
+      const updatedQuestions = questions.filter(q => q.subjectId !== id);
+      await writeQuestions(updatedQuestions);
+  }
+  return success;
+}
+
 export async function getQuestions(
     subjectIds: string[], 
     filter: AnswerFilter, 

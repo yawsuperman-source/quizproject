@@ -26,18 +26,21 @@ export default function PlayQuizPage() {
     setQuestions,
     currentQuestionIndex,
     nextQuestion,
+    previousQuestion,
+    userAnswers,
+    isSubmitted,
     recordAnswer,
     isQuizFinished,
     endQuiz,
   } = useQuizStore();
 
   const [loading, setLoading] = useState(true);
+  
+  // This local state now primarily drives the selection in the QuestionDisplay component
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     if (subjectIds.length === 0) {
-      // Redirect if the page is reloaded or accessed directly
       router.replace('/quiz/select');
       return;
     }
@@ -70,29 +73,34 @@ export default function PlayQuizPage() {
   const currentQuestion = useMemo(() => questions[currentQuestionIndex], [questions, currentQuestionIndex]);
   const progressValue = useMemo(() => (questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0), [currentQuestionIndex, questions.length]);
 
-
-  const handleSubmit = async () => {
-    if (!selectedAnswer) {
-        toast({
-            variant: 'destructive',
-            title: 'No answer selected',
-            description: 'Please choose an option before submitting.',
-        });
-        return;
+  const isCurrentQuestionSubmitted = useMemo(() => {
+    if (!isSubmitted || isSubmitted.length === 0) {
+        return false;
     }
+    return isSubmitted[currentQuestionIndex];
+  }, [isSubmitted, currentQuestionIndex]);
 
-    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-    setIsSubmitted(true);
-    recordAnswer(isCorrect);
-    if(user) {
-        saveUserAnswer(user.id, currentQuestion.id, isCorrect);
+  useEffect(() => {
+    if (userAnswers && userAnswers.length > 0) {
+        setSelectedAnswer(userAnswers[currentQuestionIndex] || null);
+    }
+  }, [currentQuestionIndex, userAnswers]);
+
+  const handleAnswerSelect = (answer: string) => {
+    setSelectedAnswer(answer);
+    recordAnswer(answer);
+    if (user && currentQuestion) {
+      const isCorrect = answer === currentQuestion.correctAnswer;
+      saveUserAnswer(user.id, currentQuestion.id, isCorrect);
     }
   };
 
   const handleNext = () => {
-    setIsSubmitted(false);
-    setSelectedAnswer(null);
     nextQuestion();
+  };
+
+  const handlePrevious = () => {
+    previousQuestion();
   };
 
   if (loading) {
@@ -132,32 +140,29 @@ export default function PlayQuizPage() {
                 questionNumber={currentQuestionIndex + 1}
                 totalQuestions={questions.length}
                 selectedAnswer={selectedAnswer}
-                onAnswerSelect={setSelectedAnswer}
-                isSubmitted={isSubmitted}
+                onAnswerSelect={handleAnswerSelect}
+                isSubmitted={isCurrentQuestionSubmitted}
             />
         )}
         
-        {isSubmitted && (
+        {isCurrentQuestionSubmitted && (
             <FeedbackDisplay 
-                isCorrect={selectedAnswer === currentQuestion.correctAnswer}
+                isCorrect={userAnswers[currentQuestionIndex] === currentQuestion.correctAnswer}
                 correctAnswer={currentQuestion.correctAnswer}
                 explanation={currentQuestion.explanation}
             />
         )}
 
         <div className="flex justify-between items-center">
-          <Button onClick={endQuiz} variant="destructive" size="lg">End Quiz</Button>
-          <div className="flex justify-end">
-            {isSubmitted ? (
-              <Button onClick={handleNext} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                  {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
-              </Button>
-            ) : (
-              <Button onClick={handleSubmit} size="lg">
-                Submit Answer
-              </Button>
-            )}
-          </div>
+            <div>
+                <Button onClick={handlePrevious} variant="outline" size="lg" disabled={currentQuestionIndex === 0}>Previous</Button>
+            </div>
+            <div className="flex items-center space-x-4">
+                <Button onClick={endQuiz} variant="destructive" size="lg">End Quiz</Button>
+                <Button onClick={handleNext} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                    {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
+                </Button>
+            </div>
         </div>
       </div>
     </div>
