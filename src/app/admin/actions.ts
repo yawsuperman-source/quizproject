@@ -7,6 +7,7 @@ import {
     updateQuestion as updateQuestionInDb,
     deleteQuestion as deleteQuestionFromDb,
     addSubject as addSubjectToDb,
+    deleteSubject as deleteSubjectFromDb,
     getSubjects
 } from '@/lib/data';
 import type { Question } from '@/lib/types';
@@ -87,6 +88,18 @@ export async function addSubjectAction(name: string) {
         return { success: true };
     } catch(e: any) {
         return { success: false, error: { form: e.message || "Failed to add subject." } };
+    }
+}
+
+export async function deleteSubjectAction(id: string) {
+    try {
+        const success = await deleteSubjectFromDb(id);
+        if(!success) throw new Error("Failed to delete");
+        revalidatePath('/admin');
+        revalidatePath('/quiz/select');
+        return { success: true };
+    } catch(e) {
+        return { success: false, error: "Failed to delete subject." };
     }
 }
 

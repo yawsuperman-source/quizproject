@@ -3,6 +3,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { CheckCircle2, XCircle, Lightbulb } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 
 type FeedbackDisplayProps = {
   isCorrect: boolean;
@@ -39,7 +42,9 @@ export function FeedbackDisplay({
             <CardTitle className="text-lg font-headline">Explanation</CardTitle>
         </CardHeader>
         <CardContent>
-            <p className="text-sm whitespace-pre-wrap">{explanation}</p>
+            <div className="prose dark:prose-invert max-w-none">
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{explanation}</ReactMarkdown>
+            </div>
         </CardContent>
       </Card>
     </div>

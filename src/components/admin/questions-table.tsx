@@ -12,6 +12,17 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+import {
   Dialog,
   DialogContent,
   DialogHeader,
@@ -21,7 +32,6 @@ import {
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { MoreHorizontal, PlusCircle, Edit, Trash } from 'lucide-react';
 import { QuestionForm } from './question-form';
-import { DeleteDialog } from './delete-dialog';
 import { addQuestionAction, updateQuestionAction, deleteQuestionAction } from '@/app/admin/actions';
 import { useToast } from '@/hooks/use-toast';
 
@@ -32,7 +42,8 @@ type QuestionsTableProps = {
 
 export function QuestionsTable({ questions, subjects }: QuestionsTableProps) {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [questionToDelete, setQuestionToDelete] = useState<Question | null>(null);
+  const [isSubmittingDelete, setIsSubmittingDelete] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<Question | undefined>(undefined);
   const { toast } = useToast();
   
@@ -46,20 +57,21 @@ export function QuestionsTable({ questions, subjects }: QuestionsTableProps) {
     setIsFormOpen(true);
   };
   
-  const openDeleteDialog = (question: Question) => {
-      setSelectedQuestion(question);
-      setIsDeleteDialogOpen(true);
-  }
-  
   const handleDeleteConfirm = async () => {
-      if (!selectedQuestion) return;
-      const result = await deleteQuestionAction(selectedQuestion.id);
-      if(result.success) {
-          toast({ title: "Question deleted successfully." });
-          setIsDeleteDialogOpen(false);
-      } else {
-          toast({ variant: 'destructive', title: "Error", description: result.error });
-      }
+    if (!questionToDelete) return;
+    
+    setIsSubmittingDelete(true);
+    const result = await deleteQuestionAction(questionToDelete.id);
+    
+    if (result.success) {
+        toast({ title: "Question deleted successfully." });
+    } else {
+        toast({ variant: 'destructive', title: "Error", description: result.error });
+    }
+    
+    setIsSubmittingDelete(false);
+    // The dialog will close via the AlertDialogAction, which will trigger onOpenChange
+    // to set questionToDelete to null.
   }
 
   return (
@@ -105,34 +117,49 @@ export function QuestionsTable({ questions, subjects }: QuestionsTableProps) {
                 <TableCell>{subjects.find(s => s.id === question.subjectId)?.name || 'N/A'}</TableCell>
                 <TableCell>{question.options.length}</TableCell>
                 <TableCell className="text-right">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className="h-8 w-8 p-0">
-                        <span className="sr-only">Open menu</span>
-                        <MoreHorizontal className="h-4 w-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={() => openFormForEdit(question)}>
-                        <Edit className="mr-2 h-4 w-4"/> Edit
-                      </DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => openDeleteDialog(question)} className="text-red-600">
-                        <Trash className="mr-2 h-4 w-4"/> Delete
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                  <AlertDialog onOpenChange={(open) => !open && setQuestionToDelete(null)}>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" className="h-8 w-8 p-0">
+                            <span className="sr-only">Open menu</span>
+                            <MoreHorizontal className="h-4 w-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuItem onClick={() => openFormForEdit(question)}>
+                            <Edit className="mr-2 h-4 w-4"/> Edit
+                          </DropdownMenuItem>
+                          <AlertDialogTrigger asChild>
+                              <DropdownMenuItem onSelect={e => { e.preventDefault(); setQuestionToDelete(question);}} className="text-red-600 focus:text-red-600 focus:bg-red-50">
+                                  <Trash className="mr-2 h-4 w-4"/> Delete
+                              </DropdownMenuItem>
+                          </AlertDialogTrigger>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                This action cannot be undone. This will permanently delete the question.
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <AlertDialogCancel>Cancel</AlertDialogCancel>
+                            <AlertDialogAction 
+                                disabled={isSubmittingDelete}
+                                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                                onClick={handleDeleteConfirm} >
+                                {isSubmittingDelete ? 'Deleting...' : 'Delete'}
+                            </AlertDialogAction>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </div>
-      
-      <DeleteDialog 
-        isOpen={isDeleteDialogOpen}
-        onOpenChange={setIsDeleteDialogOpen}
-        onConfirm={handleDeleteConfirm}
-      />
     </>
   );
 }

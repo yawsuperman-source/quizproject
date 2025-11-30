@@ -4,6 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, useFieldArray } from 'react-hook-form';
 import * as z from 'zod';
 import { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -56,6 +59,7 @@ export function QuestionForm({ subjects, question, onSubmit, onFinished }: Quest
   });
 
   const options = form.watch('options');
+  const explanation = form.watch('explanation');
 
   useEffect(() => {
     // if the correct answer is no longer a valid option, reset it
@@ -183,14 +187,23 @@ export function QuestionForm({ subjects, question, onSubmit, onFinished }: Quest
           name="explanation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Explanation</FormLabel>
+              <FormLabel>Explanation (Supports Markdown)</FormLabel>
               <FormControl>
-                <Textarea placeholder="Provide a brief explanation for the correct answer." {...field} />
+                <Textarea placeholder="Provide a brief explanation for the correct answer. You can use markdown for formatting." {...field} rows={8} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+
+        <div>
+            <Label>Explanation Preview</Label>
+            <div className="prose dark:prose-invert rounded-md border p-4 min-h-[100px] mt-2">
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+                    {explanation}
+                </ReactMarkdown>
+            </div>
+        </div>
 
         <div className="flex justify-end">
           <Button type="submit" disabled={form.formState.isSubmitting}>
