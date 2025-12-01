@@ -537,5 +537,1111 @@
     "subjectId": "public-health-&-immunology",
     "explanation": "This question asks for the **false** (\"except\") statement about yellow fever.\n**a. (True):** Yellow fever is a viral hemorrhagic fever caused by the yellow fever virus.\n**b. (False):** Yellow fever is a **vector-borne** disease. It is transmitted from an infected mosquito (like *Aedes aegypti*) to a human, or from an infected primate to a human via a mosquito. It does *not* spread directly from person to person through casual contact, respiratory droplets, etc.\n**c. (True):** The disease classically presents in phases. An initial acute phase is often followed by a brief period of remission (where the person seems to get better), before progressing to the more severe, toxic phase.\n**d. (True):** The severe, toxic phase of yellow fever (which includes jaundice, bleeding, and organ failure) has a high fatality rate.\n**e. (True):** As established in the previous question, *Aedes aegypti* is the principal vector for urban yellow fever.",
     "id": "q-1764539662930"
+  },
+  {
+    "questionText": "The triple therapy in the management of peptic ulcer disease include",
+    "options": [
+      "Three antibiotics and proton pump inhibitor",
+      "Two antibiotics and an H2 antagonist",
+      "Three antibiotics and an H2 antagonist",
+      "Two antibiotics and a proton pump inhibitor",
+      "One antibiotic, one proton pump inhibitor, and one H2 antagonist"
+    ],
+    "correctAnswer": "Two antibiotics and a proton pump inhibitor",
+    "subjectId": "internal-medicine",
+    "explanation": "Standard \"triple therapy\" for eradicating *Helicobacter pylori*, the most common cause of peptic ulcer disease, consists of:\nA **Proton Pump Inhibitor (PPI)** (e.g., Omeprazole) to reduce stomach acid.\n**Two Antibiotics** (e.g., Clarithromycin and Amoxicillin, or Clarithromycin and Metronidazole).",
+    "id": "q-1764568557585"
+  },
+  {
+    "questionText": "Which of these antibiotics is not among those used in the eradication of Helicobacter pylori",
+    "options": [
+      "Metronidazole",
+      "Ciprofloxacin",
+      "Clarithromycin",
+      "Amoxicillin",
+      "None of the above"
+    ],
+    "correctAnswer": "Ciprofloxacin",
+    "subjectId": "internal-medicine",
+    "explanation": "The standard first-line and second-line regimens for *H. pylori* primarily use **Amoxicillin**, **Clarithromycin**, **Metronidazole**, and **Tetracycline**. \n**Ciprofloxacin**, which is a fluoroquinolone, is not a standard component of these regimens.",
+    "id": "q-1764568557588"
+  },
+  {
+    "questionText": "One of the following is not a complication of gastro-oesophageal reflux disease.",
+    "options": [
+      "Adenocarcinoma",
+      "Oesophagitis",
+      "Ulceration",
+      "Obesity",
+      "Strictures"
+    ],
+    "correctAnswer": "Obesity",
+    "subjectId": "internal-medicine",
+    "explanation": "**Obesity** is a major **risk factor** (a cause) for GERD because it increases intra-abdominal pressure. It is not a **complication** (a result) of having GERD.\nThe other options are all well-known complications: Chronic acid reflux causes inflammation (**oesophagitis**), which can lead to erosions (**ulceration**) or scarring and narrowing (**strictures**). Over time, this chronic damage can cause the cells to change (Barrett's esophagus), which is a precursor to **adenocarcinoma** of the esophagus.",
+    "id": "q-1764568557589"
+  },
+  {
+    "questionText": "Which of the following medicines will not be required as routine drug by a patient with Chronic Hepatitis B undergoing chemotherapy or immunosuppressive treatment?",
+    "options": [
+      "Tenofovir",
+      "Entecavir",
+      "Lamivudine",
+      "Pegylated interferon alfa-2a",
+      "None of the above"
+    ],
+    "correctAnswer": "Pegylated interferon alfa-2a",
+    "subjectId": "internal-medicine",
+    "explanation": "Patients with chronic Hepatitis B who start chemotherapy or immunosuppressive therapy are at high risk for viral reactivation. To prevent this, they are given prophylactic oral antiviral medications (like Tenofovir, Entecavir, or Lamivudine) to suppress the virus.\n**Pegylated interferon** is an *immunomodulator*—it works by stimulating the immune system. Giving it to a patient who is about to be *immunosuppressed* is contradictory, ineffective for this purpose, and not the standard of care.",
+    "id": "q-1764568557590"
+  },
+  {
+    "questionText": "A 38-year-old man who was diagnosed with Hepatitis B 3-years ago is been management for liver cirrhosis after defaulting medications and developing complications. Which of these drugs will form part of his routine medications?",
+    "options": [
+      "Pegylated interferon alfa-2a",
+      "Paromomycin",
+      "Tenofovir",
+      "Diloxanide",
+      "None of the above"
+    ],
+    "correctAnswer": "Tenofovir",
+    "subjectId": "internal-medicine",
+    "explanation": "The patient has developed liver cirrhosis, an advanced complication of chronic Hepatitis B. All patients with chronic Hepatitis B and cirrhosis require lifelong antiviral treatment to suppress the virus, regardless of their viral load or LFTs, to prevent further liver damage and decompensation.\n**Tenofovir** (and Entecavir) is a first-line, high-barrier-to-resistance oral antiviral and the standard of care in this situation.\nPegylated interferon (a) is generally contraindicated in patients with decompensated cirrhosis.\nParomomycin (b) and Diloxanide (d) are luminal amoebicides for treating amebiasis.",
+    "id": "q-1764568557592"
+  },
+  {
+    "questionText": "All are drugs used in the management of chronic hepatitis C except",
+    "options": [
+      "Pegylated interferon alfa-2a",
+      "Pegylated interferon alfa-2b",
+      "Paromomycin",
+      "Ribavirin",
+      "None of the above"
+    ],
+    "correctAnswer": "Paromomycin",
+    "subjectId": "internal-medicine",
+    "explanation": "This question refers to the older, interferon-based treatment regimens for Hepatitis C.\nThese regimens combined **Pegylated interferon** (both alfa-2a and alfa-2b versions were used) with the oral antiviral drug **Ribavirin**.\n**Paromomycin** is an antibiotic/amoebicide used to treat intestinal infections like amebiasis and has no role in the management of Hepatitis C.",
+    "id": "q-1764568557594"
+  },
+  {
+    "questionText": "The habitual use of laxative will most likely cause one of the following",
+    "options": [
+      "Hypokalaemia",
+      "Small bowel obstruction",
+      "Peptic ulcer disease",
+      "Hypercalcaemia",
+      "None of the above"
+    ],
+    "correctAnswer": "Hypokalaemia",
+    "subjectId": "internal-medicine",
+    "explanation": "Laxative abuse, particularly with stimulant or osmotic laxatives, leads to large volumes of fluid and electrolyte loss through the stool. Potassium is a major electrolyte in gastrointestinal fluid, and its excessive loss leads to **hypokalaemia** (low potassium in the blood). This can cause muscle weakness, fatigue, and cardiac arrhythmias.",
+    "id": "q-1764568557596"
+  },
+  {
+    "questionText": "One of the following is not a medical cause of constipation",
+    "options": [
+      "Drugs such as morphine",
+      "Chronic laxative use",
+      "Hyperthyroidism",
+      "Irritable bowel syndrome",
+      "Hypercalcaemia"
+    ],
+    "correctAnswer": "Hyperthyroidism",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks for the *exception*.\n**a. Drugs such as morphine:** Opioids are a classic cause of constipation (OIC - Opioid-Induced Constipation) as they slow gut motility.\n**b. Chronic laxative use:** Overuse can damage the nerves in the colon, leading to a \"lazy bowel\" (atonic colon) that is dependent on laxatives, thus worsening constipation.\n**c. Hyperthyroidism:** This is **not a cause**. An *overactive* thyroid (hyperthyroidism) speeds up metabolism and gut motility, typically causing **diarrhea** or frequent stools. It is **hypo**thyroidism (an underactive thyroid) that causes constipation.\n**d. Irritable bowel syndrome:** One of the main subtypes is IBS-C, which is characterized by constipation.\n**e. Hypercalcaemia:** High calcium levels in the blood decrease smooth muscle contractility, including in the colon, leading to constipation.",
+    "id": "q-1764568557597"
+  },
+  {
+    "questionText": "Drugs used in the management of constipation in adults include the following except",
+    "options": [
+      "Bisacodyl",
+      "Glycerol suppository",
+      "Liquid paraffin",
+      "Milk of magnesia",
+      "Atropine"
+    ],
+    "correctAnswer": "Atropine",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks for the drug that is *not* a treatment for constipation.\n**a, b, c, & d** are all common laxatives: Bisacodyl (stimulant), Glycerol (osmotic/stimulant), Liquid paraffin (stool softener), and Milk of magnesia (osmotic).\n**e. Atropine** is an **anticholinergic** drug. Anticholinergic drugs work by blocking the parasympathetic nervous system, which is responsible for stimulating gut motility (peristalsis). Therefore, atropine *causes* constipation as a side effect and would make the condition worse.",
+    "id": "q-1764568557599"
+  },
+  {
+    "questionText": "Oesophageal pain associated with dysphagia to water suggests",
+    "options": [
+      "Mechanical obstruction by tumour",
+      "Achalasia",
+      "Duodenal ulcer",
+      "Cholecystitis",
+      "None of the above"
+    ],
+    "correctAnswer": "Achalasia",
+    "subjectId": "internal-medicine",
+    "explanation": "This question differentiates between types of dysphagia (difficulty swallowing).\n**Achalasia** is a motility disorder where the lower esophageal sphincter (LES) fails to relax, and the esophagus loses its ability to perform peristalsis (squeeze food down). Because this is a *functional* problem, patients typically have difficulty swallowing **both liquids (like water) and solids** from the beginning.\n**Mechanical obstruction by tumour** (option a) typically presents with dysphagia to **solids first**. The patient can still drink liquids. Only when the tumor grows very large does the patient develop difficulty swallowing liquids.\nDuodenal ulcer (c) and cholecystitis (d) cause abdominal pain, not dysphagia.",
+    "id": "q-1764568557601"
+  },
+  {
+    "questionText": "Oesophageal pain associated with dysphagia to solids and not liquid foods suggests",
+    "options": [
+      "Mechanical obstruction by tumour",
+      "Achalasia",
+      "Duodenal ulcer",
+      "Cholecystitis",
+      "None of the above"
+    ],
+    "correctAnswer": "Mechanical obstruction by tumour",
+    "subjectId": "internal-medicine",
+    "explanation": "This is the classic presentation for a physical blockage, like a tumor or a benign esophageal stricture.\nThe esophagus is progressively narrowed by a physical mass.\nInitially, only large, solid food boluses get stuck. The patient learns to eat more slowly and chew more, but liquids can still pass through the narrowed opening.\nAs the obstruction worsens over time, the patient will eventually have difficulty with liquids as well.\nThis pattern (solids first, then liquids) is the key feature that points to a **mechanical** cause rather than a motility disorder like achalasia (b), which affects both solids and liquids.",
+    "id": "q-1764568557603"
+  },
+  {
+    "questionText": "All are causes of pain originating from the oesophagus except",
+    "options": [
+      "Hiatus hernia",
+      "Gastro-oesophageal reflux disease",
+      "Oesophageal candidiasis",
+      "Achalasia",
+      "None of the above"
+    ],
+    "correctAnswer": "None of the above",
+    "subjectId": "internal-medicine",
+    "explanation": "All the conditions listed (a-d) can cause esophageal pain (heartburn, odynophagia, or atypical chest pain).\n**Hiatus hernia:** By disrupting the LES, it is a primary cause of GERD, which causes pain.\n**Gastro-oesophageal reflux disease (GERD):** This is the most common cause of esophageal pain (heartburn).\n**Oesophageal candidiasis:** This is an infection (thrush) of the esophagus, which causes inflammation and odynophagia (painful swallowing).\n**Achalasia:** This motility disorder can cause a feeling of pressure or pain in the chest due to retained food in the esophagus.",
+    "id": "q-1764568557605"
+  },
+  {
+    "questionText": "Treatment of amoebic abscesses should be initiated with",
+    "options": [
+      "A tissue agent followed by a luminal agent",
+      "A luminal agent followed by a tissue agent",
+      "A luminal agent together with a tissue agent",
+      "A fluoroquinolone followed by a luminal agent",
+      "None of the above"
+    ],
+    "correctAnswer": "A tissue agent followed by a luminal agent",
+    "subjectId": "internal-medicine",
+    "explanation": "The treatment for invasive amebiasis (like a liver abscess) is a two-step process.\nFirst, you must treat the invasive disease in the liver tissue. This is done with a **tissue amoebicide** like **Metronidazole** or Tinidazole, which is absorbed into the bloodstream and kills the trophozoites in the abscess.\nSecond, after completing the tissue agent, you must eradicate the amoebic cysts that remain in the colon (the gut lumen). This is done with a **luminal amoebicide** like **Paromomycin** or Diloxanide. This step is crucial to prevent a relapse and to stop the patient from being a carrier.",
+    "id": "q-1764568557607"
+  },
+  {
+    "questionText": "Which one of the following is a tissue agent used in the management of amoebic abscesses?",
+    "options": [
+      "Diloxanide",
+      "Metronidazole",
+      "Paromomycin",
+      "Aspirin",
+      "Ibuprofen"
+    ],
+    "correctAnswer": "Metronidazole",
+    "subjectId": "internal-medicine",
+    "explanation": "This question tests the classification of amoebicides.\n**b. Metronidazole** (and Tinidazole) is the standard-of-care **tissue agent**. It is absorbed into the blood and penetrates body tissues, including the liver, to kill the invasive amoeba.\n**a. Diloxanide** and **c. Paromomycin** are **luminal agents**. They are poorly absorbed and stay in the gut to kill cysts in the colon.\n**d. Aspirin** and **e. Ibuprofen** are NSAIDs and are irrelevant.",
+    "id": "q-1764568557609"
+  },
+  {
+    "questionText": "One of the following is a luminal agent used in the management of amoebic abscesses.",
+    "options": [
+      "Tinidazole",
+      "Metronidazole",
+      "Paromomycin",
+      "Aspirin",
+      "Ibuprofen"
+    ],
+    "correctAnswer": "Paromomycin",
+    "subjectId": "internal-medicine",
+    "explanation": "This is the reverse of the previous question.\n**c. Paromomycin** (and Diloxanide) is a **luminal agent**. It is not absorbed from the gut, so it stays in the colon to eradicate the amoeba there, which is the second step of treatment after the tissue agent.\n**a. Tinidazole** and **b. Metronidazole** are **tissue agents** used for the abscess itself.\n**d. Aspirin** and **e. Ibuprofen** are NSAIDs.",
+    "id": "q-1764568557611"
+  },
+  {
+    "questionText": "A 56-year-old chronic smoker and alcoholic for past 20 years presents with complaint of diarrhea alternating with constipation and unexplained weight loss for the past 6 months. On examination, he looks wasted. What is the most likely diagnosis?",
+    "options": [
+      "Enteric fever",
+      "Malignancy of the large bowel",
+      "Chronic pancreatitis",
+      "Irritable bowel syndrome",
+      "Intestinal obstruction"
+    ],
+    "correctAnswer": "Malignancy of the large bowel",
+    "subjectId": "internal-medicine",
+    "explanation": "The patient's presentation includes multiple \"red flag\" symptoms. The combination of:\n**Age** (56 years old)\n\n**Unexplained weight loss**\n\n**Wasted appearance** (cachexia)\n\nA significant change in bowel habits (alternating diarrhea and constipation)...is the classic presentation for colorectal cancer. The alternating bowel habits are often caused by a tumor partially obstructing the bowel, where liquid stool leaks around a hard, impacted mass.\n**d. Irritable bowel syndrome (IBS):** This is a diagnosis of exclusion and, crucially, does *not* cause weight loss or cachexia.\nc. Chronic pancreatitis: This is possible given the history of alcoholism and would cause weight loss, but it's less likely to cause alternating constipation and diarrhea.\n\n**a & e (Enteric fever & Intestinal obstruction):** These are acute conditions, not chronic 6-month problems.",
+    "id": "q-1764568557613"
+  },
+  {
+    "questionText": "When achalasia is suspected, which of these investigations will be best for the patient?",
+    "options": [
+      "Barium swallow",
+      "Oesophago-gastroduodenoscopy",
+      "Oesophageal manometry",
+      "Oesophageal pH monitoring",
+      "Helicobacter stool antigen"
+    ],
+    "correctAnswer": "Oesophageal manometry",
+    "subjectId": "internal-medicine",
+    "explanation": "Achalasia is a motility disorder defined by the failure of the lower esophageal sphincter (LES) to relax.\nA **Barium swallow** (a) is a good *initial* test that can strongly *suggest* achalasia by showing a dilated esophagus and a tapered \"bird's beak\" sign at the LES.\nAn **OGD** (b) is crucial to rule out a \"pseudo-achalasia,\" which is when a tumor at the junction mimics the symptoms of achalasia.\nHowever, the **gold standard** for *confirming the diagnosis* is **oesophageal manometry**. This test directly measures the pressures inside the esophagus and LES, providing definitive proof that the LES is failing to relax and that there is no coordinated peristalsis.\n**Oesophageal pH monitoring** (d) is the gold standard for diagnosing GERD, not achalasia.",
+    "id": "q-1764568557614"
+  },
+  {
+    "questionText": "Nystatin is recommended for treatment of",
+    "options": [
+      "Oral/oesophageal candidiasis",
+      "Vulvo-vaginal candidiasis",
+      "Gonorrhea",
+      "Oral ulceration due to viral infections",
+      "None of the above"
+    ],
+    "correctAnswer": "Oral/oesophageal candidiasis",
+    "subjectId": "internal-medicine",
+    "explanation": "Nystatin is an antifungal medication. It works topically, meaning by direct contact with the fungus.\nFor **oral/oesophageal candidiasis** (thrush), it is used as an oral suspension (a \"swish and swallow\" liquid) that coats the mouth and throat, killing the *Candida* fungus.\nIt is generally not the first-line treatment for **vulvo-vaginal candidiasis** (b), which is typically treated with azole antifungals (like clotrimazole cream or oral fluconazole).\nIt is completely ineffective against **gonorrhea** (c), which is a bacterial infection, and **viral infections** (d).",
+    "id": "q-1764568557616"
+  },
+  {
+    "questionText": "Which organism most commonly causes amoebic liver abscess?",
+    "options": [
+      "Giardia lamblia",
+      "Entamoeba coli",
+      "Entamoeba histolytica",
+      "Salmonella typhi",
+      "Escherichia coli"
+    ],
+    "correctAnswer": "Entamoeba histolytica",
+    "subjectId": "internal-medicine",
+    "explanation": "The name of the condition, \"amoebic liver abscess,\" points directly to its cause: an amoeba.\n**Entamoeba histolytica** is the pathogenic amoeba that causes amoebic dysentery (amebiasis). It can invade the wall of the colon, enter the portal bloodstream, and travel to the liver, where it forms a characteristic abscess.\n**Giardia lamblia** (a) is a protozoan that causes diarrhea (giardiasis) but does not typically invade the bloodstream or cause liver abscesses.\n**Entamoeba coli** (b) is a *non-pathogenic* amoeba that lives commensally in the gut.\n**Salmonella typhi** (d) and **Escherichia coli** (e) are bacteria. While bacteria can cause liver abscesses (pyogenic abscesses), they are not the cause of an *amoebic* abscess.",
+    "id": "q-1764568557618"
+  },
+  {
+    "questionText": "A 73-year-old farmer was recently diagnosed with non-complicated hepatitis B at a regional hospital and treatment was started for the diagnosed condition. What will be the follow up management for the patient?",
+    "options": [
+      "Long-term monitoring for disease activity and hepatocellular carcinoma screening with six-monthly Hepatitis B viral DNA quantification, Liver Function Test, abdominal ultrasound and alpha fetoprotein is mandatory for the patient",
+      "Long-term monitoring for disease activity and hepatocellular carcinoma screening with twelve-monthly Hepatitis B viral DNA quantification, Renal Function Test, abdominal ultrasound and alpha fetoprotein is mandatory for the patient",
+      "Long-term monitoring for disease activity and hepatocellular carcinoma screening with three-monthly Hepatitis B viral DNA quantification, Liver Function Test, abdominal ultrasound and alpha fetoprotein is mandatory for the patient",
+      "Short-term monitoring for disease activity and hepatocellular carcinoma screening with monthly Hepatitis B viral DNA quantification, Liver Function Test, abdominal ultrasound and alpha fetoprotein is mandatory for the patient",
+      "Long-term monitoring for disease activity and hepatocellular carcinoma screening with two-weekly Hepatitis B viral DNA quantification, Liver Function Test, abdominal ultrasound and alpha fetoprotein is mandatory for the patient"
+    ],
+    "correctAnswer": "Long-term monitoring for disease activity and hepatocellular carcinoma screening with six-monthly Hepatitis B viral DNA quantification, Liver Function Test, abdominal ultrasound and alpha fetoprotein is mandatory for the patient",
+    "subjectId": "internal-medicine",
+    "explanation": "The management of chronic hepatitis B requires two distinct long-term goals:\n**Monitoring Disease Activity:** This is done by checking **Liver Function Tests (LFTs)** and **Hepatitis B viral DNA (viral load)**.\n**Screening for Hepatocellular Carcinoma (HCC):** All patients with chronic hepatitis B are at high risk for liver cancer. The standard screening protocol is an **abdominal ultrasound** and an **alpha-fetoprotein (AFP)** blood test every **six months**.\nOption (a) is the only one that correctly identifies all the necessary tests (Viral DNA, LFT, Ultrasound, AFP) and the correct screening interval (six-monthly). The other options have incorrect intervals (twelve-monthly, three-monthly) or incorrect tests (Renal Function Test is used to monitor drug side effects, not for screening).",
+    "id": "q-1764568557620"
+  },
+  {
+    "questionText": "Which of the following viruses does not cause chronic hepatitis?",
+    "options": [
+      "Hepatitis E virus (genotype 3)",
+      "Hepatitis D virus",
+      "Hepatitis B virus",
+      "Hepatitis C virus",
+      "None of the above"
+    ],
+    "correctAnswer": "None of the above",
+    "subjectId": "internal-medicine",
+    "explanation": "This question is slightly tricky, as it tests specific knowledge.\n**Hepatitis A** is the classic hepatitis virus that *does not* cause a chronic infection, but it is not listed as an option.\n**Hepatitis B (c)** and **Hepatitis C (d)** are the most well-known causes of chronic hepatitis.\n**Hepatitis D (b)** is a \"satellite\" virus that requires a co-infection with Hepatitis B, and it is a major cause of chronic infection and severe, rapid-onset cirrhosis.\n**Hepatitis E (a)** *typically* causes an acute, self-limiting infection (like Hepatitis A). However, the question specifically names **genotype 3**, which is known to cause chronic infections in immunocompromised patients (e.g., transplant recipients).",
+    "id": "q-1764568557621"
+  },
+  {
+    "questionText": "People who have chronic hepatitis disease are usually",
+    "options": [
+      "Jaundiced",
+      "Lethargic",
+      "Febrile",
+      "Hypoglycaemic",
+      "Asymptomatic"
+    ],
+    "correctAnswer": "Asymptomatic",
+    "subjectId": "internal-medicine",
+    "explanation": "Chronic hepatitis (both B and C) is often called a \"silent epidemic.\" The vast majority of individuals in the chronic phase of the infection have no symptoms at all. They are asymptomatic and often unaware they are infected.\n**Jaundice (a)**, **lethargy (b)**, and **hypoglycaemia (d)** are all signs of advanced liver disease, specifically decompensated cirrhosis, which is a *complication* of long-standing chronic hepatitis.\n**Fever (c)** is a classic sign of *acute* hepatitis, not the chronic phase.",
+    "id": "q-1764568557623"
+  },
+  {
+    "questionText": "All are non-pharmacological management of gastro-oesophageal reflux disease except",
+    "options": [
+      "Encourage wearing of corsets",
+      "Elevate head of bed by 30 degrees",
+      "Avoidance of over-eating and heavy meals before bedtime",
+      "Avoid sleeping within 3 hours after eating",
+      "Weight reduction in overweight and obese individuals"
+    ],
+    "correctAnswer": "Encourage wearing of corsets",
+    "subjectId": "internal-medicine",
+    "explanation": "Non-pharmacological (lifestyle) management for GERD aims to *reduce* factors that cause reflux.\nOptions (b), (c), (d), and (e) are all standard recommendations. Elevating the head of the bed uses gravity to keep acid down. Avoiding large meals before bed, not lying down after eating, and weight reduction all help to *decrease* pressure on the stomach.\nA **corset** (option a) does the opposite: it significantly *increases* intra-abdominal pressure, which would force stomach acid up into the esophagus and worsen GERD.",
+    "id": "q-1764568557626"
+  },
+  {
+    "questionText": "All are important medications in the management of non-erosive gastro-oesophageal reflux disease except",
+    "options": [
+      "Magnesium trisilicate",
+      "Omeprazole",
+      "Magnesium hydroxide",
+      "Esomeprazole",
+      "Metoclopramide"
+    ],
+    "correctAnswer": "Metoclopramide",
+    "subjectId": "internal-medicine",
+    "explanation": "The primary treatment for non-erosive GERD is acid control.\n**Antacids** (a. Magnesium trisilicate, c. Magnesium hydroxide) neutralize stomach acid for quick, temporary relief.\n**Proton Pump Inhibitors (PPIs)** (b. Omeprazole, d. Esomeprazole) are powerful acid suppressors and a first-line treatment.\n**Metoclopramide** (e) is a **pro-kinetic** agent. It is not an acid suppressor. While it can be used for GERD in very specific cases (e.g., if the patient also has delayed gastric emptying), it is not a standard or primary medication for typical GERD due to its significant neurologic side-effect profile (e.g., tardive dyskinesia).",
+    "id": "q-1764568557628"
+  },
+  {
+    "questionText": "Oesophageal pain usually tends to be localized",
+    "options": [
+      "At the right scapula",
+      "Behind the sternum",
+      "At the right hypochondriac region",
+      "Around the umbilicus",
+      "At the left shoulder"
+    ],
+    "correctAnswer": "Behind the sternum",
+    "subjectId": "internal-medicine",
+    "explanation": "The esophagus is located in the chest (mediastinum) directly behind the sternum (breastbone). Pain originating from the esophagus (such as heartburn, esophagitis, or spasm) is classically felt in this **retrosternal** location.\nPain at the right scapula (a) is often referred from the gallbladder.\nPain in the right hypochondriac region (c) is associated with the liver or gallbladder.\nPain at the left shoulder (e) can be referred from the diaphragm or spleen.",
+    "id": "q-1764568557629"
+  },
+  {
+    "questionText": "Agents that decrease lower oesophageal sphincter pressure include the following except",
+    "options": [
+      "Amoxicillin",
+      "Cigarettes",
+      "Calcium channel blockers",
+      "Pethidine",
+      "Anticholinergics"
+    ],
+    "correctAnswer": "Amoxicillin",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks for the exception. A decrease in lower esophageal sphincter (LES) pressure allows stomach acid to reflux more easily, causing or worsening GERD.\n**b, c, d, and e** are all known to relax the LES smooth muscle:\n**Cigarettes** (nicotine)\n**Calcium channel blockers**\n**Pethidine** (opioids)\n**Anticholinergics**\n**a. Amoxicillin** is an antibiotic. It has no primary effect on the pressure of the lower esophageal sphincter.",
+    "id": "q-1764568557632"
+  },
+  {
+    "questionText": "Which one of the following is not a risk factor for gastro-oesophageal reflux disease?",
+    "options": [
+      "Obesity",
+      "Pregnancy",
+      "Long term use of nasogastric tube",
+      "Hiatus hernia",
+      "None of the above"
+    ],
+    "correctAnswer": "None of the above",
+    "subjectId": "internal-medicine",
+    "explanation": "All the options listed (a-d) are well-established risk factors for GERD.\n**Obesity** and **Pregnancy** both increase intra-abdominal pressure, which forces stomach contents upward.\nA **long-term nasogastric tube** physically keeps the LES open, allowing free reflux of acid.\nA Hiatus hernia disrupts the normal junction between the esophagus and stomach, weakening the anti-reflux barrier.\nSince all listed options are indeed risk factors, the correct choice is \"None of the above.\"",
+    "id": "q-1764568557634"
+  },
+  {
+    "questionText": "The most suitable test for diagnosing peptic ulcer disease and gastro-oesophageal-reflux disease is",
+    "options": [
+      "Chest x-ray",
+      "Oesophago-gastroduodenoscopy",
+      "Abdominal ultrasound scan",
+      "Barium meal with fluoroscopy",
+      "Oesophageal pH monitoring"
+    ],
+    "correctAnswer": "Oesophago-gastroduodenoscopy",
+    "subjectId": "internal-medicine",
+    "explanation": "This test, commonly known as an upper endoscopy or OGD, is the \"gold standard\" investigation.\nIt allows for **direct visualization** of the esophagus and stomach lining, making it ideal for identifying oesophagitis (damage from GERD) and ulcers (PUD).\nCrucially, it also allows for **biopsies** to be taken, which can be used to test for *H. pylori* (the main cause of PUD) and to rule out malignancy in a gastric ulcer.\nThe other tests are less suitable: A barium meal (d) is less sensitive. Oesophageal pH monitoring (e) is a specialized test for GERD but cannot diagnose PUD. A chest x-ray (a) and ultrasound (c) are not the correct imaging modalities for this.",
+    "id": "q-1764568557636"
+  },
+  {
+    "questionText": "All the following are common symptoms of amoebic liver abscess except",
+    "options": [
+      "Fever",
+      "Anorexia",
+      "Right upper abdominal pain",
+      "Jaundice",
+      "Malaise"
+    ],
+    "correctAnswer": "Jaundice",
+    "subjectId": "internal-medicine",
+    "explanation": "Fever, right upper abdominal pain, anorexia (loss of appetite), and malaise (general feeling of being unwell) are all classic and very common symptoms of an amoebic liver abscess.\n**Jaundice** (yellowing of the skin and eyes) is *not* a common symptom. It is a specific sign that only occurs in a minority of cases, typically when a very large abscess is positioned in a way that it compresses or obstructs the main bile ducts.",
+    "id": "q-1764568557639"
+  },
+  {
+    "questionText": "While at the hospital, a 64-year-old man came with complaint of right upper abdominal pain and fever. He has been passing mucoid stools for the past 3 weeks. You suspect amoebic liver abscess, which of the following investigations will you not request?",
+    "options": [
+      "Full blood count",
+      "Chest x-ray",
+      "Stool routine examination",
+      "Abdominal CT scan",
+      "Abdominal ultrasound scan"
+    ],
+    "correctAnswer": "Abdominal CT scan",
+    "subjectId": "internal-medicine",
+    "explanation": "This question is about the initial and most appropriate workup.\n**a. Full blood count:** Essential. You would expect a high white blood cell count (leukocytosis).\n**b. Chest x-ray:** Essential. An amoebic liver abscess can irritate the diaphragm, causing it to be raised (a common sign), or even rupture into the chest, which is a critical complication to check for.\n**c. Stool routine examination:** Essential. The history of mucoid stools is the key clue for amoebic dysentery, the precursor to the liver abscess. You must check the stool for amoeba.\n**e. Abdominal ultrasound scan:** This is the **best initial imaging test**. It is fast, non-invasive, widely available, and very good at detecting liver abscesses.\n**d. Abdominal CT scan:** This is *not* a first-line investigation in this setting. It is more expensive and less available than an ultrasound. You would request an ultrasound (e) *first*. A CT scan would only be ordered later if the ultrasound was unclear or to get a better look at complex anatomy or complications. Therefore, it's the one you would *not* request as part of the initial workup.",
+    "id": "q-1764568557641"
+  },
+  {
+    "questionText": "One of these medications is used in the management of severe pruritus in cholestatic jaundice.",
+    "options": [
+      "Hyoscine butylbromide",
+      "Cholestyramine",
+      "Paromomycin",
+      "Diloxanide",
+      "Metoclopramide"
+    ],
+    "correctAnswer": "Cholestyramine",
+    "subjectId": "internal-medicine",
+    "explanation": "**Cholestatic jaundice** is caused by a blockage in bile flow. This causes bile acids to build up in the bloodstream and get deposited in the skin, which causes severe itching (pruritus).\n**b. Cholestyramine** is a **bile acid sequestrant**. It works by binding to bile acids in the intestine, preventing their reabsorption and forcing them to be excreted in the stool. This lowers the level of bile acids in the blood, relieving the itch.\nThe other drugs are for different conditions: Hyoscine (a) is an antispasmodic. Paromomycin (c) and Diloxanide (d) are luminal amoebicides. Metoclopramide (e) is an anti-emetic.",
+    "id": "q-1764568557643"
+  },
+  {
+    "questionText": "Indications for referral in a patient with constipation include the following except",
+    "options": [
+      "Absence of bowel sounds",
+      "Inability to pass flatus",
+      "Suspected surgical causes of constipation",
+      "Constipation resistant to medical treatment",
+      "All children presenting with constipation"
+    ],
+    "correctAnswer": "All children presenting with constipation",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks for the one option that is *not* an indication for referral.\n**a, b, c:** Absence of bowel sounds, inability to pass flatus, and suspected surgical causes are all \"red flags\" pointing to a possible bowel obstruction, which is a surgical emergency requiring immediate referral.\n**d:** Constipation that doesn't respond to standard first-line medical treatment in a primary care setting is a valid reason for referral to a specialist (like a gastroenterologist) for further workup.\n**e:** This is the exception. Simple, functional constipation is extremely common in children and is routinely managed in primary care. It does *not* require an automatic referral. Only cases that are severe, resistant to treatment, or accompanied by red flags (like failure to thrive, severe abdominal distension, etc.) would be referred.",
+    "id": "q-1764568557645"
+  },
+  {
+    "questionText": "The most common cause of peptic ulcer disease in Ghana is",
+    "options": [
+      "Non-steroidal anti-inflammatory drugs abuse",
+      "Starvation",
+      "Helicobacter pylori infection",
+      "Long term use of corticosteroids",
+      "Chronic alcohol consumption"
+    ],
+    "correctAnswer": "Helicobacter pylori infection",
+    "subjectId": "internal-medicine",
+    "explanation": "This is a core etiological fact.\nc. Helicobacter pylori infection: This bacterium is the most common cause of peptic ulcer disease (PUD) worldwide, including in Ghana1. It infects the stomach lining, leading to chronic inflammation and damage that results in ulcer formation.\n\n**a. NSAIDs:** The abuse of Non-steroidal anti-inflammatory drugs is the *second* most common cause.\n**b, d, e:** Starvation, corticosteroids, and chronic alcohol use are considered risk factors that can exacerbate or contribute to ulcer development, but they are not the primary cause.",
+    "id": "q-1764568557647"
+  },
+  {
+    "questionText": "A patient present with signs and symptoms suggestive of peptic ulcer disease. Which of these important laboratory investigations will you not request?",
+    "options": [
+      "Full blood count",
+      "Helicobacter pylori stool antigen",
+      "Endoscopy",
+      "Stool for routine examination",
+      "Rapid diagnostic test for malaria"
+    ],
+    "correctAnswer": "Rapid diagnostic test for malaria",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks which test is irrelevant to a PUD workup.\n**a. Full blood count (FBC):** This is essential. A low hemoglobin would indicate anemia, a common and serious complication of a bleeding ulcer.\nb. H. pylori stool antigen: This is a key non-invasive test to check for *H. pylori*, the most common cause of PUD2.\n\nc. Endoscopy: This is the \"gold standard\" investigation to directly visualize the ulcer, check for malignancy, and test for *H. pylori*3.\n\n**d. Stool for routine examination (Stool RE):** This is a reasonable test. It can be used to check for occult blood (unseen blood from a bleeding ulcer) or to help rule out other causes of abdominal pain, like parasites.\n**e. Rapid diagnostic test for malaria:** This test is for malaria, an infectious disease with symptoms like fever, chills, and body aches. These symptoms do not overlap with the classic presentation of PUD (epigastric pain related to meals). Therefore, it is not an important investigation for this patient.",
+    "id": "q-1764568557650"
+  },
+  {
+    "questionText": "All are stigmata of chronic liver disease except",
+    "options": [
+      "Clubbing of the fingers",
+      "Palmar erythema",
+      "Spider naevi",
+      "Dupuytren’s contracture",
+      "Jaundice"
+    ],
+    "correctAnswer": "Clubbing of the fingers",
+    "subjectId": "internal-medicine",
+    "explanation": "Palmar erythema (red palms) , spider naevi (spider-like blood vessels on the skin), Dupuytren's contracture (Thickening and shortening of palmar fascia leading to finger flexion deformity), and jaundice (yellowing of the skin)  are all classic physical signs (stigmata) of chronic liver disease. While finger clubbing can be seen in some specific liver conditions (like **primary biliary cholangitis** or **cirrhosis due to biliary causes**), it is not considered a general stigma of chronic liver disease. It is more commonly associated with chronic suppurative lung disease, cyanotic heart disease and inflammatory bowel disease.",
+    "id": "q-1764568557652"
+  },
+  {
+    "questionText": "One of the following is not a sign of decompensated liver disease",
+    "options": [
+      "Anorexia",
+      "Ascites",
+      "Encephalopathy",
+      "Hypoalbuminemia",
+      "Coagulopathy"
+    ],
+    "correctAnswer": "Anorexia",
+    "subjectId": "internal-medicine",
+    "explanation": "Decompensated liver disease means the liver is actively failing to perform its key functions, leading to major complications.\n**Ascites** (fluid in the abdomen)\n\n**Encephalopathy** (confusion from toxin buildup)\n\n**Hypoalbuminemia** (low protein, as the liver can't produce it)\n\n**Coagulopath**y (bleeding problems, as the liver can't make clotting factors)\nThese are all defining signs of decompensation. While anorexia (loss of appetite) is a very common symptom of liver disease, it is not one of the specific, defining signs of liver failure itself.",
+    "id": "q-1764568557654"
+  },
+  {
+    "questionText": "A 46-year-old man has been diagnosed with hepatitis B in your hospital. In the management of chronic active hepatitis B, which of the following medicines can be used?",
+    "options": [
+      "Tenofovir",
+      "Lamivudine",
+      "Entecavir",
+      "Pegylated Interferon alfa-2a",
+      "All the above"
+    ],
+    "correctAnswer": "All the above",
+    "subjectId": "internal-medicine",
+    "explanation": "All the medications listed are approved and effective first-line or second-line treatments for chronic active hepatitis B.\n**Tenofovir**, **Lamivudine**, and **Entecavir** are oral antiviral medications that work by suppressing the replication of the hepatitis B virus.\n\n**Pegylated Interferon alfa-2a** is an injection that helps the body's own immune system to fight the virus.\nSince all are valid treatment options, the correct answer is \"All the above\".",
+    "id": "q-1764568557656"
+  },
+  {
+    "questionText": "Which of the following is not an important component in the management of hepatitis?",
+    "options": [
+      "Adequate best rest",
+      "High calorie consumption",
+      "Avoidance of alcohol consumption",
+      "Administration of herbal concoction",
+      "Administration of intravenous fluid if volume is depleted"
+    ],
+    "correctAnswer": "Administration of herbal concoction",
+    "subjectId": "internal-medicine",
+    "explanation": "Supportive care is the mainstay of managing acute viral hepatitis.\n**a, b, c, and e** are all important components of this care. Rest (a) helps the body recover. High calorie intake (b) is crucial because patients are often anorexic, and good nutrition supports liver regeneration. Avoiding alcohol (c) is mandatory as alcohol is a hepatotoxin. IV fluids (e) are necessary if the patient is vomiting and cannot maintain hydration.\n**d. Administration of herbal concoction** is **not** part of standard medical management. Many herbal preparations are hepatotoxic (toxic to the liver) and can worsen liver damage, leading to acute liver failure.",
+    "id": "q-1764568557658"
+  },
+  {
+    "questionText": "Chronic hepatitis refers to …………",
+    "options": [
+      "Inflammation of the liver for more than five months, with improving liver function test",
+      "Inflammation of the liver for more than five months, with persistent elevated liver enzymes",
+      "Inflammation of the liver for more than six months, with persistent elevated liver function tests",
+      "Inflammation of the liver for more than 2 weeks with persistent elevated liver function tests",
+      "None of the above"
+    ],
+    "correctAnswer": "Inflammation of the liver for more than six months, with persistent elevated liver function tests",
+    "subjectId": "internal-medicine",
+    "explanation": "This is the standard medical definition of chronic hepatitis.\nThe **six-month** timeframe is the key differentiator between acute hepatitis (which resolves, or should resolve, within 6 months) and chronic hepatitis (which persists beyond 6 months).\nThe persistence of **elevated liver function tests** (like ALT and AST) is the biochemical evidence that the inflammation is ongoing.\nThe other options use incorrect timeframes (five months, 2 weeks) or incorrect biochemical features (improving LFTs).",
+    "id": "q-1764568557660"
+  },
+  {
+    "questionText": "Chronic hepatitis can progress to all the following except",
+    "options": [
+      "Liver cirrhosis",
+      "Portal hypertension",
+      "Protection from upper gastrointestinal bleeding",
+      "Hepatic encephalopathy",
+      "Hepatocellular carcinoma"
+    ],
+    "correctAnswer": "Protection from upper gastrointestinal bleeding",
+    "subjectId": "internal-medicine",
+    "explanation": "Chronic hepatitis leads to a cascade of severe complications, and option (c) is the opposite of what actually happens.\nChronic inflammation leads to progressive scarring of the liver, which is called **cirrhosis** (a).\nThis scarring obstructs blood flow through the liver, causing blood to back up in the portal vein system. This is called **portal hypertension** (b).\nThis high pressure forces varicose veins to form, especially in the esophagus (esophageal varices). These varices are fragile and prone to rupture, causing **life-threatening upper gastrointestinal bleeding**. Therefore, chronic hepatitis *causes* this bleeding, it does not *protect* from it.\nAs the liver fails (decompensated cirrhosis), it can no longer clear toxins like ammonia, leading to **hepatic encephalopathy** (d).\nChronic inflammation and cirrhosis are the strongest risk factors for developing liver cancer, known as **hepatocellular carcinoma** (e).",
+    "id": "q-1764568557662"
+  },
+  {
+    "questionText": "Medications used to control ascites fluid from accumulating in a patient with chronic liver disease and mild ascites is/are",
+    "options": [
+      "Metronidazole",
+      "Lactulose",
+      "Spironolactone and furosemide",
+      "Vitamin B",
+      "Salt-poor human albumin solution"
+    ],
+    "correctAnswer": "Spironolactone and furosemide",
+    "subjectId": "internal-medicine",
+    "explanation": "The medical management to prevent the accumulation of ascites (diuretic therapy) relies on:\n**Spironolactone:** An aldosterone antagonist that is the first-line and most important diuretic for ascites.\n**Furosemide:** A loop diuretic that is often added to spironolactone for a stronger effect and to help manage the potential high potassium (hyperkalemia) caused by spironolactone.\nThe other options are for different conditions: Metronidazole (a) and Lactulose (b) are for hepatic encephalopathy. Vitamin B (d) is a nutritional supplement. Salt-poor human albumin (e) is used during large-volume paracentesis (fluid removal) or for SBP, not for the long-term *control* of mild ascites.",
+    "id": "q-1764568564250"
+  },
+  {
+    "questionText": "A positive succussion splash suggests …",
+    "options": [
+      "Gastro-oesophageal reflux disease",
+      "Peptic ulcer disease",
+      "Pyloric obstruction",
+      "Achalasia",
+      "Acute diarrhea"
+    ],
+    "correctAnswer": "Pyloric obstruction",
+    "subjectId": "internal-medicine",
+    "explanation": "A succussion splash is a sloshing sound heard (often without a stethoscope) from the abdomen when the patient's torso is moved. It is caused by the presence of a large amount of fluid and gas retained in the stomach. This indicates that the stomach is not emptying properly. This failure of gastric emptying is the definition of pyloric obstruction (also called gastric outlet obstruction), which can be a complication of peptic ulcer disease.",
+    "id": "q-1764568564252"
+  },
+  {
+    "questionText": "Which of the following is not an anti-emetic drug?",
+    "options": [
+      "Promethazine",
+      "Domperidone",
+      "Cyclizine",
+      "Cinnarizine",
+      "Milk of magnesia"
+    ],
+    "correctAnswer": "Milk of magnesia",
+    "subjectId": "internal-medicine",
+    "explanation": "An anti-emetic drug is one that prevents or treats nausea and vomiting (emesis).\n**Promethazine**, **Cyclizine**, and **Cinnarizine** (a, c, d) are antihistamines commonly used for motion sickness and vomiting.\n**Domperidone** (b) is a dopamine antagonist that works as a pro-kinetic and anti-emetic.\n**Milk of magnesia** (e) (magnesium hydroxide) is an **antacid** and a **laxative**. It is used to treat indigestion or constipation, not vomiting.",
+    "id": "q-1764568564254"
+  },
+  {
+    "questionText": "The primary malignancy of the liver is",
+    "options": [
+      "Cancer of the colon with metastasis to the liver",
+      "Cervical cancer with metastasis to the liver and lungs",
+      "Hepatocellular carcinoma",
+      "Lung cancer with metastasis to the liver",
+      "Breast cancer with metastasis to the liver"
+    ],
+    "correctAnswer": "Hepatocellular carcinoma",
+    "subjectId": "internal-medicine",
+    "explanation": "\"Primary malignancy\" means the cancer originates from the cells of that organ.\n**Hepatocellular carcinoma (HCC)** is the cancer that arises from the liver cells (hepatocytes).\nAll the other options (a, b, d, e) describe **metastatic cancer** (or secondary malignancy), which is cancer that started in another organ (like the colon, lung, or breast) and *spread* to the liver.",
+    "id": "q-1764568564257"
+  },
+  {
+    "questionText": "Signs of hepatocellular carcinoma include the following except",
+    "options": [
+      "Hepatic bruit",
+      "Cachexia",
+      "Hepatomegaly",
+      "Anorexia",
+      "Ascites"
+    ],
+    "correctAnswer": "Anorexia",
+    "subjectId": "internal-medicine",
+    "explanation": "This question distinguishes between objective signs (which the clinician observes) and subjective symptoms (which the patient reports).\n**Signs:** A hepatic bruit (a), cachexia (b), hepatomegaly (c), and ascites (e) are all objective findings that a clinician can detect on examination.\n**Symptom:** **Anorexia** (d), or loss of appetite, is a *symptom* that the patient *experiences and reports*. It is not an objective sign.",
+    "id": "q-1764568564259"
+  },
+  {
+    "questionText": "All these conditions can cause ascites except",
+    "options": [
+      "Liver cirrhosis",
+      "Renal failure",
+      "Heart failure",
+      "Nephrotic syndrome",
+      "Irritable bowel syndrome"
+    ],
+    "correctAnswer": "Irritable bowel syndrome",
+    "subjectId": "internal-medicine",
+    "explanation": "Ascites is the accumulation of fluid in the abdominal cavity. It's caused by high pressure in the veins (portal hypertension, as seen in liver cirrhosis (a)) or low protein in the blood (hypoalbuminemia, as seen in nephrotic syndrome (d) and severe renal failure (b)) or fluid overload (as seen in heart failure (c)). Irritable bowel syndrome (IBS) (e) is a functional gut disorder affecting motility and sensation; it does not cause the fluid or pressure imbalances that lead to ascites.",
+    "id": "q-1764568564261"
+  },
+  {
+    "questionText": "A positive fluid thrill test indicates",
+    "options": [
+      "Heart failure",
+      "Renal failure",
+      "Liver pathology",
+      "Ascites",
+      "Peritonitis"
+    ],
+    "correctAnswer": "Ascites",
+    "subjectId": "internal-medicine",
+    "explanation": "A \"fluid thrill\" is a specific clinical examination technique. The examiner taps one side of the abdomen and feels for a fluid wave or \"thrill\" on the opposite side. This sign is positive only when there is a large amount of free fluid in the abdominal cavity, which is the definition of ascites. While heart failure, renal failure, or liver pathology (a, b, c) can cause ascites, the test itself indicates the presence of ascites.",
+    "id": "q-1764568564264"
+  },
+  {
+    "questionText": "Non-pharmacological treatment of ascites includes all the following except",
+    "options": [
+      "Bed rest",
+      "Salt restriction",
+      "Fluid restriction",
+      "Use of NSAIDs for pain management",
+      "Abstinence from alcohol"
+    ],
+    "correctAnswer": "Use of NSAIDs for pain management",
+    "subjectId": "internal-medicine",
+    "explanation": "The goal of non-pharmacological treatment is to reduce fluid retention. Salt restriction (b) is the most critical step, as water follows salt. Fluid restriction (c) is added in severe cases. Bed rest (a) can help improve kidney perfusion, and abstinence from alcohol (e) is vital to stop further liver damage. NSAIDs (like ibuprofen) are strongly contraindicated in patients with ascites and cirrhosis. They inhibit prostaglandins, which are crucial for maintaining blood flow to the kidneys in this state, and can lead to acute kidney injury and worsen fluid retention.",
+    "id": "q-1764568564267"
+  },
+  {
+    "questionText": "What is maximum quantity of ascetic fluid that can be removed without concomitant colloid infusion but unlikely to cause haemodynamic consequences?",
+    "options": [
+      "1 litre",
+      "2 litres",
+      "3 litres",
+      "4 litres",
+      "5 litres"
+    ],
+    "correctAnswer": "5 litres",
+    "subjectId": "internal-medicine",
+    "explanation": "This procedure is called Large-Volume Paracentesis (LVP). Removing a large amount of ascitic fluid can cause a rapid shift of fluid from the bloodstream into the abdomen, leading to a dangerous drop in blood pressure (haemodynamic collapse), known as Paracentesis-Induced Circulatory Dysfunction (PICD). The standard guideline is that removing up to 5 litres is generally safe without needing to give an infusion of colloid (like albumin) to hold fluid in the bloodstream. If more than 5 litres are removed, albumin infusion is required.",
+    "id": "q-1764568564269"
+  },
+  {
+    "questionText": "Massive ascites in liver cirrhosis with respiratory embarrassment requiring more than 5 litres of fluid drainage should be treated with",
+    "options": [
+      "Spironolactone",
+      "Furosemide",
+      "Salt-poor human albumin solution",
+      "All of the above",
+      "None of the above"
+    ],
+    "correctAnswer": "Salt-poor human albumin solution",
+    "subjectId": "internal-medicine",
+    "explanation": "This question follows directly from the previous one. The patient has \"massive ascites... requiring more than 5 litres of fluid drainage.\" As established, removing this much fluid (a Large-Volume Paracentesis) puts the patient at high risk of Paracentesis-Induced Circulatory Dysfunction (PICD). To prevent this, a colloid must be infused. Salt-poor human albumin solution is the standard-of-care colloid used for this purpose. Spironolactone (a) and Furosemide (b) are diuretics used for long-term management, not for the acute treatment during the drainage procedure itself.",
+    "id": "q-1764568564272"
+  },
+  {
+    "questionText": "Which of the signs strongly supports the diagnosis of hepatic encephalopathy in a patient with chronic hepatitis",
+    "options": [
+      "Fetor hepaticus",
+      "Asterixis",
+      "Lethargy",
+      "Jaundice",
+      "Caput medusae"
+    ],
+    "correctAnswer": "Asterixis",
+    "subjectId": "internal-medicine",
+    "explanation": "While all these signs can be related, asterixis (the \"flapping tremor\") is the most specific neurological sign of hepatic encephalopathy (HE). It directly demonstrates the brain dysfunction caused by the buildup of toxins like ammonia.\n**Jaundice** (d) and **caput medusae** (e) are signs of the underlying liver failure and portal hypertension, not HE itself.\n**Lethargy** (c) is a symptom of HE but is very non-specific.\n**Fetor hepaticus** (a) (a sweet, musty breath) is a good sign, but asterixis is the classic and more definitive clinical finding.",
+    "id": "q-1764568564276"
+  },
+  {
+    "questionText": "A flapping tremor in a chronic hepatitis patient indicates",
+    "options": [
+      "Cirrhosis",
+      "Pre-coma",
+      "Hepatomegaly",
+      "All of the above",
+      "None of the above"
+    ],
+    "correctAnswer": "Pre-coma",
+    "subjectId": "internal-medicine",
+    "explanation": "The \"flapping tremor\" is the clinical name for asterixis. Asterixis is the hallmark physical sign of hepatic encephalopathy. Hepatic encephalopathy is a spectrum of consciousness, ranging from mild confusion (Grade 1) to full coma (Grade 4). The stages of confusion and lethargy before coma are collectively known as a pre-coma state.",
+    "id": "q-1764568564278"
+  },
+  {
+    "questionText": "Grade 1 encephalopathy presents with all the following except",
+    "options": [
+      "Mild confusion",
+      "Tremors",
+      "Restless",
+      "Irritability",
+      "Coma"
+    ],
+    "correctAnswer": "Coma",
+    "subjectId": "internal-medicine",
+    "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+    "id": "q-1764568564281"
+  },
+  {
+    "questionText": "Which of the following is not a feature of grade 2 encephalopathy?",
+    "options": [
+      "Lethargy",
+      "Decreased inhibition",
+      "Coma",
+      "Disorientation",
+      "Agitation"
+    ],
+    "correctAnswer": "Coma",
+    "subjectId": "internal-medicine",
+    "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+    "id": "q-1764568564283"
+  },
+  {
+    "questionText": "A person with grade 3 encephalopathy will present with all the following except",
+    "options": [
+      "Stupor but arousal",
+      "Coma",
+      "Marked confusion",
+      "Aggressive burse",
+      "Inarticulate speech"
+    ],
+    "correctAnswer": "Coma",
+    "subjectId": "internal-medicine",
+    "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+    "id": "q-1764568564286"
+  },
+  {
+    "questionText": "A patient with grade 4 encephalopathy will typically present with",
+    "options": [
+      "Stupor but arousal",
+      "Coma",
+      "Marked confusion",
+      "Aggressive burse",
+      "Inarticulate speech"
+    ],
+    "correctAnswer": "Coma",
+    "subjectId": "internal-medicine",
+    "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+    "id": "q-1764568564288"
+  },
+  {
+    "questionText": "You are presented with 53-year-old chronic hepatitis patient who seems to be mildly confused in the recent past. You suspect hepatic encephalopathy, which of the following investigations will you not request for the patient.",
+    "options": [
+      "Hepatitis B-surface-antigen",
+      "Hepatitis C screening",
+      "Full blood count",
+      "Head CT scan",
+      "Liver function test"
+    ],
+    "correctAnswer": "Head CT scan",
+    "subjectId": "internal-medicine",
+    "explanation": "When a patient with known liver disease presents with mild confusion (a classic sign of HE), the first-line investigations aim to assess the liver's function (LFTs), identify the underlying cause (Hep B/C serology), and, most importantly, find a precipitating cause (like infection, identified with an FBC).\nA **Head CT scan** is used to *rule out* alternative diagnoses (like a stroke or subdural hematoma). It is not a test *for* hepatic encephalopathy. Given the mild, non-focal symptoms, it would not be the *first* test you order, as you would first focus on blood tests to confirm HE and find its precipitant.",
+    "id": "q-1764568564290"
+  },
+  {
+    "questionText": "Which is not correct concerning non-pharmacological treatment of a patient with hepatic encephalopathy?",
+    "options": [
+      "Unconscious patients should be put in a coma position",
+      "Avoid alcohol, paracetamol and other hepatotoxic drugs",
+      "Restrict protein consumption",
+      "Encourage high calorie intake",
+      "Avoid sedatives such as benzodiazepines"
+    ],
+    "correctAnswer": "Restrict protein consumption",
+    "subjectId": "internal-medicine",
+    "explanation": "This is outdated advice. While protein metabolism is the source of ammonia, severe protein restriction worsens malnutrition and causes the body to break down its own muscle (catabolism), which also produces ammonia. Modern management emphasizes adequate nutrition with a normal protein intake (especially from vegetable sources) while using medications like lactulose to control the ammonia.\n**Option A**: Patients who are unconscious should be placed in the coma (lateral) position to prevent aspiration of vomitus and secretions. This is an essential supportive measure.\n**Option B**: Avoid alcohol, paracetamol, and other hepatotoxic drugs\nThese substances worsen liver injury and should definitely be avoided in all patients with hepatic encephalopathy or chronic liver disease.\n**Option D**: Encourage high calorie intake\nA high-calorie diet helps prevent catabolism and muscle breakdown, which can otherwise increase ammonia levels.",
+    "id": "q-1764568564293"
+  },
+  {
+    "questionText": "Measures to correct hydration status and nutrition in a patient with hepatic encephalopathy include",
+    "options": [
+      "Administration of dextrose saline solution and high potency vitamin B",
+      "Administration of lactulose and liquid paraffin",
+      "Administration of metronidazole",
+      "All the above",
+      "None of the above"
+    ],
+    "correctAnswer": "Administration of dextrose saline solution and high potency vitamin B",
+    "subjectId": "internal-medicine",
+    "explanation": "This question specifically asks about hydration and nutrition.\nOption (a) directly addresses this: **dextrose** provides calories (nutrition), **saline** provides fluid (hydration), and **high potency vitamin B** (especially thiamine) is critical nutritional supplementation for these patients (who are often malnourished or have a history of alcoholism) to prevent Wernicke's encephalopathy.\nOptions (b) and (c) are *pharmacological treatments* to lower ammonia (and treat hepatic encephalopathy), not nutritional support. The stated goal is hydration and nutrition.",
+    "id": "q-1764568564295"
+  },
+  {
+    "questionText": "Measures to lower blood ammonia concentration in hepatic encephalopathy include one of the following",
+    "options": [
+      "Administration of dextrose saline solution and high potency vitamin B",
+      "Administration of lactulose and metronidazole",
+      "Administration of halothane and liquid paraffin",
+      "All the above",
+      "None of the above"
+    ],
+    "correctAnswer": "Administration of lactulose and metronidazole",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks for the specific pharmacological treatment to lower ammonia.\n**Lactulose** is a disaccharide that works by acidifying the colon, which traps ammonia (NH3) as non-absorbable ammonium (NH4+) and also acts as a laxative to excrete it.\n**Metronidazole** (or more commonly, Rifaximin) is an antibiotic used to kill the ammonia-producing bacteria in the gut.\nOption (a) is for hydration/nutrition. Option (c) is incorrect.",
+    "id": "q-1764568564298"
+  },
+  {
+    "questionText": "First line treatment for spontaneous bacteria peritonitis in hepatic encephalopathy is",
+    "options": [
+      "Metronidazole",
+      "Ciprofloxacin",
+      "Ceftriaxone",
+      "Cefuroxime",
+      "Amoxicillin"
+    ],
+    "correctAnswer": "Ceftriaxone",
+    "subjectId": "internal-medicine",
+    "explanation": "Spontaneous Bacterial Peritonitis (SBP) is a severe infection. The standard empirical treatment (before culture results are known) is a third-generation cephalosporin, which has excellent coverage against the common gut bacteria that cause SBP (like E. coli and Klebsiella).\n**Ceftriaxone** is the most common and recommended drug in this class for SBP.\nCiprofloxacin (b) may be used for *prophylaxis*, but not as first-line treatment for an active infection. Metronidazole (a) is added if anaerobic coverage is needed, but it's not the first-line monotherapy.",
+    "id": "q-1764568564300"
+  },
+  {
+    "questionText": "The route of administration of pegylated interferon alfa-2b in the management of chronic hepatitis C is",
+    "options": [
+      "Oral route",
+      "Intravenous route",
+      "Intramuscular route",
+      "Subcutaneous route",
+      "Intradermal route"
+    ],
+    "correctAnswer": "Subcutaneous route",
+    "subjectId": "internal-medicine",
+    "explanation": "Pegylated interferon is a protein-based medication. If taken orally (a), it would be destroyed by stomach acid. It is not designed for intravenous or intramuscular administration (b, c). The standard and only approved route of administration is a subcutaneous (under the skin) injection, typically given once a week.",
+    "id": "q-1764568564303"
+  },
+  {
+    "questionText": "Which of the following is the right drug combination for the treatment of chronic hepatitis C",
+    "options": [
+      "Pegylated interferon alfa-2a and Diloxanide",
+      "Pegylated interferon alfa-2a and Paromomycin",
+      "Pegylated interferon alfa-2b and cholestyramine",
+      "Pegylated interferon alfa-2b and ribavirin",
+      "Pegylated interferon alfa-2b and lactulose"
+    ],
+    "correctAnswer": "Pegylated interferon alfa-2b and ribavirin",
+    "subjectId": "internal-medicine",
+    "explanation": "This question refers to the older, pre-DAA (Direct-Acting Antiviral) era of Hepatitis C treatment. The standard of care for many years was a combination therapy consisting of:\n**Pegylated interferon** (either alfa-2a or alfa-2b) given as an injection.\nRibavirin, an oral antiviral medication. Current combinations include Sofosbuvir + Ribavirin, Sofosbuvir + Daclatasvir, and Sofosbuvir + Ledipasvir\nAll the other options list drugs used for different conditions (Diloxanide/Paromomycin for amoeba, Cholestyramine for itching, Lactulose for HE).",
+    "id": "q-1764568564306"
+  },
+  {
+    "questionText": "The role of lactulose in the treatment of hepatic encephalopathy is to",
+    "options": [
+      "Inhibit intestinal absorption of ammonia",
+      "Inhibit intestinal ammonia production",
+      "Inhibit hepatic ammonia production",
+      "Improve hepatic portal circulation and ammonia clearance",
+      "Enhance alkalinization of intestinal lumen"
+    ],
+    "correctAnswer": "Inhibit intestinal absorption of ammonia",
+    "subjectId": "internal-medicine",
+    "explanation": "Lactulose has a dual mechanism, but its primary role relates to option (a):\n**Laxative Effect:** It's a laxative that speeds up intestinal transit, flushing out ammonia and the bacteria that produce it.\n**Ion Trapping:** It is metabolized by gut bacteria into lactic acid, which **acidifies** the colon (making option 'e' incorrect). This acidic environment converts absorbable ammonia (NH3) into non-absorbable ammonium (NH4+), which is then trapped in the stool and excreted. This is the key mechanism for inhibiting *absorption*.\nOption (b) is the role of antibiotics like Rifaximin and metronidazole.",
+    "id": "q-1764568564308"
+  },
+  {
+    "questionText": "One of these drugs used in the management of hepatic encephalopathy causes metallic taste and peripheral neuropathy",
+    "options": [
+      "Rifaxamin",
+      "Meomycin",
+      "Metronidazole",
+      "Lactulose",
+      "Vitamin B"
+    ],
+    "correctAnswer": "Metronidazole",
+    "subjectId": "internal-medicine",
+    "explanation": "**Metronidazole** is an antibiotic that can be used (though Rifaximin is preferred) to kill ammonia-producing gut bacteria. Its two most classic and well-known side effects, especially with long-term use, are a **metallic taste** in the mouth and **peripheral neuropathy** (numbness/tingling in hands and feet).\nLactulose (d) causes GI side effects (gas, diarrhea). Rifaxamin (a) is generally very well-tolerated. Vitamin B (e) *treats* neuropathy, it doesn't cause a metallic taste.",
+    "id": "q-1764568564310"
+  },
+  {
+    "questionText": "Treatment objective of lactulose in hepatic encephalopathy is to achieve",
+    "options": [
+      "1-2 solid-stools per day",
+      "1-2 semi-solid stools per day",
+      "2-3 semi-solid stools per day",
+      "3-4 semi-solid stools per day",
+      "4-5 solid stools per day"
+    ],
+    "correctAnswer": "2-3 semi-solid stools per day",
+    "subjectId": "internal-medicine",
+    "explanation": "The goal of lactulose is to act as a laxative to remove the ammonia-producing bacteria and their byproducts from the colon. However, too much laxative effect can cause dehydration and electrolyte imbalances, which can worsen hepatic encephalopathy. The standard clinical endpoint is to titrate the dose to achieve 2-3 soft, semi-solid stools per day. This indicates the medication is working without causing excessive fluid loss.",
+    "id": "q-1764568564313"
+  },
+  {
+    "questionText": "Which of the following patients with hepatic encephalopathy have the potency for active bleeding?",
+    "options": [
+      "A person with international normalize ration < 1.5",
+      "A patient with platelet count > 50 x 109 /L",
+      "A patient with international normalize ration < 1.2",
+      "A patient with platelet count < 50 x 109 /L",
+      "A patient with platelet count > 60 x 109 /L"
+    ],
+    "correctAnswer": "A patient with platelet count < 50 x 109 /L",
+    "subjectId": "internal-medicine",
+    "explanation": "Active bleeding is a risk when the body's clotting mechanisms fail. This happens for two main reasons in liver failure:\n**Low Platelets (Thrombocytopenia):** Platelets are essential for forming a clot. A platelet count **< 50 x 10^9 /L** is a significant threshold that indicates a high risk of spontaneous bleeding.\n**High INR (International Normalized Ratio):** The liver makes clotting factors. When it fails, the INR (which measures clotting time) becomes high (prolonged).\nOptions (a), (b), (c), and (e) all describe a *normal* or safe clotting status. Only (d) describes a patient with a dangerously low platelet count and high bleeding risk.",
+    "id": "q-1764568564315"
+  },
+  {
+    "questionText": "Hepatic encephalopathy associated with active bleeding should be managed with",
+    "options": [
+      "Pack cells",
+      "Fresh frozen plasma or platelet concentration",
+      "Vitamin K",
+      "Heparin",
+      "Aspirin"
+    ],
+    "correctAnswer": "Fresh frozen plasma or platelet concentration",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks how to correct the cause of the bleeding (the coagulopathy).\n**Fresh Frozen Plasma (FFP)** contains all the clotting factors that the failing liver cannot produce. It is given to correct a high INR.\n**Platelet concentration** (platelet transfusion) is given to correct a low platelet count.\n**Vitamin K** (c) is also given, but it only works if the liver is *able* to use it to make clotting factors; in severe failure, it may not be effective, and FFP is needed.\n**Packed cells** (a) replace the lost blood (hemoglobin) but do not fix the clotting problem.\n**Heparin** (d) and **Aspirin** (e) are anticoagulants/antiplatelets and would make the bleeding worse.",
+    "id": "q-1764568564318"
+  },
+  {
+    "questionText": "Which of these is a recommended antibiotics used as prophylaxis in hepatic encephalopathy associated with cirrhosis and upper gastro-intestinal haemorrhage?",
+    "options": [
+      "Ceftriaxone",
+      "Ciprofloxacin",
+      "Norfloxacin",
+      "All the above",
+      "None of the above"
+    ],
+    "correctAnswer": "All the above",
+    "subjectId": "internal-medicine",
+    "explanation": "When a patient with cirrhosis has an upper GI bleed, they are at an extremely high risk of developing a spontaneous bacterial infection, particularly Spontaneous Bacterial Peritonitis (SBP). Antibiotic prophylaxis is mandatory.\n**Ceftriaxone** (IV) is the standard-of-care, especially for sicker, hospitalized patients.\nNorfloxacin (oral) and Ciprofloxacin (oral) are fluoroquinolones that are also well-established and effective for this prophylaxis.\nSince all three are (or have been) standard-of-care, \"All the above\" is the best answer.",
+    "id": "q-1764568564320"
+  },
+  {
+    "questionText": "A diagnosis of spontaneous bacterial peritonitis is established if",
+    "options": [
+      "The neutrophil count in the ascetic fluid is < 250 cells/mL and surgically treatable causes are excluded",
+      "The leukocyte count in the ascetic fluid is < 250 cells/mL and surgically treatable causes are excluded",
+      "The neutrophil count in the ascetic fluid is > 250 cells/mL and surgically treatable causes are excluded",
+      "The lymphocyte count in the ascetic fluid is > 250 cells/mL and surgically treatable causes are excluded",
+      "The monocyte count in the ascetic fluid is < 250 cells/mL and surgically treatable causes are excluded"
+    ],
+    "correctAnswer": "The neutrophil count in the ascetic fluid is > 250 cells/mL and surgically treatable causes are excluded",
+    "subjectId": "internal-medicine",
+    "explanation": "This is the standard diagnostic definition of Spontaneous Bacterial Peritonitis (SBP).\nA diagnostic paracentesis (ascitic tap) is performed.\nThe ascitic fluid is sent for a cell count.\nThe key marker for a bacterial infection is the **neutrophil** (also called PMN or polymorphonuclear cell) count.\nA count of **> 250 neutrophils/mL** is the threshold for diagnosing SBP.\n\"Surgically treatable causes\" (like a perforated bowel) must also be excluded.\nTotal leukocyte (b) or lymphocyte (d) counts are not the diagnostic marker.",
+    "id": "q-1764568564322"
+  },
+  {
+    "questionText": "Which of the following group of chronic hepatitis C patients should be referred to a specialist?",
+    "options": [
+      "Persons who have failed first line anti-viral therapy",
+      "Persons who have had adverse reactions to anti-viral therapy",
+      "Persons who have developed liver-related complications such as cirrhosis",
+      "Pregnant women and patients with hepatitis C co-infections",
+      "All the above"
+    ],
+    "correctAnswer": "All the above",
+    "subjectId": "internal-medicine",
+    "explanation": "A specialist (like a gastroenterologist or hepatologist) is required for managing all complex cases of Hepatitis C. This includes:\n**Treatment failure** (a) or **adverse reactions** (b), which require second-line or alternative therapies.\n**Cirrhosis** (c), which is an advanced complication requiring specialized monitoring.\nSpecial populations like pregnant women or co-infected patients (d) (e.g., HIV/HCV), who have unique management needs.\nTherefore, all listed groups should be referred.",
+    "id": "q-1764568564325"
+  },
+  {
+    "questionText": "All are true concerning hepatic encephalopathy except",
+    "options": [
+      "It may be caused by acute liver disease",
+      "It may be caused by chronic infections to the liver",
+      "Liver is unable to detoxify ammonia in the circulation",
+      "It presents with disordered peripheral nervous system",
+      "It presents with disordered central nervous system"
+    ],
+    "correctAnswer": "It presents with disordered peripheral nervous system",
+    "subjectId": "internal-medicine",
+    "explanation": "Hepatic encephalopathy (HE) is a neuropsychiatric syndrome.\nIt's caused by the liver's failure (in acute disease or chronic infection) to clear toxins, especially **ammonia** (c).\nThese toxins cross the blood-brain barrier and cause dysfunction of the **central nervous system (e)**, leading to confusion, personality changes, asterixis, and coma.\nIt does **not** primarily present as a disorder of the *peripheral* nervous system (like a peripheral neuropathy). Therefore, statement (d) is the exception.",
+    "id": "q-1764568564328"
+  },
+  {
+    "questionText": "Which of these drugs is less likely to cause  hepatic encephalopathy",
+    "options": [
+      "Halothane",
+      "Isoniazid",
+      "Paracetamol overdose",
+      "Ibuprofen",
+      "Herbal concoction"
+    ],
+    "correctAnswer": "Ibuprofen",
+    "subjectId": "internal-medicine",
+    "explanation": "Hepatic encephalopathy is a complication of severe liver failure. This question is asking which drug is less likely to cause severe, acute liver failure.\n**Halothane** (a) is a known cause of severe immune-mediated hepatitis.\n**Isoniazid** (b) is a well-known hepatotoxin.\n**Paracetamol overdose** (c) is the classic cause of acute liver failure.\n**Herbal concoctions** (e) are a major and unpredictable cause of drug-induced liver injury.\n**Ibuprofen** (d) is an NSAID. While it can be toxic, it is primarily known for causing kidney damage (nephrotoxicity) and gastrointestinal ulcers. Significant hepatotoxicity is much *less common* compared to the other options.",
+    "id": "q-1764568564330"
+  },
+  {
+    "questionText": "Precipitating factors for hepatic encephalopathy in a patient with pre-existing liver disease include the following except",
+    "options": [
+      "Fever",
+      "Infection",
+      "Alcoholic binge",
+      "Excessive use of diuretics",
+      "None of the above"
+    ],
+    "correctAnswer": "None of the above",
+    "subjectId": "internal-medicine",
+    "explanation": "Hepatic encephalopathy in a patient with chronic liver disease (cirrhosis) is almost always \"precipitated\" or triggered by an underlying event. All the options listed (a-d) are classic precipitants:\n**Infection** (b) (like SBP) and the resulting **fever** (a) increase the body's metabolic state, producing more ammonia.\nAn **alcoholic binge** (c) causes direct liver inflammation and damage.\nExcessive use of diuretics (d) causes volume depletion and electrolyte imbalances (especially hypokalaemia), which worsens the kidney's ability to clear ammonia.\nSince all (a-d) are well-known precipitating factors, the correct answer is \"None of the above.\"",
+    "id": "q-1764568564332"
+  },
+  {
+    "questionText": "Patients with hepatic encephalopathy may present with all the following symptoms except",
+    "options": [
+      "Jaundice",
+      "Confusion",
+      "Inversion of sleep rhythm",
+      "Personality changes",
+      "None of the above"
+    ],
+    "correctAnswer": "None of the above",
+    "subjectId": "internal-medicine",
+    "explanation": "This question asks for the exception among a list of common signs and symptoms.\n**Confusion** (b), **inversion of sleep rhythm** (c) (being awake all night, sleeping all day), and **personality changes** (d) are the hallmark *neurological* symptoms of hepatic encephalopathy.\nJaundice (a) is the key physical sign of the underlying liver failure that is causing the encephalopathy.",
+    "id": "q-1764568564335"
+  },
+  {
+    "questionText": "The major risk factor for hepatocellular carcinoma is",
+    "options": [
+      "Obesity",
+      "Diabetes mellitus",
+      "Liver cirrhosis of any cause",
+      "Overweight",
+      "Cholilithiasis"
+    ],
+    "correctAnswer": "Liver cirrhosis of any cause",
+    "subjectId": "internal-medicine",
+    "explanation": "Hepatocellular carcinoma (HCC) is a cancer that arises from liver cells. The single greatest risk factor is cirrhosis, which is chronic, severe scarring of the liver. This scarring can be caused by Hepatitis B, Hepatitis C, chronic alcohol use, or fatty liver disease, but the presence of cirrhosis itself is the primary driver of cancer risk.",
+    "id": "q-1764568564338"
+  },
+  {
+    "questionText": "Common early symptoms of acute paracetamol poisoning is/are",
+    "options": [
+      "Jaundice",
+      "Diarrhea",
+      "Nausea and vomiting",
+      "Upper gastrointestinal bleeding",
+      "Right upper abdominal pain"
+    ],
+    "correctAnswer": "Nausea and vomiting",
+    "subjectId": "internal-medicine",
+    "explanation": "Paracetamol poisoning occurs in stages. The early symptoms (Stage 1, within the first 24 hours) are often non-specific and include nausea and vomiting, or the patient may be asymptomatic. Jaundice (a), upper GI bleeding (d), and right upper abdominal pain (e) are all signs of severe liver failure (Stage 3), which occurs much later (72-96 hours after ingestion).",
+    "id": "q-1764568564340"
+  },
+  {
+    "questionText": "Contraindications for oral N-Acetylcysteine in acute paracetamol poisoning include all the following except",
+    "options": [
+      "Intractable vomiting",
+      "Gastrointestinal bleeding",
+      "Patients with significant hepatotoxicity",
+      "Pregnant women",
+      "None of the above"
+    ],
+    "correctAnswer": "Pregnant women",
+    "subjectId": "internal-medicine",
+    "explanation": "Pregnancy is not a contraindication for N-Acetylcysteine. In fact, it is a strong indication for treatment, as NAC is safe in pregnancy and protects both the mother's and the fetus's liver.\n**Intractable vomiting** (a), **GI bleeding** (b), and **significant hepatotoxicity** (c) (which often causes severe vomiting) are all contraindications for the *oral* route, as the patient cannot physically take or absorb the medication. In these cases, the IV (intravenous) route is used instead.",
+    "id": "q-1764568564343"
+  },
+  {
+    "questionText": "The correct definition of malnutrition is",
+    "options": [
+      "Deficiencies, excesses or imbalances in a person’s intake of energy and/or essential nutrients",
+      "Inadequate intake of energy and nutrients",
+      "Excessive intake of energy and/or nutrients",
+      "Deficiencies in intake of protein",
+      "None of the above"
+    ],
+    "correctAnswer": "Deficiencies, excesses or imbalances in a person’s intake of energy and/or essential nutrients",
+    "subjectId": "internal-medicine",
+    "explanation": "This is the comprehensive, correct definition. Malnutrition is a broad term that includes:\n**Undernutrition** (option b) - e.g., marasmus, kwashiorkor.\n**Overnutrition** (option c) - e.g., obesity.\nMicronutrient imbalances.\nOptions (b) and (c) are only partial definitions. Option (a) is the only one that correctly captures the full spectrum of the condition.",
+    "id": "q-1764568564346"
   }
 ]
