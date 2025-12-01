@@ -22,12 +22,13 @@ type SelectFormProps = {
   subjects: SubjectWithCount[];
 };
 
-const initialCounts: Record<AnswerFilter | 'answered', number> = {
+const initialCounts: Record<AnswerFilter, number> = {
     all: 0,
     unanswered: 0,
     correct: 0,
     incorrect: 0,
     answered: 0,
+    bookmarked: 0,
 };
 
 export function SelectForm({ subjects }: SelectFormProps) {
@@ -173,6 +174,13 @@ export function SelectForm({ subjects }: SelectFormProps) {
                     Previously Correct
                 </Label>
                 <Badge variant="outline">{questionCounts.correct}</Badge>
+            </div>
+             <div className="flex items-center justify-between">
+                <Label htmlFor="r5" className="flex items-center gap-2 text-base">
+                    <RadioGroupItem value="bookmarked" id="r5" />
+                    Bookmarked
+                </Label>
+                <Badge variant="outline">{questionCounts.bookmarked}</Badge>
             </div>
           </RadioGroup>
         </div>

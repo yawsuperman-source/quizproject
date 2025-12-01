@@ -4,6 +4,7 @@ import type { Question } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { BookmarkToggle } from './bookmark-toggle';
 
 type QuestionDisplayProps = {
   question: Question;
@@ -26,10 +27,15 @@ export function QuestionDisplay({
   return (
     <Card className="w-full max-w-3xl mx-auto animate-slide-down-and-fade">
       <CardHeader>
-        <CardDescription>
-          Question {questionNumber} of {totalQuestions}
-        </CardDescription>
-        <CardTitle className="text-2xl font-headline">{question.questionText}</CardTitle>
+        <div className="flex justify-between items-start">
+          <div>
+            <CardDescription>
+              Question {questionNumber} of {totalQuestions}
+            </CardDescription>
+            <CardTitle className="text-2xl font-headline mt-1">{question.questionText}</CardTitle>
+          </div>
+          <BookmarkToggle questionId={question.id} />
+        </div>
         {question.questionText.includes('`') && (
             <p className="text-sm text-muted-foreground mt-2">
               Note: Code snippets are displayed using a <code className="font-code bg-muted p-1 rounded-sm">monospace font</code>.

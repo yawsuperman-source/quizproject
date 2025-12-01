@@ -10,6 +10,7 @@ import type { Subject, Question, User, AnswerFilter, UserAnswer } from './types'
 const subjectsPath = path.join(process.cwd(), 'src', 'lib', 'data', 'subjects.json');
 const questionsPath = path.join(process.cwd(), 'src', 'lib', 'data', 'questions.json');
 const userAnswersPath = path.join(process.cwd(), 'src', 'lib', 'data', 'user-answers.json');
+const userBookmarksPath = path.join(process.cwd(), 'src', 'lib', 'data', 'user-bookmarks.json');
 
 async function readSubjects(): Promise<Subject[]> {
   try {
@@ -115,6 +116,23 @@ async function writeUserAnswers(userAnswers: Record<string, UserAnswer[]>): Prom
   await fs.writeFile(userAnswersPath, JSON.stringify(userAnswers, null, 2), 'utf-8');
 }
 
+async function readUserBookmarks(): Promise<Record<string, string[]>> {
+    try {
+        const data = await fs.readFile(userBookmarksPath, 'utf-8');
+        return JSON.parse(data);
+    } catch (error) {
+        const defaultUserBookmarks = {
+            'normal-user-id': ['js2', 'react2']
+        };
+        await writeUserBookmarks(defaultUserBookmarks);
+        return defaultUserBookmarks;
+    }
+}
+
+async function writeUserBookmarks(bookmarks: Record<string, string[]>): Promise<void> {
+    await fs.writeFile(userBookmarksPath, JSON.stringify(bookmarks, null, 2), 'utf-8');
+}
+
 
 // In-memory data for things that don't need to persist across server restarts for this mock setup.
 export let users: (Omit<User, keyof import('firebase/auth').User> & { id: string })[] = [
@@ -179,7 +197,9 @@ export async function getQuestions(
   const allQuestions = await readQuestions();
   const userAnswers = await readUserAnswers();
   const allUserAnswers = userAnswers[userId] || [];
-  
+  const userBookmarks = await readUserBookmarks();
+  const bookmarkedQuestionIds = new Set(userBookmarks[userId] || []);
+
   const subjectQuestions = allQuestions.filter(q => subjectIds.includes(q.subjectId));
 
   if (filter === 'all' || !userId) {
@@ -202,6 +222,8 @@ export async function getQuestions(
     case 'incorrect':
       const incorrectIds = new Set(relevantUserAnswers.filter(a => !a.isCorrect).map(a => a.questionId));
       return subjectQuestions.filter(q => incorrectIds.has(q.id));
+    case 'bookmarked':
+        return subjectQuestions.filter(q => bookmarkedQuestionIds.has(q.id));
     default:
         return subjectQuestions;
   }
@@ -212,12 +234,14 @@ export async function getQuestionCounts(
   userId: string
 ): Promise<Record<AnswerFilter | 'answered', number>> {
   if (subjectIds.length === 0) {
-    return { all: 0, unanswered: 0, correct: 0, incorrect: 0, answered: 0 };
+    return { all: 0, unanswered: 0, correct: 0, incorrect: 0, answered: 0, bookmarked: 0 };
   }
 
   const allQuestions = await readQuestions();
   const userAnswers = await readUserAnswers();
   const allUserAnswers = userAnswers[userId] || [];
+  const userBookmarks = await readUserBookmarks();
+  const bookmarkedQuestionIds = new Set(userBookmarks[userId] || []);
 
   const subjectQuestions = allQuestions.filter(q => subjectIds.includes(q.subjectId));
   const subjectQuestionIds = new Set(subjectQuestions.map(q => q.id));
@@ -227,6 +251,7 @@ export async function getQuestionCounts(
   const answeredQuestionIds = new Set(relevantUserAnswers.map(a => a.questionId));
   const correctQuestionIds = new Set(relevantUserAnswers.filter(a => a.isCorrect).map(a => a.questionId));
   const incorrectQuestionIds = new Set(relevantUserAnswers.filter(a => !a.isCorrect).map(a => a.questionId));
+  const relevantBookmarkedIds = new Set(subjectQuestions.filter(q => bookmarkedQuestionIds.has(q.id)).map(q => q.id));
 
   const counts = {
     all: subjectQuestions.length,
@@ -234,6 +259,7 @@ export async function getQuestionCounts(
     correct: correctQuestionIds.size,
     incorrect: incorrectQuestionIds.size,
     answered: answeredQuestionIds.size,
+    bookmarked: relevantBookmarkedIds.size,
   };
 
   return counts;
@@ -289,4 +315,26 @@ export async function saveUserAnswer(userId: string, questionId: string, isCorre
     }
     
     await writeUserAnswers(userAnswers);
+}
+
+export async function isBookmarked(userId: string, questionId: string): Promise<boolean> {
+    const bookmarks = await readUserBookmarks();
+    return bookmarks[userId]?.includes(questionId) || false;
+}
+
+export async function toggleBookmark(userId: string, questionId: string): Promise<boolean> {
+    const bookmarks = await readUserBookmarks();
+    if (!bookmarks[userId]) {
+        bookmarks[userId] = [];
+    }
+
+    const questionIndex = bookmarks[userId].indexOf(questionId);
+    if (questionIndex > -1) {
+        bookmarks[userId].splice(questionIndex, 1);
+    } else {
+        bookmarks[userId].push(questionId);
+    }
+
+    await writeUserBookmarks(bookmarks);
+    return await isBookmarked(userId, questionId);
 }

@@ -10,7 +10,12 @@ import type { Question, AnswerFilter, Subject } from './types';
 export async function getSubjects() {
   try {
     const subjects = await data.getSubjects();
-    return { success: true, subjects };
+    const allQuestions = await data.getAllQuestions();
+    const subjectsWithCounts = subjects.map(subject => ({
+        ...subject,
+        questionCount: allQuestions.filter(q => q.subjectId === subject.id).length,
+    }));
+    return { success: true, subjects: subjectsWithCounts };
   } catch (error) {
     return { success: false, error: 'Failed to load subjects.' };
   }
@@ -178,5 +183,26 @@ export async function saveUserAnswer(userId: string, questionId: string, isCorre
     } catch (error) {
         console.error('Error saving user answer:', error);
         return { success: false, error: "Failed to save answer." };
+    }
+}
+
+export async function isBookmarked(userId: string, questionId: string) {
+    try {
+        const isBookmarked = await data.isBookmarked(userId, questionId);
+        return { success: true, isBookmarked };
+    } catch (error) {
+        console.error('Error checking bookmark status:', error);
+        return { success: false, error: "Failed to check bookmark status." };
+    }
+}
+
+export async function toggleBookmark(userId: string, questionId: string) {
+    try {
+        const isBookmarked = await data.toggleBookmark(userId, questionId);
+        revalidatePath('/quiz/select');
+        return { success: true, isBookmarked };
+    } catch (error) {
+        console.error('Error toggling bookmark:', error);
+        return { success: false, error: "Failed to toggle bookmark." };
     }
 }

@@ -24,4 +24,4 @@ export type UserAnswer = {
   isCorrect: boolean;
 };
 
-export type AnswerFilter = 'all' | 'answered' | 'unanswered' | 'correct' | 'incorrect';
+export type AnswerFilter = 'all' | 'answered' | 'unanswered' | 'correct' | 'incorrect' | 'bookmarked';
