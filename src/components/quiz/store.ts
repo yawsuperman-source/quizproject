@@ -4,6 +4,7 @@ import type { Question, AnswerFilter } from '@/lib/types';
 type QuizState = {
   subjectIds: string[];
   answerFilter: AnswerFilter;
+  numQuestions: number;
   questions: Question[];
   currentQuestionIndex: number;
   userAnswers: (string | null)[];
@@ -11,7 +12,7 @@ type QuizState = {
   correctAnswers: number;
   incorrectAnswers: number;
   isQuizFinished: boolean;
-  setQuizConfig: (config: { subjectIds: string[], answerFilter: AnswerFilter }) => void;
+  setQuizConfig: (config: { subjectIds: string[], answerFilter: AnswerFilter, numQuestions: number }) => void;
   setQuestions: (questions: Question[]) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
@@ -23,6 +24,7 @@ type QuizState = {
 const useQuizStore = create<QuizState>((set, get) => ({
   subjectIds: [],
   answerFilter: 'all',
+  numQuestions: 10,
   questions: [],
   currentQuestionIndex: 0,
   userAnswers: [],
@@ -34,6 +36,7 @@ const useQuizStore = create<QuizState>((set, get) => ({
   setQuizConfig: (config) => set({
     subjectIds: config.subjectIds,
     answerFilter: config.answerFilter,
+    numQuestions: config.numQuestions,
     questions: [],
     currentQuestionIndex: 0,
     userAnswers: [],
@@ -97,6 +100,7 @@ const useQuizStore = create<QuizState>((set, get) => ({
   resetQuiz: () => set({
     subjectIds: [],
     answerFilter: 'all',
+    numQuestions: 10,
     questions: [],
     currentQuestionIndex: 0,
     userAnswers: [],

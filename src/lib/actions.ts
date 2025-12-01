@@ -43,13 +43,37 @@ export async function deleteSubject(subjectId: string) {
 
 // --- QUESTION ACTIONS ---
 
-export async function getQuizQuestions(subjectIds: string[], answerFilter: AnswerFilter, userId: string) {
+export async function getQuizQuestions(
+  subjectIds: string[], 
+  answerFilter: AnswerFilter, 
+  userId: string, 
+  numQuestions: number
+) {
   try {
-    const allUserAnswers = data.userAnswers[userId] || [];
-    const questions = await data.getQuestions(subjectIds, answerFilter, userId, allUserAnswers);
+    let questions = await data.getQuestions(subjectIds, answerFilter, userId);
+
+    // Shuffle questions for randomness
+    questions.sort(() => Math.random() - 0.5);
+
+    // Limit the number of questions based on user selection
+    if (numQuestions > 0 && questions.length > numQuestions) {
+      questions = questions.slice(0, numQuestions);
+    }
+
     return { success: true, questions };
   } catch (error) {
+    console.error('Error getting quiz questions:', error);
     return { success: false, error: 'Failed to load questions.' };
+  }
+}
+
+export async function getQuestionCounts(subjectIds: string[], userId: string) {
+  try {
+    const counts = await data.getQuestionCounts(subjectIds, userId);
+    return { success: true, counts };
+  } catch (error) {
+    console.error('Error getting question counts:', error);
+    return { success: false, error: 'Failed to load question counts.' };
   }
 }
 
@@ -149,9 +173,10 @@ export async function deleteQuestion(questionId: string) {
 export async function saveUserAnswer(userId: string, questionId: string, isCorrect: boolean) {
     try {
         await data.saveUserAnswer(userId, questionId, isCorrect);
-        // No revalidation needed as this is a background-like task
+        revalidatePath('/quiz/select');
         return { success: true };
     } catch (error) {
+        console.error('Error saving user answer:', error);
         return { success: false, error: "Failed to save answer." };
     }
 }

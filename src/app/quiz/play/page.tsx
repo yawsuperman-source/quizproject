@@ -22,6 +22,7 @@ export default function PlayQuizPage() {
   const {
     subjectIds,
     answerFilter,
+    numQuestions,
     questions,
     setQuestions,
     currentQuestionIndex,
@@ -48,7 +49,7 @@ export default function PlayQuizPage() {
     async function fetchQuestions() {
       if (!user) return;
       setLoading(true);
-      const result = await getQuizQuestions(subjectIds, answerFilter, user.id);
+      const result = await getQuizQuestions(subjectIds, answerFilter, user.id, numQuestions);
       if (result.success && result.questions) {
         setQuestions(result.questions);
       } else {
@@ -62,7 +63,7 @@ export default function PlayQuizPage() {
       setLoading(false);
     }
     fetchQuestions();
-  }, [subjectIds, answerFilter, setQuestions, router, user, toast]);
+  }, [subjectIds, answerFilter, numQuestions, setQuestions, router, user, toast]);
   
   useEffect(() => {
     if(isQuizFinished){

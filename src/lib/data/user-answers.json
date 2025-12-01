@@ -1,0 +1,52 @@
+{
+  "normal-user-id": [
+    {
+      "questionId": "js1",
+      "isCorrect": false
+    },
+    {
+      "questionId": "react1",
+      "isCorrect": true
+    }
+  ],
+  "8SSrPf3mTNaJyZDgblNjqjI8I7s2": [
+    {
+      "questionId": "q-1764539662902",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764539662884",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764539662887",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764539662877",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764539662923",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764539662930",
+      "isCorrect": true
+    }
+  ],
+  "0qUCKN9hMEcjTjwPrGvbjAQvm9k2": [
+    {
+      "questionId": "q-1764539662930",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764539662883",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764539662920",
+      "isCorrect": true
+    }
+  ]
+}

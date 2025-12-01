@@ -7,18 +7,15 @@ import path from 'path';
 import type { Subject, Question, User, AnswerFilter, UserAnswer } from './types';
 
 // --- FILE-BASED DATABASE ---
-// We use simple JSON files to act as our database during development.
-// This gives us a persistent store that is not lost on server restart.
-
 const subjectsPath = path.join(process.cwd(), 'src', 'lib', 'data', 'subjects.json');
 const questionsPath = path.join(process.cwd(), 'src', 'lib', 'data', 'questions.json');
+const userAnswersPath = path.join(process.cwd(), 'src', 'lib', 'data', 'user-answers.json');
 
 async function readSubjects(): Promise<Subject[]> {
   try {
     const data = await fs.readFile(subjectsPath, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
-    // If the file doesn't exist, return the default set and create the file.
     const defaultSubjects = [
       { id: 'js', name: 'JavaScript' },
       { id: 'react', name: 'React' },
@@ -98,6 +95,26 @@ async function writeQuestions(questions: Question[]): Promise<void> {
   await fs.writeFile(questionsPath, JSON.stringify(questions, null, 2), 'utf-8');
 }
 
+async function readUserAnswers(): Promise<Record<string, UserAnswer[]>> {
+  try {
+    const data = await fs.readFile(userAnswersPath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    const defaultUserAnswers = {
+      'normal-user-id': [
+        { questionId: 'js1', isCorrect: false },
+        { questionId: 'react1', isCorrect: true },
+      ]
+    };
+    await writeUserAnswers(defaultUserAnswers);
+    return defaultUserAnswers;
+  }
+}
+
+async function writeUserAnswers(userAnswers: Record<string, UserAnswer[]>): Promise<void> {
+  await fs.writeFile(userAnswersPath, JSON.stringify(userAnswers, null, 2), 'utf-8');
+}
+
 
 // In-memory data for things that don't need to persist across server restarts for this mock setup.
 export let users: (Omit<User, keyof import('firebase/auth').User> & { id: string })[] = [
@@ -118,13 +135,6 @@ export let users: (Omit<User, keyof import('firebase/auth').User> & { id: string
     photoURL: null,
   },
 ];
-
-export let userAnswers: Record<string, UserAnswer[]> = {
-    'normal-user-id': [
-        { questionId: 'js1', isCorrect: false },
-        { questionId: 'react1', isCorrect: true },
-    ]
-};
 
 // --- Mock Data Access Functions ---
 
@@ -165,35 +175,68 @@ export async function getQuestions(
     subjectIds: string[], 
     filter: AnswerFilter, 
     userId: string,
-    allUserAnswers: UserAnswer[]
 ): Promise<Question[]> {
-  let questions = await readQuestions();
-  let filteredQuestions = questions.filter(q => subjectIds.includes(q.subjectId));
+  const allQuestions = await readQuestions();
+  const userAnswers = await readUserAnswers();
+  const allUserAnswers = userAnswers[userId] || [];
+  
+  const subjectQuestions = allQuestions.filter(q => subjectIds.includes(q.subjectId));
 
   if (filter === 'all' || !userId) {
-    return filteredQuestions;
+    return subjectQuestions;
   }
 
-  const answeredQuestionIds = new Set(allUserAnswers.map(a => a.questionId));
+  const subjectQuestionIds = new Set(subjectQuestions.map(q => q.id));
+  const relevantUserAnswers = allUserAnswers.filter(a => subjectQuestionIds.has(a.questionId));
+
+  const answeredQuestionIds = new Set(relevantUserAnswers.map(a => a.questionId));
 
   switch (filter) {
     case 'answered':
-      filteredQuestions = filteredQuestions.filter(q => answeredQuestionIds.has(q.id));
-      break;
+      return subjectQuestions.filter(q => answeredQuestionIds.has(q.id));
     case 'unanswered':
-      filteredQuestions = filteredQuestions.filter(q => !answeredQuestionIds.has(q.id));
-      break;
+      return subjectQuestions.filter(q => !answeredQuestionIds.has(q.id));
     case 'correct':
-      const correctIds = new Set(allUserAnswers.filter(a => a.isCorrect).map(a => a.questionId));
-      filteredQuestions = filteredQuestions.filter(q => correctIds.has(q.id));
-      break;
+      const correctIds = new Set(relevantUserAnswers.filter(a => a.isCorrect).map(a => a.questionId));
+      return subjectQuestions.filter(q => correctIds.has(q.id));
     case 'incorrect':
-       const incorrectIds = new Set(allUserAnswers.filter(a => !a.isCorrect).map(a => a.questionId));
-       filteredQuestions = filteredQuestions.filter(q => incorrectIds.has(q.id));
-      break;
+      const incorrectIds = new Set(relevantUserAnswers.filter(a => !a.isCorrect).map(a => a.questionId));
+      return subjectQuestions.filter(q => incorrectIds.has(q.id));
+    default:
+        return subjectQuestions;
   }
-  
-  return filteredQuestions;
+}
+
+export async function getQuestionCounts(
+  subjectIds: string[],
+  userId: string
+): Promise<Record<AnswerFilter | 'answered', number>> {
+  if (subjectIds.length === 0) {
+    return { all: 0, unanswered: 0, correct: 0, incorrect: 0, answered: 0 };
+  }
+
+  const allQuestions = await readQuestions();
+  const userAnswers = await readUserAnswers();
+  const allUserAnswers = userAnswers[userId] || [];
+
+  const subjectQuestions = allQuestions.filter(q => subjectIds.includes(q.subjectId));
+  const subjectQuestionIds = new Set(subjectQuestions.map(q => q.id));
+
+  const relevantUserAnswers = allUserAnswers.filter(a => subjectQuestionIds.has(a.questionId));
+
+  const answeredQuestionIds = new Set(relevantUserAnswers.map(a => a.questionId));
+  const correctQuestionIds = new Set(relevantUserAnswers.filter(a => a.isCorrect).map(a => a.questionId));
+  const incorrectQuestionIds = new Set(relevantUserAnswers.filter(a => !a.isCorrect).map(a => a.questionId));
+
+  const counts = {
+    all: subjectQuestions.length,
+    unanswered: subjectQuestions.length - answeredQuestionIds.size,
+    correct: correctQuestionIds.size,
+    incorrect: incorrectQuestionIds.size,
+    answered: answeredQuestionIds.size,
+  };
+
+  return counts;
 }
 
 export async function getAllQuestions(): Promise<Question[]> {
@@ -204,7 +247,7 @@ export async function addQuestion(questionData: Omit<Question, 'id'>): Promise<Q
   const questions = await readQuestions();
   const newQuestion: Question = {
     ...questionData,
-    id: `q-${Date.now()}`,
+    id: `q-${Date.now()}`
   };
   const updatedQuestions = [...questions, newQuestion];
   await writeQuestions(updatedQuestions);
@@ -233,6 +276,8 @@ export async function deleteQuestion(id: string): Promise<boolean> {
 }
 
 export async function saveUserAnswer(userId: string, questionId: string, isCorrect: boolean): Promise<void> {
+    const userAnswers = await readUserAnswers();
+
     if(!userAnswers[userId]) {
         userAnswers[userId] = [];
     }
@@ -242,6 +287,6 @@ export async function saveUserAnswer(userId: string, questionId: string, isCorre
     } else {
         userAnswers[userId].push({ questionId, isCorrect });
     }
-    console.log(`Saved answer for user ${userId}`, userAnswers[userId]);
-    return Promise.resolve();
+    
+    await writeUserAnswers(userAnswers);
 }
