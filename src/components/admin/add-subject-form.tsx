@@ -23,7 +23,7 @@ export function AddSubjectForm() {
   const onSubmit = async (values: z.infer<typeof subjectSchema>) => {
     const result = await addSubjectAction(values.name);
     if (result.success) {
-      toast({ title: 'Success', description: 'Subject added successfully.' });
+      toast({ title: 'Success', description: 'Subject added successfully.', duration: 2000 });
       form.reset();
     } else {
       // FIX: Handle different error structures from the action
@@ -31,7 +31,8 @@ export function AddSubjectForm() {
       toast({ 
         title: 'Error adding subject', 
         description: description,
-        variant: 'destructive' 
+        variant: 'destructive',
+        duration: 2000 
       });
     }
   };

@@ -64,9 +64,9 @@ export function QuestionsTable({ questions, subjects }: QuestionsTableProps) {
     const result = await deleteQuestionAction(questionToDelete.id);
     
     if (result.success) {
-        toast({ title: "Question deleted successfully." });
+        toast({ title: "Question deleted successfully.", duration: 2000 });
     } else {
-        toast({ variant: 'destructive', title: "Error", description: result.error });
+        toast({ variant: 'destructive', title: "Error", description: result.error, duration: 2000 });
     }
     
     setIsSubmittingDelete(false);

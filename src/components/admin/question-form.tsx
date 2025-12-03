@@ -79,6 +79,7 @@ export function QuestionForm({ subjects, question, onSubmit, onFinished }: Quest
     if (result.success) {
       toast({
         title: `Question ${question ? 'updated' : 'added'} successfully.`,
+        duration: 2000
       });
       onFinished();
     } else {
@@ -86,6 +87,7 @@ export function QuestionForm({ subjects, question, onSubmit, onFinished }: Quest
         variant: 'destructive',
         title: 'An error occurred.',
         description: result.error?.form || JSON.stringify(result.error),
+        duration: 2000
       });
     }
   };

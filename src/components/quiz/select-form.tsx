@@ -15,7 +15,15 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 
 type SubjectWithCount = Subject & { questionCount: number };
@@ -44,7 +52,7 @@ export function SelectForm({ subjects }: SelectFormProps) {
   const [numQuestions, setNumQuestions] = useState(10);
   const [questionCounts, setQuestionCounts] = useState(initialCounts);
   const [isCountsLoading, setIsCountsLoading] = useState(false);
-  const [isExamMode, setIsExamMode] = useState(false);
+  const [isExamDialogVisible, setExamDialogVisible] = useState(false);
   const [timer, setTimer] = useState(10); // Default 10 minutes
 
   useEffect(() => {
@@ -62,7 +70,7 @@ export function SelectForm({ subjects }: SelectFormProps) {
         if (result.success && result.counts) {
           setQuestionCounts(result.counts);
         } else {
-          toast({ variant: 'destructive', title: 'Error', description: result.error });
+          toast({ variant: 'destructive', title: 'Error', description: result.error, duration: 2000 });
           setQuestionCounts(initialCounts);
         }
         setIsCountsLoading(false);
@@ -89,32 +97,55 @@ export function SelectForm({ subjects }: SelectFormProps) {
     );
   };
 
-  const handleStartQuiz = () => {
+  const validateSelections = () => {
     if (selectedSubjects.length === 0) {
       toast({
         variant: 'destructive',
         title: 'No subjects selected',
         description: 'Please select at least one subject to start the quiz.',
+        duration: 2000
       });
-      return;
+      return false;
     }
     if (availableQuestions === 0) {
          toast({
             variant: 'destructive',
             title: 'No questions available',
             description: 'There are no questions for the selected filter. Please choose another one.',
+            duration: 2000
         });
-        return;
+        return false;
     }
+    return true;
+  }
+
+  const handleStartPractice = () => {
+    if (!validateSelections()) return;
+
     setQuizConfig({
       subjectIds: selectedSubjects,
       answerFilter,
       numQuestions: Math.min(numQuestions, maxQuestions),
-      isExamMode,
-      timer: isExamMode ? timer : 0,
+      isExamMode: false,
+      timer: 0,
     });
     router.push('/quiz/play');
   };
+
+  const handleStartExam = () => {
+    if (!validateSelections()) return;
+
+    setQuizConfig({
+      subjectIds: selectedSubjects,
+      answerFilter,
+      numQuestions: Math.min(numQuestions, maxQuestions),
+      isExamMode: true,
+      timer: timer,
+    });
+    setExamDialogVisible(false);
+    router.push('/quiz/play');
+  };
+
 
   return (
     <>
@@ -209,43 +240,45 @@ export function SelectForm({ subjects }: SelectFormProps) {
                 disabled={availableQuestions === 0}
             />
         </div>
-
-        <div className="space-y-4">
-          <h3 className="font-semibold text-lg">4. Exam Mode</h3>
-          <div className="flex items-center justify-between rounded-lg border p-4">
-            <div className="space-y-0.5">
-                <Label htmlFor="exam-mode" className="text-base">
-                    Enable Exam Mode
-                </Label>
-                <p className="text-sm text-muted-foreground">
-                    A timed quiz with results shown only at the end.
-                </p>
-            </div>
-            <Switch
-              id="exam-mode"
-              checked={isExamMode}
-              onCheckedChange={setIsExamMode}
-              disabled={selectedSubjects.length === 0}
-            />
-          </div>
-          {isExamMode && (
-            <div className="space-y-2 pt-2">
-                <Label htmlFor="timer">Timer (in minutes)</Label>
-                <Input 
-                    id="timer"
-                    type="number"
-                    value={timer}
-                    onChange={(e) => setTimer(Math.max(1, parseInt(e.target.value, 10) || 1))}
-                    min={1}
-                    max={180} />
-            </div>
-          )}
-        </div>
       </CardContent>
-      <CardFooter>
-        <Button onClick={handleStartQuiz} size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={selectedSubjects.length === 0 || availableQuestions === 0}>
-          Start Quiz
+      <CardFooter className="flex-col sm:flex-row gap-2">
+        <Button onClick={handleStartPractice} size="lg" className="w-full sm:w-auto flex-1">
+          Start Practice
         </Button>
+         <Dialog open={isExamDialogVisible} onOpenChange={setExamDialogVisible}>
+          <DialogTrigger asChild>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto flex-1" disabled={selectedSubjects.length === 0 || availableQuestions === 0}>
+                Start Exam
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Start Exam</DialogTitle>
+              <DialogDescription>
+                Set a time limit for your exam. You won&apos;t receive feedback until the very end.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">
+                  Timer (minutes)
+                </Label>
+                <Input
+                  id="name"
+                  type="number"
+                  value={timer}
+                  onChange={(e) => setTimer(Math.max(1, parseInt(e.target.value, 10) || 1))}
+                  className="col-span-3"
+                  min={1}
+                  max={180}
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button onClick={handleStartExam}>Start Exam Now</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </CardFooter>
     </>
   );

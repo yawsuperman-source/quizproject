@@ -32,7 +32,7 @@ export function AuthButton() {
         <Button variant="ghost" asChild>
           <Link href="/login">Log In</Link>
         </Button>
-        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button asChild>
           <Link href="/register">Sign Up</Link>
         </Button>
       </div>

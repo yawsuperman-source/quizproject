@@ -3,26 +3,24 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, BrainCircuit, LineChart } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'quiz-hero');
 
   const features = [
     {
       icon: <BrainCircuit className="w-8 h-8 text-primary" />,
-      title: 'AI-Powered Explanations',
-      description: 'Don\'t just know you\'re wrong. Understand why with detailed, AI-generated explanations for every question.',
+      title: 'Evidence-Based Explanations',
+      description: `Don\'t just know you\'re wrong. Understand why with detailed, expert-approved explanations for every question.`,
     },
     {
       icon: <CheckCircle className="w-8 h-8 text-primary" />,
       title: 'Personalized Learning',
-      description: 'Focus your efforts by quizzing yourself on questions you\'ve previously answered incorrectly.',
+      description: `Focus your efforts by quizzing yourself on questions you\'ve previously answered incorrectly.`,
     },
     {
       icon: <LineChart className="w-8 h-8 text-primary" />,
       title: 'Track Your Progress',
-      description: 'Watch your knowledge grow with detailed score tracking and results analysis after every quiz.',
+      description: `Watch your knowledge grow with detailed score tracking and results analysis after every quiz.`,
     },
   ];
 
@@ -37,25 +35,23 @@ export default function Home() {
                   Master Any Subject, Faster.
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Welcome to QuizMaster, the ultimate learning tool. Tackle challenging questions and get instant, AI-powered feedback to accelerate your understanding.
+                  Welcome to Prof T, the ultimate learning tool. Tackle challenging questions and get instant, evidence-based feedback to accelerate your understanding.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button asChild size="lg">
                   <Link href="/quiz/select">Start a Quiz</Link>
                 </Button>
               </div>
             </div>
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                data-ai-hint={heroImage.imageHint}
-                width={650}
-                height={400}
-                className="mx-auto aspect-[16/10] overflow-hidden rounded-xl object-cover sm:w-full"
-              />
-            )}
+            <Image
+              src="/touse.png"
+              alt="Hero image for the quiz app"
+              width={650}
+              height={400}
+              className="mx-auto aspect-[16/10] overflow-hidden rounded-xl object-cover sm:w-full"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -65,7 +61,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">Key Features</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Why Choose QuizMaster?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Why Choose Prof T?</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Go beyond right or wrong. Our platform is built to help you truly learn and retain information.
               </p>
@@ -96,7 +92,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2">
-             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">
+             <Button asChild size="lg" className="w-full">
                 <Link href="/quiz/select">Get Started Now</Link>
               </Button>
           </div>

@@ -20,14 +20,15 @@ export function SubjectList({ subjects }: SubjectListProps) {
     setDeletingId(id);
     const result = await deleteSubjectAction(id);
     if (result.success) {
-      toast({ title: 'Success', description: 'Subject deleted successfully.' });
+      toast({ title: 'Success', description: 'Subject deleted successfully.', duration: 2000 });
     } else {
       // FIX: Handle different error structures from the action for the toast
       const description = result.error?.form || (typeof result.error === 'string' ? result.error : JSON.stringify(result.error));
       toast({ 
         title: 'Error deleting subject', 
         description: description,
-        variant: 'destructive' 
+        variant: 'destructive',
+        duration: 2000
       });
     }
     // Reset state after operation is complete

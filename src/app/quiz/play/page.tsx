@@ -62,6 +62,7 @@ export default function PlayQuizPage() {
           variant: 'destructive',
           title: 'Failed to load quiz',
           description: result.error,
+          duration: 2000
         });
         router.replace('/quiz/select');
       }

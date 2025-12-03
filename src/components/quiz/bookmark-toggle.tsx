@@ -23,7 +23,7 @@ export function BookmarkToggle({ questionId }: BookmarkToggleProps) {
       setLoading(true);
       const { isBookmarked: currentlyBookmarked, error } = await isBookmarked(user.id, questionId);
       if (error) {
-        toast({ variant: 'destructive', title: 'Error', description: error });
+        toast({ variant: 'destructive', title: 'Error', description: error, duration: 2000 });
       } else {
         setBookmarked(currentlyBookmarked ?? false);
       }
@@ -36,10 +36,10 @@ export function BookmarkToggle({ questionId }: BookmarkToggleProps) {
     if (!user) return;
     const { isBookmarked: newBookmarkStatus, error } = await toggleBookmark(user.id, questionId);
     if (error) {
-      toast({ variant: 'destructive', title: 'Error', description: error });
+      toast({ variant: 'destructive', title: 'Error', description: error, duration: 2000 });
     } else {
       setBookmarked(newBookmarkStatus ?? false);
-      toast({ title: newBookmarkStatus ? 'Bookmarked!' : 'Bookmark removed.' });
+      toast({ title: newBookmarkStatus ? 'Bookmarked!' : 'Bookmark removed.', duration: 2000 });
     }
   };
 

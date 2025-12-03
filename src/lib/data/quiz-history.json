@@ -1,5 +1,327 @@
 [
   {
+    "id": "attempt-1764793593134",
+    "userId": "60wa7spxoMdP1xU3TmIVL896Sdj1",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764793593134,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1764568564328",
+        "userAnswer": "Liver is unable to detoxify ammonia in the circulation",
+        "correctAnswer": "It presents with disordered peripheral nervous system",
+        "questionText": "All are true concerning hepatic encephalopathy except",
+        "options": [
+          "It may be caused by acute liver disease",
+          "It may be caused by chronic infections to the liver",
+          "Liver is unable to detoxify ammonia in the circulation",
+          "It presents with disordered peripheral nervous system",
+          "It presents with disordered central nervous system"
+        ],
+        "explanation": "Hepatic encephalopathy (HE) is a neuropsychiatric syndrome.\nIt's caused by the liver's failure (in acute disease or chronic infection) to clear toxins, especially **ammonia** (c).\nThese toxins cross the blood-brain barrier and cause dysfunction of the **central nervous system (e)**, leading to confusion, personality changes, asterixis, and coma.\nIt does **not** primarily present as a disorder of the *peripheral* nervous system (like a peripheral neuropathy). Therefore, statement (d) is the exception.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564290",
+        "userAnswer": "",
+        "correctAnswer": "Head CT scan",
+        "questionText": "You are presented with 53-year-old chronic hepatitis patient who seems to be mildly confused in the recent past. You suspect hepatic encephalopathy, which of the following investigations will you not request for the patient.",
+        "options": [
+          "Hepatitis B-surface-antigen",
+          "Hepatitis C screening",
+          "Full blood count",
+          "Head CT scan",
+          "Liver function test"
+        ],
+        "explanation": "When a patient with known liver disease presents with mild confusion (a classic sign of HE), the first-line investigations aim to assess the liver's function (LFTs), identify the underlying cause (Hep B/C serology), and, most importantly, find a precipitating cause (like infection, identified with an FBC).\nA **Head CT scan** is used to *rule out* alternative diagnoses (like a stroke or subdural hematoma). It is not a test *for* hepatic encephalopathy. Given the mild, non-focal symptoms, it would not be the *first* test you order, as you would first focus on blood tests to confirm HE and find its precipitant.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564343",
+        "userAnswer": "",
+        "correctAnswer": "Pregnant women",
+        "questionText": "Contraindications for oral N-Acetylcysteine in acute paracetamol poisoning include all the following except",
+        "options": [
+          "Intractable vomiting",
+          "Gastrointestinal bleeding",
+          "Patients with significant hepatotoxicity",
+          "Pregnant women",
+          "None of the above"
+        ],
+        "explanation": "Pregnancy is not a contraindication for N-Acetylcysteine. In fact, it is a strong indication for treatment, as NAC is safe in pregnancy and protects both the mother's and the fetus's liver.\n**Intractable vomiting** (a), **GI bleeding** (b), and **significant hepatotoxicity** (c) (which often causes severe vomiting) are all contraindications for the *oral* route, as the patient cannot physically take or absorb the medication. In these cases, the IV (intravenous) route is used instead.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564310",
+        "userAnswer": "",
+        "correctAnswer": "Metronidazole",
+        "questionText": "One of these drugs used in the management of hepatic encephalopathy causes metallic taste and peripheral neuropathy",
+        "options": [
+          "Rifaxamin",
+          "Meomycin",
+          "Metronidazole",
+          "Lactulose",
+          "Vitamin B"
+        ],
+        "explanation": "**Metronidazole** is an antibiotic that can be used (though Rifaximin is preferred) to kill ammonia-producing gut bacteria. Its two most classic and well-known side effects, especially with long-term use, are a **metallic taste** in the mouth and **peripheral neuropathy** (numbness/tingling in hands and feet).\nLactulose (d) causes GI side effects (gas, diarrhea). Rifaxamin (a) is generally very well-tolerated. Vitamin B (e) *treats* neuropathy, it doesn't cause a metallic taste.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564330",
+        "userAnswer": "",
+        "correctAnswer": "Ibuprofen",
+        "questionText": "Which of these drugs is less likely to cause  hepatic encephalopathy",
+        "options": [
+          "Halothane",
+          "Isoniazid",
+          "Paracetamol overdose",
+          "Ibuprofen",
+          "Herbal concoction"
+        ],
+        "explanation": "Hepatic encephalopathy is a complication of severe liver failure. This question is asking which drug is less likely to cause severe, acute liver failure.\n**Halothane** (a) is a known cause of severe immune-mediated hepatitis.\n**Isoniazid** (b) is a well-known hepatotoxin.\n**Paracetamol overdose** (c) is the classic cause of acute liver failure.\n**Herbal concoctions** (e) are a major and unpredictable cause of drug-induced liver injury.\n**Ibuprofen** (d) is an NSAID. While it can be toxic, it is primarily known for causing kidney damage (nephrotoxicity) and gastrointestinal ulcers. Significant hepatotoxicity is much *less common* compared to the other options.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564254",
+        "userAnswer": "",
+        "correctAnswer": "Milk of magnesia",
+        "questionText": "Which of the following is not an anti-emetic drug?",
+        "options": [
+          "Promethazine",
+          "Domperidone",
+          "Cyclizine",
+          "Cinnarizine",
+          "Milk of magnesia"
+        ],
+        "explanation": "An anti-emetic drug is one that prevents or treats nausea and vomiting (emesis).\n**Promethazine**, **Cyclizine**, and **Cinnarizine** (a, c, d) are antihistamines commonly used for motion sickness and vomiting.\n**Domperidone** (b) is a dopamine antagonist that works as a pro-kinetic and anti-emetic.\n**Milk of magnesia** (e) (magnesium hydroxide) is an **antacid** and a **laxative**. It is used to treat indigestion or constipation, not vomiting.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564252",
+        "userAnswer": "",
+        "correctAnswer": "Pyloric obstruction",
+        "questionText": "A positive succussion splash suggests …",
+        "options": [
+          "Gastro-oesophageal reflux disease",
+          "Peptic ulcer disease",
+          "Pyloric obstruction",
+          "Achalasia",
+          "Acute diarrhea"
+        ],
+        "explanation": "A succussion splash is a sloshing sound heard (often without a stethoscope) from the abdomen when the patient's torso is moved. It is caused by the presence of a large amount of fluid and gas retained in the stomach. This indicates that the stomach is not emptying properly. This failure of gastric emptying is the definition of pyloric obstruction (also called gastric outlet obstruction), which can be a complication of peptic ulcer disease.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557609",
+        "userAnswer": "",
+        "correctAnswer": "Metronidazole",
+        "questionText": "Which one of the following is a tissue agent used in the management of amoebic abscesses?",
+        "options": [
+          "Diloxanide",
+          "Metronidazole",
+          "Paromomycin",
+          "Aspirin",
+          "Ibuprofen"
+        ],
+        "explanation": "This question tests the classification of amoebicides.\n**b. Metronidazole** (and Tinidazole) is the standard-of-care **tissue agent**. It is absorbed into the blood and penetrates body tissues, including the liver, to kill the invasive amoeba.\n**a. Diloxanide** and **c. Paromomycin** are **luminal agents**. They are poorly absorbed and stay in the gut to kill cysts in the colon.\n**d. Aspirin** and **e. Ibuprofen** are NSAIDs and are irrelevant.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557626",
+        "userAnswer": "",
+        "correctAnswer": "Encourage wearing of corsets",
+        "questionText": "All are non-pharmacological management of gastro-oesophageal reflux disease except",
+        "options": [
+          "Encourage wearing of corsets",
+          "Elevate head of bed by 30 degrees",
+          "Avoidance of over-eating and heavy meals before bedtime",
+          "Avoid sleeping within 3 hours after eating",
+          "Weight reduction in overweight and obese individuals"
+        ],
+        "explanation": "Non-pharmacological (lifestyle) management for GERD aims to *reduce* factors that cause reflux.\nOptions (b), (c), (d), and (e) are all standard recommendations. Elevating the head of the bed uses gravity to keep acid down. Avoiding large meals before bed, not lying down after eating, and weight reduction all help to *decrease* pressure on the stomach.\nA **corset** (option a) does the opposite: it significantly *increases* intra-abdominal pressure, which would force stomach acid up into the esophagus and worsen GERD.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564295",
+        "userAnswer": "",
+        "correctAnswer": "Administration of dextrose saline solution and high potency vitamin B",
+        "questionText": "Measures to correct hydration status and nutrition in a patient with hepatic encephalopathy include",
+        "options": [
+          "Administration of dextrose saline solution and high potency vitamin B",
+          "Administration of lactulose and liquid paraffin",
+          "Administration of metronidazole",
+          "All the above",
+          "None of the above"
+        ],
+        "explanation": "This question specifically asks about hydration and nutrition.\nOption (a) directly addresses this: **dextrose** provides calories (nutrition), **saline** provides fluid (hydration), and **high potency vitamin B** (especially thiamine) is critical nutritional supplementation for these patients (who are often malnourished or have a history of alcoholism) to prevent Wernicke's encephalopathy.\nOptions (b) and (c) are *pharmacological treatments* to lower ammonia (and treat hepatic encephalopathy), not nutritional support. The stated goal is hydration and nutrition.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764774495976",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764774495976,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1764568557662",
+        "userAnswer": "",
+        "correctAnswer": "Protection from upper gastrointestinal bleeding",
+        "questionText": "Chronic hepatitis can progress to all the following except",
+        "options": [
+          "Liver cirrhosis",
+          "Portal hypertension",
+          "Protection from upper gastrointestinal bleeding",
+          "Hepatic encephalopathy",
+          "Hepatocellular carcinoma"
+        ],
+        "explanation": "Chronic hepatitis leads to a cascade of severe complications, and option (c) is the opposite of what actually happens.\nChronic inflammation leads to progressive scarring of the liver, which is called **cirrhosis** (a).\nThis scarring obstructs blood flow through the liver, causing blood to back up in the portal vein system. This is called **portal hypertension** (b).\nThis high pressure forces varicose veins to form, especially in the esophagus (esophageal varices). These varices are fragile and prone to rupture, causing **life-threatening upper gastrointestinal bleeding**. Therefore, chronic hepatitis *causes* this bleeding, it does not *protect* from it.\nAs the liver fails (decompensated cirrhosis), it can no longer clear toxins like ammonia, leading to **hepatic encephalopathy** (d).\nChronic inflammation and cirrhosis are the strongest risk factors for developing liver cancer, known as **hepatocellular carcinoma** (e).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557636",
+        "userAnswer": "",
+        "correctAnswer": "Oesophago-gastroduodenoscopy",
+        "questionText": "The most suitable test for diagnosing peptic ulcer disease and gastro-oesophageal-reflux disease is",
+        "options": [
+          "Chest x-ray",
+          "Oesophago-gastroduodenoscopy",
+          "Abdominal ultrasound scan",
+          "Barium meal with fluoroscopy",
+          "Oesophageal pH monitoring"
+        ],
+        "explanation": "This test, commonly known as an upper endoscopy or OGD, is the \"gold standard\" investigation.\nIt allows for **direct visualization** of the esophagus and stomach lining, making it ideal for identifying oesophagitis (damage from GERD) and ulcers (PUD).\nCrucially, it also allows for **biopsies** to be taken, which can be used to test for *H. pylori* (the main cause of PUD) and to rule out malignancy in a gastric ulcer.\nThe other tests are less suitable: A barium meal (d) is less sensitive. Oesophageal pH monitoring (e) is a specialized test for GERD but cannot diagnose PUD. A chest x-ray (a) and ultrasound (c) are not the correct imaging modalities for this.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557599",
+        "userAnswer": "",
+        "correctAnswer": "Atropine",
+        "questionText": "Drugs used in the management of constipation in adults include the following except",
+        "options": [
+          "Bisacodyl",
+          "Glycerol suppository",
+          "Liquid paraffin",
+          "Milk of magnesia",
+          "Atropine"
+        ],
+        "explanation": "This question asks for the drug that is *not* a treatment for constipation.\n**a, b, c, & d** are all common laxatives: Bisacodyl (stimulant), Glycerol (osmotic/stimulant), Liquid paraffin (stool softener), and Milk of magnesia (osmotic).\n**e. Atropine** is an **anticholinergic** drug. Anticholinergic drugs work by blocking the parasympathetic nervous system, which is responsible for stimulating gut motility (peristalsis). Therefore, atropine *causes* constipation as a side effect and would make the condition worse.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557588",
+        "userAnswer": "",
+        "correctAnswer": "Ciprofloxacin",
+        "questionText": "Which of these antibiotics is not among those used in the eradication of Helicobacter pylori",
+        "options": [
+          "Metronidazole",
+          "Ciprofloxacin",
+          "Clarithromycin",
+          "Amoxicillin",
+          "None of the above"
+        ],
+        "explanation": "The standard first-line and second-line regimens for *H. pylori* primarily use **Amoxicillin**, **Clarithromycin**, **Metronidazole**, and **Tetracycline**. \n**Ciprofloxacin**, which is a fluoroquinolone, is not a standard component of these regimens.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564254",
+        "userAnswer": "",
+        "correctAnswer": "Milk of magnesia",
+        "questionText": "Which of the following is not an anti-emetic drug?",
+        "options": [
+          "Promethazine",
+          "Domperidone",
+          "Cyclizine",
+          "Cinnarizine",
+          "Milk of magnesia"
+        ],
+        "explanation": "An anti-emetic drug is one that prevents or treats nausea and vomiting (emesis).\n**Promethazine**, **Cyclizine**, and **Cinnarizine** (a, c, d) are antihistamines commonly used for motion sickness and vomiting.\n**Domperidone** (b) is a dopamine antagonist that works as a pro-kinetic and anti-emetic.\n**Milk of magnesia** (e) (magnesium hydroxide) is an **antacid** and a **laxative**. It is used to treat indigestion or constipation, not vomiting.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557618",
+        "userAnswer": "",
+        "correctAnswer": "Entamoeba histolytica",
+        "questionText": "Which organism most commonly causes amoebic liver abscess?",
+        "options": [
+          "Giardia lamblia",
+          "Entamoeba coli",
+          "Entamoeba histolytica",
+          "Salmonella typhi",
+          "Escherichia coli"
+        ],
+        "explanation": "The name of the condition, \"amoebic liver abscess,\" points directly to its cause: an amoeba.\n**Entamoeba histolytica** is the pathogenic amoeba that causes amoebic dysentery (amebiasis). It can invade the wall of the colon, enter the portal bloodstream, and travel to the liver, where it forms a characteristic abscess.\n**Giardia lamblia** (a) is a protozoan that causes diarrhea (giardiasis) but does not typically invade the bloodstream or cause liver abscesses.\n**Entamoeba coli** (b) is a *non-pathogenic* amoeba that lives commensally in the gut.\n**Salmonella typhi** (d) and **Escherichia coli** (e) are bacteria. While bacteria can cause liver abscesses (pyogenic abscesses), they are not the cause of an *amoebic* abscess.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557634",
+        "userAnswer": "",
+        "correctAnswer": "None of the above",
+        "questionText": "Which one of the following is not a risk factor for gastro-oesophageal reflux disease?",
+        "options": [
+          "Obesity",
+          "Pregnancy",
+          "Long term use of nasogastric tube",
+          "Hiatus hernia",
+          "None of the above"
+        ],
+        "explanation": "All the options listed (a-d) are well-established risk factors for GERD.\n**Obesity** and **Pregnancy** both increase intra-abdominal pressure, which forces stomach contents upward.\nA **long-term nasogastric tube** physically keeps the LES open, allowing free reflux of acid.\nA Hiatus hernia disrupts the normal junction between the esophagus and stomach, weakening the anti-reflux barrier.\nSince all listed options are indeed risk factors, the correct choice is \"None of the above.\"",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557654",
+        "userAnswer": "",
+        "correctAnswer": "Anorexia",
+        "questionText": "One of the following is not a sign of decompensated liver disease",
+        "options": [
+          "Anorexia",
+          "Ascites",
+          "Encephalopathy",
+          "Hypoalbuminemia",
+          "Coagulopathy"
+        ],
+        "explanation": "Decompensated liver disease means the liver is actively failing to perform its key functions, leading to major complications.\n**Ascites** (fluid in the abdomen)\n\n**Encephalopathy** (confusion from toxin buildup)\n\n**Hypoalbuminemia** (low protein, as the liver can't produce it)\n\n**Coagulopath**y (bleeding problems, as the liver can't make clotting factors)\nThese are all defining signs of decompensation. While anorexia (loss of appetite) is a very common symptom of liver disease, it is not one of the specific, defining signs of liver failure itself.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557652",
+        "userAnswer": "",
+        "correctAnswer": "Clubbing of the fingers",
+        "questionText": "All are stigmata of chronic liver disease except",
+        "options": [
+          "Clubbing of the fingers",
+          "Palmar erythema",
+          "Spider naevi",
+          "Dupuytren’s contracture",
+          "Jaundice"
+        ],
+        "explanation": "Palmar erythema (red palms) , spider naevi (spider-like blood vessels on the skin), Dupuytren's contracture (Thickening and shortening of palmar fascia leading to finger flexion deformity), and jaundice (yellowing of the skin)  are all classic physical signs (stigmata) of chronic liver disease. While finger clubbing can be seen in some specific liver conditions (like **primary biliary cholangitis** or **cirrhosis due to biliary causes**), it is not considered a general stigma of chronic liver disease. It is more commonly associated with chronic suppurative lung disease, cyanotic heart disease and inflammatory bowel disease.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557585",
+        "userAnswer": "",
+        "correctAnswer": "Two antibiotics and a proton pump inhibitor",
+        "questionText": "The triple therapy in the management of peptic ulcer disease include",
+        "options": [
+          "Three antibiotics and proton pump inhibitor",
+          "Two antibiotics and an H2 antagonist",
+          "Three antibiotics and an H2 antagonist",
+          "Two antibiotics and a proton pump inhibitor",
+          "One antibiotic, one proton pump inhibitor, and one H2 antagonist"
+        ],
+        "explanation": "Standard \"triple therapy\" for eradicating *Helicobacter pylori*, the most common cause of peptic ulcer disease, consists of:\nA **Proton Pump Inhibitor (PPI)** (e.g., Omeprazole) to reduce stomach acid.\n**Two Antibiotics** (e.g., Clarithromycin and Amoxicillin, or Clarithromycin and Metronidazole).",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
     "id": "attempt-1764773291780",
     "userId": "60wa7spxoMdP1xU3TmIVL896Sdj1",
     "subjectIds": [
