@@ -25,3 +25,23 @@ export type UserAnswer = {
 };
 
 export type AnswerFilter = 'all' | 'answered' | 'unanswered' | 'correct' | 'incorrect' | 'bookmarked';
+
+export interface QuizAttempt {
+  id: string;
+  userId: string;
+  timestamp: number;
+  score: number;
+  subjectIds: string[];
+  questions: QuizAttemptQuestion[];
+}
+
+// This interface now includes all necessary question data for the review page.
+export interface QuizAttemptQuestion {
+  questionId: string;
+  questionText: string;
+  options: string[];
+  userAnswer: string;
+  correctAnswer: string;
+  explanation: string;
+  subjectId: string;
+}

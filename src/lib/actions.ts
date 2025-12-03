@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import * as data from './data';
-import type { Question, AnswerFilter, Subject } from './types';
+import type { Question, AnswerFilter, Subject, QuizAttempt } from './types';
 
 // --- SUBJECT ACTIONS ---
 
@@ -93,8 +93,7 @@ export async function getAllQuestions() {
 
 export async function getQuestionById(id: string) {
     try {
-        const questions = await data.getAllQuestions();
-        const question = questions.find(q => q.id === id);
+        const question = await data.getQuestionById(id);
         if (!question) {
             return { success: false, error: 'Question not found.' };
         }
@@ -205,4 +204,39 @@ export async function toggleBookmark(userId: string, questionId: string) {
         console.error('Error toggling bookmark:', error);
         return { success: false, error: "Failed to toggle bookmark." };
     }
+}
+
+// --- QUIZ HISTORY ACTIONS ---
+
+export async function getQuizHistory(userId: string) {
+  try {
+    const quizzes = await data.getQuizHistory(userId);
+    return { success: true, quizzes };
+  } catch (error) {
+    return { success: false, error: 'Failed to load quiz history.' };
+  }
+}
+
+export async function getQuizAttempt(attemptId: string) {
+  try {
+    const attempt = await data.getQuizAttempt(attemptId);
+    if (!attempt) {
+      return { success: false, error: 'Quiz attempt not found.' };
+    }
+    // No need to fetch questions separately anymore, they are self-contained.
+    return { success: true, attempt };
+  } catch (error) {
+    return { success: false, error: 'Failed to load quiz attempt.' };
+  }
+}
+
+export async function saveQuizAttempt(userId: string, subjectIds: string[], questions: Question[], userAnswers: (string | null)[]) {
+  try {
+    const newAttempt = await data.saveQuizAttempt(userId, subjectIds, questions, userAnswers);
+    revalidatePath('/quiz/history');
+    return { success: true, attempt: newAttempt };
+  } catch (error) {
+    console.error('Error saving quiz attempt:', error);
+    return { success: false, error: 'Failed to save quiz attempt.' };
+  }
 }

@@ -14,7 +14,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from 'next/navigation';
-import { User, LogOut, LayoutDashboard } from 'lucide-react';
+import { User, LogOut, LayoutDashboard, History } from 'lucide-react';
 
 export function AuthButton() {
   const { user, isAdmin } = useAuth();
@@ -72,6 +72,10 @@ export function AuthButton() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={() => router.push('/quiz/history')}>
+          <History className="mr-2 h-4 w-4" />
+          <span>Quiz History</span>
+        </DropdownMenuItem>
         <DropdownMenuItem disabled>
           <User className="mr-2 h-4 w-4" />
           <span>Profile</span>

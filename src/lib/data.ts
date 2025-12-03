@@ -4,13 +4,14 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import type { Subject, Question, User, AnswerFilter, UserAnswer } from './types';
+import type { Subject, Question, User, AnswerFilter, UserAnswer, QuizAttempt, QuizAttemptQuestion } from './types';
 
 // --- FILE-BASED DATABASE ---
 const subjectsPath = path.join(process.cwd(), 'src', 'lib', 'data', 'subjects.json');
 const questionsPath = path.join(process.cwd(), 'src', 'lib', 'data', 'questions.json');
 const userAnswersPath = path.join(process.cwd(), 'src', 'lib', 'data', 'user-answers.json');
 const userBookmarksPath = path.join(process.cwd(), 'src', 'lib', 'data', 'user-bookmarks.json');
+const quizHistoryPath = path.join(process.cwd(), 'src', 'lib', 'data', 'quiz-history.json');
 
 async function readSubjects(): Promise<Subject[]> {
   try {
@@ -131,6 +132,19 @@ async function readUserBookmarks(): Promise<Record<string, string[]>> {
 
 async function writeUserBookmarks(bookmarks: Record<string, string[]>): Promise<void> {
     await fs.writeFile(userBookmarksPath, JSON.stringify(bookmarks, null, 2), 'utf-8');
+}
+
+async function readQuizHistory(): Promise<QuizAttempt[]> {
+  try {
+    const data = await fs.readFile(quizHistoryPath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    return [];
+  }
+}
+
+async function writeQuizHistory(history: QuizAttempt[]): Promise<void> {
+  await fs.writeFile(quizHistoryPath, JSON.stringify(history, null, 2), 'utf-8');
 }
 
 
@@ -269,6 +283,11 @@ export async function getAllQuestions(): Promise<Question[]> {
   return await readQuestions();
 }
 
+export async function getQuestionById(id: string): Promise<Question | null> {
+  const questions = await readQuestions();
+  return questions.find(q => q.id === id) || null;
+}
+
 export async function addQuestion(questionData: Omit<Question, 'id'>): Promise<Question> {
   const questions = await readQuestions();
   const newQuestion: Question = {
@@ -337,4 +356,46 @@ export async function toggleBookmark(userId: string, questionId: string): Promis
 
     await writeUserBookmarks(bookmarks);
     return await isBookmarked(userId, questionId);
+}
+
+export async function getQuizHistory(userId: string): Promise<QuizAttempt[]> {
+  const history = await readQuizHistory();
+  return history.filter(attempt => attempt.userId === userId);
+}
+
+export async function getQuizAttempt(attemptId: string): Promise<QuizAttempt | null> {
+  const history = await readQuizHistory();
+  return history.find(attempt => attempt.id === attemptId) || null;
+}
+
+export async function saveQuizAttempt(userId: string, subjectIds: string[], questions: Question[], userAnswers: (string | null)[]): Promise<QuizAttempt> {
+  const history = await readQuizHistory();
+  
+  const correctAnswers = questions.map(q => q.correctAnswer);
+  const score = (userAnswers.filter((ua, i) => ua === correctAnswers[i]).length / questions.length) * 100;
+
+  // CRITICAL FIX: Ensure all necessary question data is saved for the review page.
+  // The previous implementation was missing these fields, causing the TypeError.
+  const attemptQuestions: QuizAttemptQuestion[] = questions.map((q, i) => ({
+    questionId: q.id,
+    userAnswer: userAnswers[i] || '',
+    correctAnswer: q.correctAnswer,
+    questionText: q.questionText,
+    options: q.options,
+    explanation: q.explanation,
+    subjectId: q.subjectId,
+  }));
+
+  const newAttempt: QuizAttempt = {
+    id: `attempt-${Date.now()}`,
+    userId,
+    subjectIds,
+    timestamp: Date.now(),
+    score: Math.round(score),
+    questions: attemptQuestions,
+  };
+
+  const updatedHistory = [newAttempt, ...history];
+  await writeQuizHistory(updatedHistory);
+  return newAttempt;
 }

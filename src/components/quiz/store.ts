@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { Question, AnswerFilter } from '@/lib/types';
+import { saveQuizAttempt } from '@/lib/actions';
 
 type QuizState = {
   subjectIds: string[];
@@ -14,10 +15,10 @@ type QuizState = {
   isQuizFinished: boolean;
   setQuizConfig: (config: { subjectIds: string[], answerFilter: AnswerFilter, numQuestions: number }) => void;
   setQuestions: (questions: Question[]) => void;
-  nextQuestion: () => void;
+  nextQuestion: (userId: string) => Promise<void>;
   previousQuestion: () => void;
   recordAnswer: (selectedAnswer: string) => void;
-  endQuiz: () => void;
+  endQuiz: (userId: string) => Promise<void>;
   resetQuiz: () => void;
 };
 
@@ -52,19 +53,24 @@ const useQuizStore = create<QuizState>((set, get) => ({
     isSubmitted: Array(questions.length).fill(false),
    }),
 
-  nextQuestion: () => set((state) => {
+  nextQuestion: async (userId: string) => {
+    const state = get();
     if (state.currentQuestionIndex < state.questions.length - 1) {
-      return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+      set({ currentQuestionIndex: state.currentQuestionIndex + 1 });
+      return;
     }
-    const { questions, userAnswers } = get();
+
+    const { questions, userAnswers, subjectIds } = state;
     let correct = 0;
     userAnswers.forEach((answer, index) => {
       if (answer && questions[index] && answer === questions[index].correctAnswer) {
         correct++;
       }
     });
-    return { isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct };
-  }),
+    
+    await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
+    set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct });
+  },
 
   previousQuestion: () => set((state) => {
     if (state.currentQuestionIndex > 0) {
@@ -86,16 +92,18 @@ const useQuizStore = create<QuizState>((set, get) => ({
     };
   }),
 
-  endQuiz: () => set((state) => {
-    const { questions, userAnswers } = state;
+  endQuiz: async (userId: string) => {
+    const { questions, userAnswers, subjectIds } = get();
     let correct = 0;
     userAnswers.forEach((answer, index) => {
       if (answer && questions[index] && answer === questions[index].correctAnswer) {
         correct++;
       }
     });
-    return { isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct };
-  }),
+    
+    await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
+    set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct });
+  },
 
   resetQuiz: () => set({
     subjectIds: [],

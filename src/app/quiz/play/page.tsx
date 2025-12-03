@@ -37,7 +37,6 @@ export default function PlayQuizPage() {
 
   const [loading, setLoading] = useState(true);
   
-  // This local state now primarily drives the selection in the QuestionDisplay component
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
   useEffect(() => {
@@ -96,8 +95,14 @@ export default function PlayQuizPage() {
     }
   };
 
-  const handleNext = () => {
-    nextQuestion();
+  const handleNext = async () => {
+    if (!user) return;
+    await nextQuestion(user.id);
+  };
+
+  const handleEndQuiz = async () => {
+    if (!user) return;
+    await endQuiz(user.id);
   };
 
   const handlePrevious = () => {
@@ -159,7 +164,7 @@ export default function PlayQuizPage() {
                 <Button onClick={handlePrevious} variant="outline" size="lg" disabled={currentQuestionIndex === 0}>Previous</Button>
             </div>
             <div className="flex items-center space-x-4">
-                <Button onClick={endQuiz} variant="destructive" size="lg">End Quiz</Button>
+                <Button onClick={handleEndQuiz} variant="destructive" size="lg">End Quiz</Button>
                 <Button onClick={handleNext} size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                     {currentQuestionIndex === questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
                 </Button>
