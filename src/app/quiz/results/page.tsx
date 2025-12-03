@@ -8,21 +8,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import Confetti from 'react-dom-confetti';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkBreaks from 'remark-breaks';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { CheckCircle2, XCircle } from 'lucide-react';
 import { useAuth } from '@/hooks/use-auth';
 import { saveQuizAttempt } from '@/lib/actions';
 
 export default function ResultsPage() {
   const router = useRouter();
   const { user } = useAuth();
-  const { correctAnswers, incorrectAnswers, questions, userAnswers, resetQuiz } = useQuizStore();
+  const { subjectIds, correctAnswers, incorrectAnswers, questions, userAnswers, resetQuiz } = useQuizStore();
   const totalQuestions = questions.length;
   const [isClient, setIsClient] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
+  const [attemptId, setAttemptId] = useState<string | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -32,24 +27,20 @@ export default function ResultsPage() {
       return;
     }
 
-    if (user && totalQuestions > 0 && !isSaved) {
-      const attempt = {
-        userId: user.uid,
-        timestamp: Date.now(),
-        score: Math.round((correctAnswers / totalQuestions) * 100),
-        subjectIds: Array.from(new Set(questions.map(q => q.subjectId))),
-        questions: questions.map(q => ({
-          questionId: q.id,
-          userAnswer: userAnswers[q.id],
-          correctAnswer: q.correctAnswer,
-        })),
-      };
-      // We are not handling the error here, but in a real app you should.
-      saveQuizAttempt(attempt as any).then(() => {
-        setIsSaved(true);
-      });
+    if (user && totalQuestions > 0 && !attemptId) {
+        saveQuizAttempt(user.uid, subjectIds, questions, userAnswers)
+        .then(result => {
+          if (result.success && result.attempt) {
+            setAttemptId(result.attempt.id);
+          } else {
+            console.error("Failed to save quiz attempt:", result.error);
+          }
+        })
+        .catch(error => {
+            console.error("An error occurred while saving the quiz attempt:", error);
+        });
     }
-  }, [totalQuestions, router, user, correctAnswers, questions, userAnswers, isSaved]);
+  }, [totalQuestions, router, user, subjectIds, questions, userAnswers, attemptId]);
 
   const score = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
 
@@ -117,40 +108,17 @@ export default function ResultsPage() {
 
             <div className="flex justify-center gap-4 pt-4">
               <Button onClick={handlePlayAgain} size="lg">Play Again</Button>
+              {attemptId && (
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/quiz/history/${attemptId}`}>Review Quiz</Link>
+                </Button>
+              )}
               <Button asChild variant="outline" size="lg">
                 <Link href="/">Back to Home</Link>
               </Button>
             </div>
           </CardContent>
         </Card>
-
-        <div className="mt-10">
-          <h2 className="text-2xl font-bold text-center mb-4 font-headline">Review Your Answers</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {questions.map((q, index) => {
-              const userAnswer = userAnswers[q.id];
-              const isCorrect = userAnswer === q.correctAnswer;
-              return (
-                <AccordionItem value={`item-${index}`} key={q.id}>
-                  <AccordionTrigger>
-                    <div className="flex items-center justify-between w-full pr-4">
-                      <p className="text-left truncate w-11/12">{q.questionText}</p>
-                      {isCorrect ? <CheckCircle2 className="text-green-500" /> : <XCircle className="text-red-500" />}
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="p-4 bg-muted/50 rounded-md">
-                    <p className="mb-2 text-sm">Your answer: <span className={isCorrect ? 'font-semibold text-green-600' : 'font-semibold text-red-600'}>{userAnswer}</span></p>
-                    <p className="mb-4 text-sm">Correct answer: <span className="font-semibold text-green-600">{q.correctAnswer}</span></p>
-                    <h4 className="font-semibold mb-2">Explanation:</h4>
-                    <div className="prose dark:prose-invert max-w-none">
-                      <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{q.explanation}</ReactMarkdown>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              );
-            })}
-          </Accordion>
-        </div>
       </div>
     </div>
   );
