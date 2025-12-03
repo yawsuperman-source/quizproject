@@ -2,9 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { getQuizAttempt } from '@/lib/actions';
-import useQuizStore from '@/components/quiz/store';
 import type { QuizAttempt, QuizAttemptQuestion, Question } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
@@ -12,6 +10,7 @@ import { Progress } from '@/components/ui/progress';
 import { ChevronLeft, ChevronRight, Home, RefreshCw } from 'lucide-react';
 import { QuestionDisplay } from '@/components/quiz/question-display';
 import { FeedbackDisplay } from '@/components/quiz/feedback-display';
+import { RedoQuizDialog } from '@/components/quiz/redo-quiz-dialog';
 
 interface AttemptDetails extends Omit<QuizAttempt, 'questions'> {
   questions: QuizAttemptQuestion[];
@@ -21,8 +20,7 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
   const [attempt, setAttempt] = useState<AttemptDetails | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const router = useRouter();
-  const startQuizWithQuestions = useQuizStore((state) => state.startQuizWithQuestions);
+  const [isRedoDialogOpen, setIsRedoDialogOpen] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -31,24 +29,25 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
     getQuizAttempt(id).then(data => {
       if (data.success && data.attempt) {
         setAttempt(data.attempt as AttemptDetails);
+      } else {
+        // Handle case where attempt is not found
+        setAttempt(null);
       }
       setLoading(false);
     });
   }, [id]);
 
-  const handleRedoQuiz = () => {
-    if (!attempt) return;
-    const questionsToRedo = attempt.questions.map(q => ({
-        id: q.questionId,
-        questionText: q.questionText,
-        options: q.options,
-        correctAnswer: q.correctAnswer,
-        subjectId: q.subjectId,
-        explanation: q.explanation,
+  const questionsToRedo: Question[] = useMemo(() => {
+    if (!attempt) return [];
+    return attempt.questions.map(q => ({
+      id: q.questionId,
+      questionText: q.questionText,
+      options: q.options,
+      correctAnswer: q.correctAnswer,
+      subjectId: q.subjectId,
+      explanation: q.explanation,
     }));
-    startQuizWithQuestions(questionsToRedo);
-    router.push('/quiz/play');
-  };
+  }, [attempt]);
 
   const handleNext = () => {
     if (attempt && currentQuestionIndex < attempt.questions.length - 1) {
@@ -63,17 +62,16 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
   };
   
   const currentQuestionData = useMemo(() => {
-      if (!attempt) return null;
-      const currentQ = attempt.questions[currentQuestionIndex];
-      const questionForDisplay: Question = {
-          id: currentQ.questionId,
-          questionText: currentQ.questionText,
-          options: currentQ.options,
-          correctAnswer: currentQ.correctAnswer,
-          subjectId: currentQ.subjectId,
-          explanation: currentQ.explanation,
-      };
-      return questionForDisplay;
+    if (!attempt) return null;
+    const currentQ = attempt.questions[currentQuestionIndex];
+    return {
+      id: currentQ.questionId,
+      questionText: currentQ.questionText,
+      options: currentQ.options,
+      correctAnswer: currentQ.correctAnswer,
+      subjectId: currentQ.subjectId,
+      explanation: currentQ.explanation,
+    };
   }, [attempt, currentQuestionIndex]);
   
   const progress = useMemo(() => attempt ? ((currentQuestionIndex + 1) / attempt.questions.length) * 100 : 0, [attempt, currentQuestionIndex]);
@@ -93,78 +91,85 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
     );
   }
 
-  if (!attempt || !currentQuestionData) {
+  if (!attempt) {
     return (
       <div className="container py-12 text-center">
         <h1 className="text-2xl font-bold">Attempt not found</h1>
         <p className="text-muted-foreground mb-6">This quiz attempt could not be found.</p>
         <Button asChild>
-            <Link href="/quiz/history">
-                <ChevronLeft className="mr-2 h-4 w-4" />
-                Back to History
-            </Link>
+          <Link href="/quiz/history">
+            <ChevronLeft className="mr-2 h-4 w-4" />
+            Back to History
+          </Link>
         </Button>
       </div>
     );
   }
   
-  const { correctAnswer, explanation } = currentQuestionData;
+  const { correctAnswer, explanation } = currentQuestionData!;
   const userAnswer = attempt.questions[currentQuestionIndex].userAnswer;
   const isCorrect = userAnswer === correctAnswer;
 
   return (
-    <div className="container mx-auto py-10 px-4">
-      <div className="w-full max-w-3xl mx-auto space-y-6">
-        <div className="flex justify-between items-start">
-            <div className="space-y-2">
-                <h1 className="text-2xl md:text-3xl font-bold">Quiz Review</h1>
-                <p className="text-muted-foreground">
-                    Taken on {new Date(attempt.timestamp).toLocaleString()} | Score: {attempt.score}%
-                </p>
-            </div>
-            <Button onClick={handleRedoQuiz} variant="outline">
-                <RefreshCw className="mr-2 h-4 w-4" />
-                Redo Quiz
-            </Button>
-        </div>
+    <>
+      <div className="container mx-auto py-10 px-4">
+        <div className="w-full max-w-3xl mx-auto space-y-6">
+          <div className="flex justify-between items-start">
+              <div className="space-y-2">
+                  <h1 className="text-2xl md:text-3xl font-bold">Quiz Review</h1>
+                  <p className="text-muted-foreground">
+                      Taken on {new Date(attempt.timestamp).toLocaleString()} | Score: {attempt.score}%
+                  </p>
+              </div>
+              <Button onClick={() => setIsRedoDialogOpen(true)} variant="outline">
+                  <RefreshCw className="mr-2 h-4 w-4" />
+                  Redo Quiz
+              </Button>
+          </div>
 
-        <Progress value={progress} className="w-full" />
-        
-        <QuestionDisplay
-            question={currentQuestionData}
-            questionNumber={currentQuestionIndex + 1}
-            totalQuestions={attempt.questions.length}
-            selectedAnswer={userAnswer}
-            onAnswerSelect={() => {}} // Read-only
-            isSubmitted={true}
-        />
-        
-        <FeedbackDisplay 
-            isCorrect={isCorrect}
-            correctAnswer={correctAnswer}
-            explanation={explanation}
-        />
+          <Progress value={progress} className="w-full" />
+          
+          <QuestionDisplay
+              question={currentQuestionData!}
+              questionNumber={currentQuestionIndex + 1}
+              totalQuestions={attempt.questions.length}
+              selectedAnswer={userAnswer}
+              onAnswerSelect={() => {}} // Read-only
+              isSubmitted={true}
+          />
+          
+          <FeedbackDisplay 
+              isCorrect={isCorrect}
+              correctAnswer={correctAnswer}
+              explanation={explanation}
+          />
 
-        <div className="flex justify-between items-center pt-4">
-            <Button onClick={handlePrevious} variant="outline" size="lg" disabled={currentQuestionIndex === 0}>
-                <ChevronLeft className="mr-2 h-4 w-4"/>
-                Previous
-            </Button>
-            {currentQuestionIndex === attempt.questions.length - 1 ? (
-                <Button asChild size="lg">
-                    <Link href="/quiz/history">
-                        <Home className="mr-2 h-4 w-4" />
-                        Back to History
-                    </Link>
-                </Button>
-            ) : (
-                <Button onClick={handleNext} size="lg" >
-                    Next
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-            )}
+          <div className="flex justify-between items-center pt-4">
+              <Button onClick={handlePrevious} variant="outline" size="lg" disabled={currentQuestionIndex === 0}>
+                  <ChevronLeft className="mr-2 h-4 w-4"/>
+                  Previous
+              </Button>
+              {currentQuestionIndex === attempt.questions.length - 1 ? (
+                  <Button asChild size="lg">
+                      <Link href="/quiz/history">
+                          <Home className="mr-2 h-4 w-4" />
+                          Back to History
+                      </Link>
+                  </Button>
+              ) : (
+                  <Button onClick={handleNext} size="lg" >
+                      Next
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+              )}
+          </div>
         </div>
       </div>
-    </div>
+      <RedoQuizDialog 
+        isOpen={isRedoDialogOpen} 
+        onOpenChange={setIsRedoDialogOpen} 
+        questions={questionsToRedo}
+      />
+    </>
   );
 }

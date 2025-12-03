@@ -15,6 +15,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
+import { Switch } from '@/components/ui/switch';
+import { Input } from '@/components/ui/input';
 
 type SubjectWithCount = Subject & { questionCount: number };
 
@@ -42,6 +44,8 @@ export function SelectForm({ subjects }: SelectFormProps) {
   const [numQuestions, setNumQuestions] = useState(10);
   const [questionCounts, setQuestionCounts] = useState(initialCounts);
   const [isCountsLoading, setIsCountsLoading] = useState(false);
+  const [isExamMode, setIsExamMode] = useState(false);
+  const [timer, setTimer] = useState(10); // Default 10 minutes
 
   useEffect(() => {
     // Reset quiz state when component mounts
@@ -77,7 +81,6 @@ export function SelectForm({ subjects }: SelectFormProps) {
     setNumQuestions((prev) => Math.min(prev, maxQuestions > 0 ? maxQuestions : 10));
   }, [answerFilter, maxQuestions]);
 
-
   const handleSubjectChange = (subjectId: string) => {
     setSelectedSubjects((prev) =>
       prev.includes(subjectId)
@@ -107,6 +110,8 @@ export function SelectForm({ subjects }: SelectFormProps) {
       subjectIds: selectedSubjects,
       answerFilter,
       numQuestions: Math.min(numQuestions, maxQuestions),
+      isExamMode,
+      timer: isExamMode ? timer : 0,
     });
     router.push('/quiz/play');
   };
@@ -205,6 +210,37 @@ export function SelectForm({ subjects }: SelectFormProps) {
             />
         </div>
 
+        <div className="space-y-4">
+          <h3 className="font-semibold text-lg">4. Exam Mode</h3>
+          <div className="flex items-center justify-between rounded-lg border p-4">
+            <div className="space-y-0.5">
+                <Label htmlFor="exam-mode" className="text-base">
+                    Enable Exam Mode
+                </Label>
+                <p className="text-sm text-muted-foreground">
+                    A timed quiz with results shown only at the end.
+                </p>
+            </div>
+            <Switch
+              id="exam-mode"
+              checked={isExamMode}
+              onCheckedChange={setIsExamMode}
+              disabled={selectedSubjects.length === 0}
+            />
+          </div>
+          {isExamMode && (
+            <div className="space-y-2 pt-2">
+                <Label htmlFor="timer">Timer (in minutes)</Label>
+                <Input 
+                    id="timer"
+                    type="number"
+                    value={timer}
+                    onChange={(e) => setTimer(Math.max(1, parseInt(e.target.value, 10) || 1))}
+                    min={1}
+                    max={180} />
+            </div>
+          )}
+        </div>
       </CardContent>
       <CardFooter>
         <Button onClick={handleStartQuiz} size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={selectedSubjects.length === 0 || availableQuestions === 0}>

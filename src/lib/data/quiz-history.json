@@ -1,5 +1,917 @@
 [
   {
+    "id": "attempt-1764773291780",
+    "userId": "60wa7spxoMdP1xU3TmIVL896Sdj1",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764773291780,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1764568557645",
+        "userAnswer": "All children presenting with constipation",
+        "correctAnswer": "All children presenting with constipation",
+        "questionText": "Indications for referral in a patient with constipation include the following except",
+        "options": [
+          "Absence of bowel sounds",
+          "Inability to pass flatus",
+          "Suspected surgical causes of constipation",
+          "Constipation resistant to medical treatment",
+          "All children presenting with constipation"
+        ],
+        "explanation": "This question asks for the one option that is *not* an indication for referral.\n**a, b, c:** Absence of bowel sounds, inability to pass flatus, and suspected surgical causes are all \"red flags\" pointing to a possible bowel obstruction, which is a surgical emergency requiring immediate referral.\n**d:** Constipation that doesn't respond to standard first-line medical treatment in a primary care setting is a valid reason for referral to a specialist (like a gastroenterologist) for further workup.\n**e:** This is the exception. Simple, functional constipation is extremely common in children and is routinely managed in primary care. It does *not* require an automatic referral. Only cases that are severe, resistant to treatment, or accompanied by red flags (like failure to thrive, severe abdominal distension, etc.) would be referred.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557628",
+        "userAnswer": "Metoclopramide",
+        "correctAnswer": "Metoclopramide",
+        "questionText": "All are important medications in the management of non-erosive gastro-oesophageal reflux disease except",
+        "options": [
+          "Magnesium trisilicate",
+          "Omeprazole",
+          "Magnesium hydroxide",
+          "Esomeprazole",
+          "Metoclopramide"
+        ],
+        "explanation": "The primary treatment for non-erosive GERD is acid control.\n**Antacids** (a. Magnesium trisilicate, c. Magnesium hydroxide) neutralize stomach acid for quick, temporary relief.\n**Proton Pump Inhibitors (PPIs)** (b. Omeprazole, d. Esomeprazole) are powerful acid suppressors and a first-line treatment.\n**Metoclopramide** (e) is a **pro-kinetic** agent. It is not an acid suppressor. While it can be used for GERD in very specific cases (e.g., if the patient also has delayed gastric emptying), it is not a standard or primary medication for typical GERD due to its significant neurologic side-effect profile (e.g., tardive dyskinesia).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557662",
+        "userAnswer": "Protection from upper gastrointestinal bleeding",
+        "correctAnswer": "Protection from upper gastrointestinal bleeding",
+        "questionText": "Chronic hepatitis can progress to all the following except",
+        "options": [
+          "Liver cirrhosis",
+          "Portal hypertension",
+          "Protection from upper gastrointestinal bleeding",
+          "Hepatic encephalopathy",
+          "Hepatocellular carcinoma"
+        ],
+        "explanation": "Chronic hepatitis leads to a cascade of severe complications, and option (c) is the opposite of what actually happens.\nChronic inflammation leads to progressive scarring of the liver, which is called **cirrhosis** (a).\nThis scarring obstructs blood flow through the liver, causing blood to back up in the portal vein system. This is called **portal hypertension** (b).\nThis high pressure forces varicose veins to form, especially in the esophagus (esophageal varices). These varices are fragile and prone to rupture, causing **life-threatening upper gastrointestinal bleeding**. Therefore, chronic hepatitis *causes* this bleeding, it does not *protect* from it.\nAs the liver fails (decompensated cirrhosis), it can no longer clear toxins like ammonia, leading to **hepatic encephalopathy** (d).\nChronic inflammation and cirrhosis are the strongest risk factors for developing liver cancer, known as **hepatocellular carcinoma** (e).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557656",
+        "userAnswer": "All the above",
+        "correctAnswer": "All the above",
+        "questionText": "A 46-year-old man has been diagnosed with hepatitis B in your hospital. In the management of chronic active hepatitis B, which of the following medicines can be used?",
+        "options": [
+          "Tenofovir",
+          "Lamivudine",
+          "Entecavir",
+          "Pegylated Interferon alfa-2a",
+          "All the above"
+        ],
+        "explanation": "All the medications listed are approved and effective first-line or second-line treatments for chronic active hepatitis B.\n**Tenofovir**, **Lamivudine**, and **Entecavir** are oral antiviral medications that work by suppressing the replication of the hepatitis B virus.\n\n**Pegylated Interferon alfa-2a** is an injection that helps the body's own immune system to fight the virus.\nSince all are valid treatment options, the correct answer is \"All the above\".",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764773186059",
+    "userId": "60wa7spxoMdP1xU3TmIVL896Sdj1",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764773186059,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1764568557645",
+        "userAnswer": "All children presenting with constipation",
+        "correctAnswer": "All children presenting with constipation",
+        "questionText": "Indications for referral in a patient with constipation include the following except",
+        "options": [
+          "Absence of bowel sounds",
+          "Inability to pass flatus",
+          "Suspected surgical causes of constipation",
+          "Constipation resistant to medical treatment",
+          "All children presenting with constipation"
+        ],
+        "explanation": "This question asks for the one option that is *not* an indication for referral.\n**a, b, c:** Absence of bowel sounds, inability to pass flatus, and suspected surgical causes are all \"red flags\" pointing to a possible bowel obstruction, which is a surgical emergency requiring immediate referral.\n**d:** Constipation that doesn't respond to standard first-line medical treatment in a primary care setting is a valid reason for referral to a specialist (like a gastroenterologist) for further workup.\n**e:** This is the exception. Simple, functional constipation is extremely common in children and is routinely managed in primary care. It does *not* require an automatic referral. Only cases that are severe, resistant to treatment, or accompanied by red flags (like failure to thrive, severe abdominal distension, etc.) would be referred.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557628",
+        "userAnswer": "Metoclopramide",
+        "correctAnswer": "Metoclopramide",
+        "questionText": "All are important medications in the management of non-erosive gastro-oesophageal reflux disease except",
+        "options": [
+          "Magnesium trisilicate",
+          "Omeprazole",
+          "Magnesium hydroxide",
+          "Esomeprazole",
+          "Metoclopramide"
+        ],
+        "explanation": "The primary treatment for non-erosive GERD is acid control.\n**Antacids** (a. Magnesium trisilicate, c. Magnesium hydroxide) neutralize stomach acid for quick, temporary relief.\n**Proton Pump Inhibitors (PPIs)** (b. Omeprazole, d. Esomeprazole) are powerful acid suppressors and a first-line treatment.\n**Metoclopramide** (e) is a **pro-kinetic** agent. It is not an acid suppressor. While it can be used for GERD in very specific cases (e.g., if the patient also has delayed gastric emptying), it is not a standard or primary medication for typical GERD due to its significant neurologic side-effect profile (e.g., tardive dyskinesia).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557662",
+        "userAnswer": "Protection from upper gastrointestinal bleeding",
+        "correctAnswer": "Protection from upper gastrointestinal bleeding",
+        "questionText": "Chronic hepatitis can progress to all the following except",
+        "options": [
+          "Liver cirrhosis",
+          "Portal hypertension",
+          "Protection from upper gastrointestinal bleeding",
+          "Hepatic encephalopathy",
+          "Hepatocellular carcinoma"
+        ],
+        "explanation": "Chronic hepatitis leads to a cascade of severe complications, and option (c) is the opposite of what actually happens.\nChronic inflammation leads to progressive scarring of the liver, which is called **cirrhosis** (a).\nThis scarring obstructs blood flow through the liver, causing blood to back up in the portal vein system. This is called **portal hypertension** (b).\nThis high pressure forces varicose veins to form, especially in the esophagus (esophageal varices). These varices are fragile and prone to rupture, causing **life-threatening upper gastrointestinal bleeding**. Therefore, chronic hepatitis *causes* this bleeding, it does not *protect* from it.\nAs the liver fails (decompensated cirrhosis), it can no longer clear toxins like ammonia, leading to **hepatic encephalopathy** (d).\nChronic inflammation and cirrhosis are the strongest risk factors for developing liver cancer, known as **hepatocellular carcinoma** (e).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557656",
+        "userAnswer": "All the above",
+        "correctAnswer": "All the above",
+        "questionText": "A 46-year-old man has been diagnosed with hepatitis B in your hospital. In the management of chronic active hepatitis B, which of the following medicines can be used?",
+        "options": [
+          "Tenofovir",
+          "Lamivudine",
+          "Entecavir",
+          "Pegylated Interferon alfa-2a",
+          "All the above"
+        ],
+        "explanation": "All the medications listed are approved and effective first-line or second-line treatments for chronic active hepatitis B.\n**Tenofovir**, **Lamivudine**, and **Entecavir** are oral antiviral medications that work by suppressing the replication of the hepatitis B virus.\n\n**Pegylated Interferon alfa-2a** is an injection that helps the body's own immune system to fight the virus.\nSince all are valid treatment options, the correct answer is \"All the above\".",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764768192025",
+    "userId": "0qUCKN9hMEcjTjwPrGvbjAQvm9k2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764768192025,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1764568564281",
+        "userAnswer": "Coma",
+        "correctAnswer": "Coma",
+        "questionText": "Grade 1 encephalopathy presents with all the following except",
+        "options": [
+          "Mild confusion",
+          "Tremors",
+          "Restless",
+          "Irritability",
+          "Coma"
+        ],
+        "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557626",
+        "userAnswer": "Encourage wearing of corsets",
+        "correctAnswer": "Encourage wearing of corsets",
+        "questionText": "All are non-pharmacological management of gastro-oesophageal reflux disease except",
+        "options": [
+          "Encourage wearing of corsets",
+          "Elevate head of bed by 30 degrees",
+          "Avoidance of over-eating and heavy meals before bedtime",
+          "Avoid sleeping within 3 hours after eating",
+          "Weight reduction in overweight and obese individuals"
+        ],
+        "explanation": "Non-pharmacological (lifestyle) management for GERD aims to *reduce* factors that cause reflux.\nOptions (b), (c), (d), and (e) are all standard recommendations. Elevating the head of the bed uses gravity to keep acid down. Avoiding large meals before bed, not lying down after eating, and weight reduction all help to *decrease* pressure on the stomach.\nA **corset** (option a) does the opposite: it significantly *increases* intra-abdominal pressure, which would force stomach acid up into the esophagus and worsen GERD.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557596",
+        "userAnswer": "Hypokalaemia",
+        "correctAnswer": "Hypokalaemia",
+        "questionText": "The habitual use of laxative will most likely cause one of the following",
+        "options": [
+          "Hypokalaemia",
+          "Small bowel obstruction",
+          "Peptic ulcer disease",
+          "Hypercalcaemia",
+          "None of the above"
+        ],
+        "explanation": "Laxative abuse, particularly with stimulant or osmotic laxatives, leads to large volumes of fluid and electrolyte loss through the stool. Potassium is a major electrolyte in gastrointestinal fluid, and its excessive loss leads to **hypokalaemia** (low potassium in the blood). This can cause muscle weakness, fatigue, and cardiac arrhythmias.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557616",
+        "userAnswer": "Oral/oesophageal candidiasis",
+        "correctAnswer": "Oral/oesophageal candidiasis",
+        "questionText": "Nystatin is recommended for treatment of",
+        "options": [
+          "Oral/oesophageal candidiasis",
+          "Vulvo-vaginal candidiasis",
+          "Gonorrhea",
+          "Oral ulceration due to viral infections",
+          "None of the above"
+        ],
+        "explanation": "Nystatin is an antifungal medication. It works topically, meaning by direct contact with the fungus.\nFor **oral/oesophageal candidiasis** (thrush), it is used as an oral suspension (a \"swish and swallow\" liquid) that coats the mouth and throat, killing the *Candida* fungus.\nIt is generally not the first-line treatment for **vulvo-vaginal candidiasis** (b), which is typically treated with azole antifungals (like clotrimazole cream or oral fluconazole).\nIt is completely ineffective against **gonorrhea** (c), which is a bacterial infection, and **viral infections** (d).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557632",
+        "userAnswer": "Amoxicillin",
+        "correctAnswer": "Amoxicillin",
+        "questionText": "Agents that decrease lower oesophageal sphincter pressure include the following except",
+        "options": [
+          "Amoxicillin",
+          "Cigarettes",
+          "Calcium channel blockers",
+          "Pethidine",
+          "Anticholinergics"
+        ],
+        "explanation": "This question asks for the exception. A decrease in lower esophageal sphincter (LES) pressure allows stomach acid to reflux more easily, causing or worsening GERD.\n**b, c, d, and e** are all known to relax the LES smooth muscle:\n**Cigarettes** (nicotine)\n**Calcium channel blockers**\n**Pethidine** (opioids)\n**Anticholinergics**\n**a. Amoxicillin** is an antibiotic. It has no primary effect on the pressure of the lower esophageal sphincter.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764768097681",
+    "userId": "0qUCKN9hMEcjTjwPrGvbjAQvm9k2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764768097681,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1764568564281",
+        "userAnswer": "Restless",
+        "correctAnswer": "Coma",
+        "questionText": "Grade 1 encephalopathy presents with all the following except",
+        "options": [
+          "Mild confusion",
+          "Tremors",
+          "Restless",
+          "Irritability",
+          "Coma"
+        ],
+        "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557626",
+        "userAnswer": "Avoid sleeping within 3 hours after eating",
+        "correctAnswer": "Encourage wearing of corsets",
+        "questionText": "All are non-pharmacological management of gastro-oesophageal reflux disease except",
+        "options": [
+          "Encourage wearing of corsets",
+          "Elevate head of bed by 30 degrees",
+          "Avoidance of over-eating and heavy meals before bedtime",
+          "Avoid sleeping within 3 hours after eating",
+          "Weight reduction in overweight and obese individuals"
+        ],
+        "explanation": "Non-pharmacological (lifestyle) management for GERD aims to *reduce* factors that cause reflux.\nOptions (b), (c), (d), and (e) are all standard recommendations. Elevating the head of the bed uses gravity to keep acid down. Avoiding large meals before bed, not lying down after eating, and weight reduction all help to *decrease* pressure on the stomach.\nA **corset** (option a) does the opposite: it significantly *increases* intra-abdominal pressure, which would force stomach acid up into the esophagus and worsen GERD.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557596",
+        "userAnswer": "Peptic ulcer disease",
+        "correctAnswer": "Hypokalaemia",
+        "questionText": "The habitual use of laxative will most likely cause one of the following",
+        "options": [
+          "Hypokalaemia",
+          "Small bowel obstruction",
+          "Peptic ulcer disease",
+          "Hypercalcaemia",
+          "None of the above"
+        ],
+        "explanation": "Laxative abuse, particularly with stimulant or osmotic laxatives, leads to large volumes of fluid and electrolyte loss through the stool. Potassium is a major electrolyte in gastrointestinal fluid, and its excessive loss leads to **hypokalaemia** (low potassium in the blood). This can cause muscle weakness, fatigue, and cardiac arrhythmias.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557616",
+        "userAnswer": "Gonorrhea",
+        "correctAnswer": "Oral/oesophageal candidiasis",
+        "questionText": "Nystatin is recommended for treatment of",
+        "options": [
+          "Oral/oesophageal candidiasis",
+          "Vulvo-vaginal candidiasis",
+          "Gonorrhea",
+          "Oral ulceration due to viral infections",
+          "None of the above"
+        ],
+        "explanation": "Nystatin is an antifungal medication. It works topically, meaning by direct contact with the fungus.\nFor **oral/oesophageal candidiasis** (thrush), it is used as an oral suspension (a \"swish and swallow\" liquid) that coats the mouth and throat, killing the *Candida* fungus.\nIt is generally not the first-line treatment for **vulvo-vaginal candidiasis** (b), which is typically treated with azole antifungals (like clotrimazole cream or oral fluconazole).\nIt is completely ineffective against **gonorrhea** (c), which is a bacterial infection, and **viral infections** (d).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557632",
+        "userAnswer": "",
+        "correctAnswer": "Amoxicillin",
+        "questionText": "Agents that decrease lower oesophageal sphincter pressure include the following except",
+        "options": [
+          "Amoxicillin",
+          "Cigarettes",
+          "Calcium channel blockers",
+          "Pethidine",
+          "Anticholinergics"
+        ],
+        "explanation": "This question asks for the exception. A decrease in lower esophageal sphincter (LES) pressure allows stomach acid to reflux more easily, causing or worsening GERD.\n**b, c, d, and e** are all known to relax the LES smooth muscle:\n**Cigarettes** (nicotine)\n**Calcium channel blockers**\n**Pethidine** (opioids)\n**Anticholinergics**\n**a. Amoxicillin** is an antibiotic. It has no primary effect on the pressure of the lower esophageal sphincter.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764768068139",
+    "userId": "0qUCKN9hMEcjTjwPrGvbjAQvm9k2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764768068139,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1764568564281",
+        "userAnswer": "Irritability",
+        "correctAnswer": "Coma",
+        "questionText": "Grade 1 encephalopathy presents with all the following except",
+        "options": [
+          "Mild confusion",
+          "Tremors",
+          "Restless",
+          "Irritability",
+          "Coma"
+        ],
+        "explanation": "The West Haven criteria grade hepatic encephalopathy from 1 (mild) to 4 (severe).\n**Grade 1** is the mildest form, characterized by subtle changes like mild confusion, irritability, restlessness, and altered sleep patterns.\n**Grade 2** is characterized by definite personality changes, lethargy, disorientation, and inappropriate behavior (decreased inhibition). Asterixis is easily elicited.\n**Grade 3** is a severe stage where the patient is very sleepy, difficult to rouse (**stuporous**), but *can* still be aroused by stimuli. When awake, they are markedly confused, may be aggressive, and unable to speak clearly (inarticulate speech).\n**Grade 4** is defined as **Coma **(being unresponsive), where the patient is *unarousable*.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557626",
+        "userAnswer": "Avoidance of over-eating and heavy meals before bedtime",
+        "correctAnswer": "Encourage wearing of corsets",
+        "questionText": "All are non-pharmacological management of gastro-oesophageal reflux disease except",
+        "options": [
+          "Encourage wearing of corsets",
+          "Elevate head of bed by 30 degrees",
+          "Avoidance of over-eating and heavy meals before bedtime",
+          "Avoid sleeping within 3 hours after eating",
+          "Weight reduction in overweight and obese individuals"
+        ],
+        "explanation": "Non-pharmacological (lifestyle) management for GERD aims to *reduce* factors that cause reflux.\nOptions (b), (c), (d), and (e) are all standard recommendations. Elevating the head of the bed uses gravity to keep acid down. Avoiding large meals before bed, not lying down after eating, and weight reduction all help to *decrease* pressure on the stomach.\nA **corset** (option a) does the opposite: it significantly *increases* intra-abdominal pressure, which would force stomach acid up into the esophagus and worsen GERD.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557596",
+        "userAnswer": "Hypercalcaemia",
+        "correctAnswer": "Hypokalaemia",
+        "questionText": "The habitual use of laxative will most likely cause one of the following",
+        "options": [
+          "Hypokalaemia",
+          "Small bowel obstruction",
+          "Peptic ulcer disease",
+          "Hypercalcaemia",
+          "None of the above"
+        ],
+        "explanation": "Laxative abuse, particularly with stimulant or osmotic laxatives, leads to large volumes of fluid and electrolyte loss through the stool. Potassium is a major electrolyte in gastrointestinal fluid, and its excessive loss leads to **hypokalaemia** (low potassium in the blood). This can cause muscle weakness, fatigue, and cardiac arrhythmias.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557616",
+        "userAnswer": "None of the above",
+        "correctAnswer": "Oral/oesophageal candidiasis",
+        "questionText": "Nystatin is recommended for treatment of",
+        "options": [
+          "Oral/oesophageal candidiasis",
+          "Vulvo-vaginal candidiasis",
+          "Gonorrhea",
+          "Oral ulceration due to viral infections",
+          "None of the above"
+        ],
+        "explanation": "Nystatin is an antifungal medication. It works topically, meaning by direct contact with the fungus.\nFor **oral/oesophageal candidiasis** (thrush), it is used as an oral suspension (a \"swish and swallow\" liquid) that coats the mouth and throat, killing the *Candida* fungus.\nIt is generally not the first-line treatment for **vulvo-vaginal candidiasis** (b), which is typically treated with azole antifungals (like clotrimazole cream or oral fluconazole).\nIt is completely ineffective against **gonorrhea** (c), which is a bacterial infection, and **viral infections** (d).",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557632",
+        "userAnswer": "Pethidine",
+        "correctAnswer": "Amoxicillin",
+        "questionText": "Agents that decrease lower oesophageal sphincter pressure include the following except",
+        "options": [
+          "Amoxicillin",
+          "Cigarettes",
+          "Calcium channel blockers",
+          "Pethidine",
+          "Anticholinergics"
+        ],
+        "explanation": "This question asks for the exception. A decrease in lower esophageal sphincter (LES) pressure allows stomach acid to reflux more easily, causing or worsening GERD.\n**b, c, d, and e** are all known to relax the LES smooth muscle:\n**Cigarettes** (nicotine)\n**Calcium channel blockers**\n**Pethidine** (opioids)\n**Anticholinergics**\n**a. Amoxicillin** is an antibiotic. It has no primary effect on the pressure of the lower esophageal sphincter.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764762289257",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "pediatrics"
+    ],
+    "timestamp": 1764762289257,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1761189339727",
+        "userAnswer": "un8unn9n",
+        "correctAnswer": "un8unn9n",
+        "questionText": "uybu un nn nuin n9n9 ",
+        "options": [
+          "un8unn9n",
+          "8999j9j9j",
+          "8998j9j9j9j",
+          "9j9j9j9j9j"
+        ],
+        "explanation": "n999j9j 9j9j 9j9j9j 9j9j9",
+        "subjectId": "pediatrics"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764762275481",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "pediatrics"
+    ],
+    "timestamp": 1764762275481,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1761189339727",
+        "userAnswer": "8999j9j9j",
+        "correctAnswer": "un8unn9n",
+        "questionText": "uybu un nn nuin n9n9 ",
+        "options": [
+          "un8unn9n",
+          "8999j9j9j",
+          "8998j9j9j9j",
+          "9j9j9j9j9j"
+        ],
+        "explanation": "n999j9j 9j9j 9j9j9j 9j9j9",
+        "subjectId": "pediatrics"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764762084204",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764762084204,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A syntax extension for JavaScript",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using props",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764762054382",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764762054382,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764761784921",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764761784921,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A CSS preprocessor",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using Redux",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764761078794",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764761078794,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764760809811",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "nextjs"
+    ],
+    "timestamp": 1764760809811,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "nextjs1",
+        "userAnswer": "Smaller bundle sizes",
+        "correctAnswer": "Improved SEO and initial page load",
+        "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+        "options": [
+          "Faster client-side navigation",
+          "Improved SEO and initial page load",
+          "Smaller bundle sizes",
+          "Easier state management"
+        ],
+        "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load.",
+        "subjectId": "nextjs"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764760168162",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764760168162,
+    "score": 50,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A JavaScript library",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using props",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764757918325",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764757918325,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A CSS preprocessor",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using Redux",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764757896611",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764757896611,
+    "score": 50,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A syntax extension for JavaScript",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using context",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764756468380",
+    "userId": "0qUCKN9hMEcjTjwPrGvbjAQvm9k2",
+    "subjectIds": [
+      "paediatrics"
+    ],
+    "timestamp": 1764756468380,
+    "score": 20,
+    "questions": [
+      {
+        "questionId": "q-1761204734344",
+        "userAnswer": "Cryptosporidium species",
+        "correctAnswer": "Cryptosporidium species",
+        "questionText": "The commonest protozoan causing acute diarrhea in children is",
+        "options": [
+          "Giardia intestinalis",
+          "Entamoeba histolytica",
+          "Cryptosporidium species",
+          "Entamoeba coli",
+          "Schistosoma haematobium"
+        ],
+        "explanation": "Cryptosporidium species (particularly C. parvum and C. hominis) are the most common protozoan parasites causing acute diarrhea in children worldwide, especially in low-resource settings and during outbreaks (e.g., via contaminated water or person-to-person transmission in daycares). It is a leading cause of moderate-to-severe diarrheal disease in children under 5 years, per WHO and CDC data.\n\nGiardia intestinalis (a) is common but typically causes chronic or subacute diarrhea with malabsorption, not acute watery diarrhea as the primary presentation.\n\nEntamoeba histolytica (b) causes dysentery (bloody diarrhea), not typical acute watery diarrhea, and is less common in children overall.\n\nEntamoeba coli (d) is a non-pathogenic commensal and does not cause disease.",
+        "subjectId": "paediatrics"
+      },
+      {
+        "questionId": "q-1761204734343",
+        "userAnswer": "Entamoeba histolytica",
+        "correctAnswer": "Rotavirus",
+        "questionText": "The most common infectious agent in acute diarrhea among children is",
+        "options": [
+          "Rotavirus",
+          "Entamoeba histolytica",
+          "Norovirus",
+          "Shigella species",
+          "Campylobacter"
+        ],
+        "explanation": "• \ta. Rotavirus \nCorrect. Rotavirus is the leading cause of acute diarrhea in children under five, especially in settings without widespread vaccination.\n• \tb. Entamoeba histolytica\nThis protozoan causes amoebiasis, which can lead to bloody diarrhea, but it's not the most common cause overall.\n• \tc. Norovirus\nNorovirus is a common cause of gastroenteritis in older children and adults, but rotavirus is more prevalent in younger children.\n• \td. Shigella species\nShigella is a bacterial cause of dysentery (bloody diarrhea), but it's less common than viral causes.\n• \te. Campylobacter\nAnother bacterial cause, often linked to foodborne illness, but again, not the most common in children.",
+        "subjectId": "paediatrics"
+      },
+      {
+        "questionId": "q-1761204734341",
+        "userAnswer": "The commonest complication is dehydration",
+        "correctAnswer": "Antibiotics is the mainstay treatment",
+        "questionText": "Which of the following is not true concerning diarrhea in children?",
+        "options": [
+          "It is often self-limiting",
+          "Antibiotics is the mainstay treatment",
+          "Fluid loss occur quickly compared to adults",
+          "The commonest complication is dehydration",
+          "Giving antibiotics in all cases of diarrhea may worsen or prolong the condition"
+        ],
+        "explanation": "• \ta. It is often self-limiting \nTrue. Most cases of childhood diarrhea, especially viral, resolve on their own with supportive care like hydration.\n• \tb. Antibiotics is the mainstay treatment \nThis is not true — and thus the correct answer to the question. Antibiotics are not routinely used in childhood diarrhea and may even worsen outcomes if used unnecessarily.\n• \tc. Fluid loss occurs quickly compared to adults \nTrue. Children have a higher surface area-to-volume ratio and lower fluid reserves, making them more vulnerable to dehydration.\n• \td. The commonest complication is dehydration \nTrue. Dehydration is the most serious and frequent complication of diarrhea in children and can be life-threatening if not managed promptly.\n• \te. Giving antibiotics in all cases of diarrhea may worsen or prolong the condition \nTrue. Overuse of antibiotics can disrupt gut flora and lead to complications like antibiotic-associated diarrhea or resistance.",
+        "subjectId": "paediatrics"
+      },
+      {
+        "questionId": "q-1761204734338",
+        "userAnswer": "Bacterial infections",
+        "correctAnswer": "Viral infections",
+        "questionText": "The commonest cause of diarrhea in children is",
+        "options": [
+          "Viral infections",
+          "Bacterial infections",
+          "Protozoal infestations",
+          "Medications",
+          "None of the above"
+        ],
+        "explanation": "• \tViral infections are the leading cause, especially in children under five. Rotavirus is the most frequent culprit globally, followed by norovirus and adenovirus.\n Why Viral Diarrhea Is So Common in Kids\n \tChildren’s immune systems are still developing.\n \tViruses spread easily in daycare and school settings.\n \tPoor hand hygiene and close contact increase transmission.\n \tBacterial infections (e.g., Salmonella, Shigella, E. coli) are less common but can cause more severe symptoms like bloody diarrhea or high fever.\n• \tProtozoal infestations, such as Giardia lamblia, tend to cause chronic diarrhea and are more prevalent in areas with poor water sanitation.\n• \tMedications, particularly antibiotics, can disrupt gut flora and lead to diarrhea, but this is a less frequent cause compared to infections.",
+        "subjectId": "paediatrics"
+      },
+      {
+        "questionId": "q-1761204734345",
+        "userAnswer": "Codeine",
+        "correctAnswer": "Penicillin",
+        "questionText": "Which of these drugs commonly causes acute diarrhea?",
+        "options": [
+          "Morphine",
+          "Codeine",
+          "Penicillin",
+          "Metronidazole",
+          "Ibuprofen"
+        ],
+        "explanation": "• \ta. Morphine\nMorphine typically causes constipation, not diarrhea.\n• \tb. Codeine\nLike morphine, codeine is an opioid and more likely to cause constipation.\n• \tc. Penicillin \nCorrect. Penicillin and other antibiotics can disrupt normal gut flora, leading to antibiotic-associated diarrhea.\n• \td. Metronidazole\nWhile it can cause gastrointestinal upset, diarrhea is not its most common side effect.\n• \te. Ibuprofen\nMore likely to cause gastric irritation or ulcers, not typically diarrhea.",
+        "subjectId": "paediatrics"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764751763332",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764751763332,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A JavaScript library",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using context",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764751703367",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764751703367,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A JavaScript library",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using Redux",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
     "id": "attempt-1764748850459",
     "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
     "subjectIds": [

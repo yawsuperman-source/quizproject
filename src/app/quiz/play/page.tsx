@@ -9,11 +9,10 @@ import { useToast } from '@/hooks/use-toast';
 
 import { QuestionDisplay } from '@/components/quiz/question-display';
 import { FeedbackDisplay } from '@/components/quiz/feedback-display';
+import { TimerDisplay } from '@/components/quiz/timer-display';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Loader2 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Link from 'next/link';
 
 export default function PlayQuizPage() {
   const router = useRouter();
@@ -33,6 +32,7 @@ export default function PlayQuizPage() {
     recordAnswer,
     isQuizFinished,
     endQuiz,
+    isExamMode,
   } = useQuizStore();
 
   const [loading, setLoading] = useState(true);
@@ -40,6 +40,12 @@ export default function PlayQuizPage() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
   useEffect(() => {
+    // If we already have questions (e.g., from a redo), don't fetch them again.
+    if (questions.length > 0) {
+        setLoading(false);
+        return;
+    }
+
     if (subjectIds.length === 0) {
       router.replace('/quiz/select');
       return;
@@ -62,7 +68,8 @@ export default function PlayQuizPage() {
       setLoading(false);
     }
     fetchQuestions();
-  }, [subjectIds, answerFilter, numQuestions, setQuestions, router, user, toast]);
+
+  }, [subjectIds, answerFilter, numQuestions, setQuestions, router, user, toast, questions.length]);
   
   useEffect(() => {
     if(isQuizFinished){
@@ -74,11 +81,11 @@ export default function PlayQuizPage() {
   const progressValue = useMemo(() => (questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0), [currentQuestionIndex, questions.length]);
 
   const isCurrentQuestionSubmitted = useMemo(() => {
-    if (!isSubmitted || isSubmitted.length === 0) {
+    if (isExamMode || !isSubmitted || isSubmitted.length === 0) {
         return false;
     }
     return isSubmitted[currentQuestionIndex];
-  }, [isSubmitted, currentQuestionIndex]);
+  }, [isSubmitted, currentQuestionIndex, isExamMode]);
 
   useEffect(() => {
     if (userAnswers && userAnswers.length > 0) {
@@ -89,7 +96,7 @@ export default function PlayQuizPage() {
   const handleAnswerSelect = (answer: string) => {
     setSelectedAnswer(answer);
     recordAnswer(answer);
-    if (user && currentQuestion) {
+    if (user && currentQuestion && !isExamMode) {
       const isCorrect = answer === currentQuestion.correctAnswer;
       saveUserAnswer(user.id, currentQuestion.id, isCorrect);
     }
@@ -116,27 +123,15 @@ export default function PlayQuizPage() {
       </div>
     );
   }
-
-  if (questions.length === 0) {
-    return (
-        <div className="container flex items-center justify-center py-20">
-            <Card className="max-w-md text-center">
-                <CardHeader>
-                    <CardTitle>No Questions Found</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <p>We couldn't find any questions matching your criteria.</p>
-                    <Button asChild>
-                        <Link href="/quiz/select">Try Different Options</Link>
-                    </Button>
-                </CardContent>
-            </Card>
-      </div>
-    )
+  
+  if (questions.length === 0 && !loading) {
+      router.replace('/quiz/select');
+      return null;
   }
 
   return (
     <div className="container mx-auto py-10 px-4">
+      {isExamMode && <TimerDisplay />}
       <div className="w-full max-w-3xl mx-auto space-y-6">
         <Progress value={progressValue} className="w-full" />
         

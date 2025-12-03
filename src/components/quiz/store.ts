@@ -14,9 +14,12 @@ type QuizState = {
   incorrectAnswers: number;
   isQuizFinished: boolean;
   attemptId: string | null;
-  setQuizConfig: (config: { subjectIds: string[], answerFilter: AnswerFilter, numQuestions: number }) => void;
+  isExamMode: boolean;
+  timer: number; // in minutes
+  startTime: number | null;
+  setQuizConfig: (config: { subjectIds: string[], answerFilter: AnswerFilter, numQuestions: number, isExamMode: boolean, timer: number }) => void;
   setQuestions: (questions: Question[]) => void;
-  startQuizWithQuestions: (questions: Question[]) => void;
+  startQuizWithQuestions: (questions: Question[], options?: { isExamMode?: boolean; timer?: number }) => void;
   nextQuestion: (userId: string) => Promise<void>;
   previousQuestion: () => void;
   recordAnswer: (selectedAnswer: string) => void;
@@ -36,11 +39,16 @@ const useQuizStore = create<QuizState>((set, get) => ({
   incorrectAnswers: 0,
   isQuizFinished: false,
   attemptId: null,
+  isExamMode: false,
+  timer: 0,
+  startTime: null,
 
   setQuizConfig: (config) => set({
     subjectIds: config.subjectIds,
     answerFilter: config.answerFilter,
     numQuestions: config.numQuestions,
+    isExamMode: config.isExamMode,
+    timer: config.timer,
     questions: [],
     currentQuestionIndex: 0,
     userAnswers: [],
@@ -49,27 +57,34 @@ const useQuizStore = create<QuizState>((set, get) => ({
     incorrectAnswers: 0,
     isQuizFinished: false,
     attemptId: null,
+    startTime: config.isExamMode ? Date.now() : null,
   }),
 
   setQuestions: (questions) => set({
     questions,
     userAnswers: Array(questions.length).fill(null),
     isSubmitted: Array(questions.length).fill(false),
-   }),
+  }),
 
-  startQuizWithQuestions: (questions) => set(() => ({
-    questions,
-    subjectIds: Array.from(new Set(questions.map(q => q.subjectId))),
-    numQuestions: questions.length,
-    answerFilter: 'all',
-    currentQuestionIndex: 0,
-    userAnswers: Array(questions.length).fill(null),
-    isSubmitted: Array(questions.length).fill(false),
-    correctAnswers: 0,
-    incorrectAnswers: 0,
-    isQuizFinished: false,
-    attemptId: null, // Reset attemptId for redos
-  })),
+  startQuizWithQuestions: (questions, options = {}) => set(() => {
+    const { isExamMode = false, timer = 0 } = options;
+    return {
+        questions,
+        subjectIds: Array.from(new Set(questions.map(q => q.subjectId))),
+        numQuestions: questions.length,
+        answerFilter: 'all',
+        currentQuestionIndex: 0,
+        userAnswers: Array(questions.length).fill(null),
+        isSubmitted: Array(questions.length).fill(false),
+        correctAnswers: 0,
+        incorrectAnswers: 0,
+        isQuizFinished: false,
+        attemptId: null,
+        isExamMode,
+        timer,
+        startTime: isExamMode ? Date.now() : null,
+    }
+  }),
 
   nextQuestion: async (userId: string) => {
     const state = get();
@@ -106,7 +121,10 @@ const useQuizStore = create<QuizState>((set, get) => ({
     newAnswers[state.currentQuestionIndex] = selectedAnswer;
 
     const newSubmitted = [...state.isSubmitted];
-    newSubmitted[state.currentQuestionIndex] = true;
+    // In exam mode, we don't mark as submitted until the end.
+    if (!get().isExamMode) {
+        newSubmitted[state.currentQuestionIndex] = true;
+    }
 
     return {
       userAnswers: newAnswers,
@@ -115,7 +133,7 @@ const useQuizStore = create<QuizState>((set, get) => ({
   }),
 
   endQuiz: async (userId: string) => {
-    const { questions, userAnswers, subjectIds } = get();
+    const { questions, userAnswers, subjectIds, isExamMode } = get();
     let correct = 0;
     userAnswers.forEach((answer, index) => {
       if (answer && questions[index] && answer === questions[index].correctAnswer) {
@@ -124,6 +142,11 @@ const useQuizStore = create<QuizState>((set, get) => ({
     });
     
     const result = await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
+    if (isExamMode) {
+        // Mark all questions as submitted at the end of the exam
+        set({ isSubmitted: Array(questions.length).fill(true) });
+    }
+
     if (result.success && result.attempt) {
         set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct, attemptId: result.attempt.id });
     } else {
@@ -143,6 +166,9 @@ const useQuizStore = create<QuizState>((set, get) => ({
     incorrectAnswers: 0,
     isQuizFinished: false,
     attemptId: null,
+    isExamMode: false,
+    timer: 0,
+    startTime: null,
   }),
 }));
 
