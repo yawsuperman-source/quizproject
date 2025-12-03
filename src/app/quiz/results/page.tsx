@@ -8,39 +8,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import Confetti from 'react-dom-confetti';
-import { useAuth } from '@/hooks/use-auth';
-import { saveQuizAttempt } from '@/lib/actions';
 
 export default function ResultsPage() {
   const router = useRouter();
-  const { user } = useAuth();
-  const { subjectIds, correctAnswers, incorrectAnswers, questions, userAnswers, resetQuiz } = useQuizStore();
+  const { correctAnswers, incorrectAnswers, questions, resetQuiz, attemptId } = useQuizStore();
   const totalQuestions = questions.length;
   const [isClient, setIsClient] = useState(false);
-  const [attemptId, setAttemptId] = useState<string | null>(null);
 
   useEffect(() => {
     setIsClient(true);
     // If user lands here without finishing a quiz, redirect.
     if (totalQuestions === 0) {
       router.replace('/quiz/select');
-      return;
     }
-
-    if (user && totalQuestions > 0 && !attemptId) {
-        saveQuizAttempt(user.uid, subjectIds, questions, userAnswers)
-        .then(result => {
-          if (result.success && result.attempt) {
-            setAttemptId(result.attempt.id);
-          } else {
-            console.error("Failed to save quiz attempt:", result.error);
-          }
-        })
-        .catch(error => {
-            console.error("An error occurred while saving the quiz attempt:", error);
-        });
-    }
-  }, [totalQuestions, router, user, subjectIds, questions, userAnswers, attemptId]);
+  }, [totalQuestions, router]);
 
   const score = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
 

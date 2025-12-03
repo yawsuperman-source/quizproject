@@ -2,12 +2,14 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { getQuizAttempt } from '@/lib/actions';
+import useQuizStore from '@/components/quiz/store';
 import type { QuizAttempt, QuizAttemptQuestion, Question } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, RefreshCw } from 'lucide-react';
 import { QuestionDisplay } from '@/components/quiz/question-display';
 import { FeedbackDisplay } from '@/components/quiz/feedback-display';
 
@@ -19,6 +21,8 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
   const [attempt, setAttempt] = useState<AttemptDetails | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const router = useRouter();
+  const startQuizWithQuestions = useQuizStore((state) => state.startQuizWithQuestions);
 
   useEffect(() => {
     if (!id) return;
@@ -31,6 +35,20 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
       setLoading(false);
     });
   }, [id]);
+
+  const handleRedoQuiz = () => {
+    if (!attempt) return;
+    const questionsToRedo = attempt.questions.map(q => ({
+        id: q.questionId,
+        questionText: q.questionText,
+        options: q.options,
+        correctAnswer: q.correctAnswer,
+        subjectId: q.subjectId,
+        explanation: q.explanation,
+    }));
+    startQuizWithQuestions(questionsToRedo);
+    router.push('/quiz/play');
+  };
 
   const handleNext = () => {
     if (attempt && currentQuestionIndex < attempt.questions.length - 1) {
@@ -47,8 +65,6 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
   const currentQuestionData = useMemo(() => {
       if (!attempt) return null;
       const currentQ = attempt.questions[currentQuestionIndex];
-      // Explicitly map the properties to match the 'Question' type.
-      // This is the most robust way to fix the mismatch.
       const questionForDisplay: Question = {
           id: currentQ.questionId,
           questionText: currentQ.questionText,
@@ -99,11 +115,17 @@ export default function AttemptDetailsClientPage({ id }: { id: string }) {
   return (
     <div className="container mx-auto py-10 px-4">
       <div className="w-full max-w-3xl mx-auto space-y-6">
-        <div className="space-y-2">
-            <h1 className="text-2xl md:text-3xl font-bold">Quiz Review</h1>
-            <p className="text-muted-foreground">
-                Taken on {new Date(attempt.timestamp).toLocaleString()} | Score: {attempt.score}%
-            </p>
+        <div className="flex justify-between items-start">
+            <div className="space-y-2">
+                <h1 className="text-2xl md:text-3xl font-bold">Quiz Review</h1>
+                <p className="text-muted-foreground">
+                    Taken on {new Date(attempt.timestamp).toLocaleString()} | Score: {attempt.score}%
+                </p>
+            </div>
+            <Button onClick={handleRedoQuiz} variant="outline">
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Redo Quiz
+            </Button>
         </div>
 
         <Progress value={progress} className="w-full" />

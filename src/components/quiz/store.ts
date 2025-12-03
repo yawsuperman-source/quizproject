@@ -13,8 +13,10 @@ type QuizState = {
   correctAnswers: number;
   incorrectAnswers: number;
   isQuizFinished: boolean;
+  attemptId: string | null;
   setQuizConfig: (config: { subjectIds: string[], answerFilter: AnswerFilter, numQuestions: number }) => void;
   setQuestions: (questions: Question[]) => void;
+  startQuizWithQuestions: (questions: Question[]) => void;
   nextQuestion: (userId: string) => Promise<void>;
   previousQuestion: () => void;
   recordAnswer: (selectedAnswer: string) => void;
@@ -33,6 +35,7 @@ const useQuizStore = create<QuizState>((set, get) => ({
   correctAnswers: 0,
   incorrectAnswers: 0,
   isQuizFinished: false,
+  attemptId: null,
 
   setQuizConfig: (config) => set({
     subjectIds: config.subjectIds,
@@ -45,6 +48,7 @@ const useQuizStore = create<QuizState>((set, get) => ({
     correctAnswers: 0,
     incorrectAnswers: 0,
     isQuizFinished: false,
+    attemptId: null,
   }),
 
   setQuestions: (questions) => set({
@@ -52,6 +56,20 @@ const useQuizStore = create<QuizState>((set, get) => ({
     userAnswers: Array(questions.length).fill(null),
     isSubmitted: Array(questions.length).fill(false),
    }),
+
+  startQuizWithQuestions: (questions) => set(() => ({
+    questions,
+    subjectIds: Array.from(new Set(questions.map(q => q.subjectId))),
+    numQuestions: questions.length,
+    answerFilter: 'all',
+    currentQuestionIndex: 0,
+    userAnswers: Array(questions.length).fill(null),
+    isSubmitted: Array(questions.length).fill(false),
+    correctAnswers: 0,
+    incorrectAnswers: 0,
+    isQuizFinished: false,
+    attemptId: null, // Reset attemptId for redos
+  })),
 
   nextQuestion: async (userId: string) => {
     const state = get();
@@ -68,8 +86,12 @@ const useQuizStore = create<QuizState>((set, get) => ({
       }
     });
     
-    await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
-    set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct });
+    const result = await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
+    if (result.success && result.attempt) {
+        set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct, attemptId: result.attempt.id });
+    } else {
+        set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct });
+    }
   },
 
   previousQuestion: () => set((state) => {
@@ -101,8 +123,12 @@ const useQuizStore = create<QuizState>((set, get) => ({
       }
     });
     
-    await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
-    set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct });
+    const result = await saveQuizAttempt(userId, subjectIds, questions, userAnswers);
+    if (result.success && result.attempt) {
+        set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct, attemptId: result.attempt.id });
+    } else {
+        set({ isQuizFinished: true, correctAnswers: correct, incorrectAnswers: questions.length - correct });
+    }
   },
 
   resetQuiz: () => set({
@@ -116,6 +142,7 @@ const useQuizStore = create<QuizState>((set, get) => ({
     correctAnswers: 0,
     incorrectAnswers: 0,
     isQuizFinished: false,
+    attemptId: null,
   }),
 }));
 

@@ -1,5 +1,741 @@
 [
   {
+    "id": "attempt-1764748850459",
+    "userId": "8SSrPf3mTNaJyZDgblNjqjI8I7s2",
+    "subjectIds": [
+      "pediatrics"
+    ],
+    "timestamp": 1764748850459,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1761189303399",
+        "userAnswer": "iunerinininn",
+        "correctAnswer": "iunerinininn",
+        "questionText": "uijr9j9jr9j9h994 uuininn ininini n",
+        "options": [
+          "iunerinininn",
+          "infininnini",
+          " in9ninninini"
+        ],
+        "explanation": "jk jfrn  jinn inionnnin",
+        "subjectId": "pediatrics"
+      },
+      {
+        "questionId": "q-1761189339727",
+        "userAnswer": "un8unn9n",
+        "correctAnswer": "un8unn9n",
+        "questionText": "uybu un nn nuin n9n9 ",
+        "options": [
+          "un8unn9n",
+          "8999j9j9j",
+          "8998j9j9j9j",
+          "9j9j9j9j9j"
+        ],
+        "explanation": "n999j9j 9j9j 9j9j9j 9j9j9",
+        "subjectId": "pediatrics"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764746944642",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "css"
+    ],
+    "timestamp": 1764746944642,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "css1",
+        "userAnswer": "It includes padding and border in the element's total width and height.",
+        "correctAnswer": "It includes padding and border in the element's total width and height.",
+        "questionText": "What does the `box-sizing: border-box;` property do?",
+        "options": [
+          "It includes padding and border in the element's total width and height.",
+          "It makes the element a flex container.",
+          "It adds a shadow to the box.",
+          "It changes the element's display to block."
+        ],
+        "explanation": "By default, an element's width and height are calculated as `content`. `border-box` tells the browser to account for any border and padding in the values you specify for an element's width and height.",
+        "subjectId": "css"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764746917304",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "nextjs"
+    ],
+    "timestamp": 1764746917304,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "nextjs1",
+        "userAnswer": "Improved SEO and initial page load",
+        "correctAnswer": "Improved SEO and initial page load",
+        "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+        "options": [
+          "Faster client-side navigation",
+          "Improved SEO and initial page load",
+          "Smaller bundle sizes",
+          "Easier state management"
+        ],
+        "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load.",
+        "subjectId": "nextjs"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764746409727",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "react",
+      "nextjs",
+      "css"
+    ],
+    "timestamp": 1764746409727,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "react2",
+        "userAnswer": "Using props",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "css1",
+        "userAnswer": "It includes padding and border in the element's total width and height.",
+        "correctAnswer": "It includes padding and border in the element's total width and height.",
+        "questionText": "What does the `box-sizing: border-box;` property do?",
+        "options": [
+          "It includes padding and border in the element's total width and height.",
+          "It makes the element a flex container.",
+          "It adds a shadow to the box.",
+          "It changes the element's display to block."
+        ],
+        "explanation": "By default, an element's width and height are calculated as `content`. `border-box` tells the browser to account for any border and padding in the values you specify for an element's width and height.",
+        "subjectId": "css"
+      },
+      {
+        "questionId": "nextjs1",
+        "userAnswer": "Improved SEO and initial page load",
+        "correctAnswer": "Improved SEO and initial page load",
+        "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+        "options": [
+          "Faster client-side navigation",
+          "Improved SEO and initial page load",
+          "Smaller bundle sizes",
+          "Easier state management"
+        ],
+        "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load.",
+        "subjectId": "nextjs"
+      },
+      {
+        "questionId": "react1",
+        "userAnswer": "A syntax extension for JavaScript",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764746193147",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "pediatrics"
+    ],
+    "timestamp": 1764746193147,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1761189339727",
+        "userAnswer": "un8unn9n",
+        "correctAnswer": "un8unn9n",
+        "questionText": "uybu un nn nuin n9n9 ",
+        "options": [
+          "un8unn9n",
+          "8999j9j9j",
+          "8998j9j9j9j",
+          "9j9j9j9j9j"
+        ],
+        "explanation": "n999j9j 9j9j 9j9j9j 9j9j9",
+        "subjectId": "pediatrics"
+      },
+      {
+        "questionId": "q-1761189303399",
+        "userAnswer": "iunerinininn",
+        "correctAnswer": "iunerinininn",
+        "questionText": "uijr9j9jr9j9h994 uuininn ininini n",
+        "options": [
+          "iunerinininn",
+          "infininnini",
+          " in9ninninini"
+        ],
+        "explanation": "jk jfrn  jinn inionnnin",
+        "subjectId": "pediatrics"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764746166620",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "react",
+      "css",
+      "nextjs"
+    ],
+    "timestamp": 1764746166620,
+    "score": 75,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A syntax extension for JavaScript",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using props",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "nextjs1",
+        "userAnswer": "Improved SEO and initial page load",
+        "correctAnswer": "Improved SEO and initial page load",
+        "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+        "options": [
+          "Faster client-side navigation",
+          "Improved SEO and initial page load",
+          "Smaller bundle sizes",
+          "Easier state management"
+        ],
+        "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load.",
+        "subjectId": "nextjs"
+      },
+      {
+        "questionId": "css1",
+        "userAnswer": "It makes the element a flex container.",
+        "correctAnswer": "It includes padding and border in the element's total width and height.",
+        "questionText": "What does the `box-sizing: border-box;` property do?",
+        "options": [
+          "It includes padding and border in the element's total width and height.",
+          "It makes the element a flex container.",
+          "It adds a shadow to the box.",
+          "It changes the element's display to block."
+        ],
+        "explanation": "By default, an element's width and height are calculated as `content`. `border-box` tells the browser to account for any border and padding in the values you specify for an element's width and height.",
+        "subjectId": "css"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764745194710",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "nextjs"
+    ],
+    "timestamp": 1764745194710,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "nextjs1",
+        "userAnswer": "Faster client-side navigation",
+        "correctAnswer": "Improved SEO and initial page load",
+        "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+        "options": [
+          "Faster client-side navigation",
+          "Improved SEO and initial page load",
+          "Smaller bundle sizes",
+          "Easier state management"
+        ],
+        "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load.",
+        "subjectId": "nextjs"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764745194493",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "nextjs"
+    ],
+    "timestamp": 1764745194493,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "nextjs1",
+        "userAnswer": "Faster client-side navigation",
+        "correctAnswer": "Improved SEO and initial page load",
+        "questionText": "What is the primary benefit of Server-Side Rendering (SSR) in Next.js?",
+        "options": [
+          "Faster client-side navigation",
+          "Improved SEO and initial page load",
+          "Smaller bundle sizes",
+          "Easier state management"
+        ],
+        "explanation": "SSR pre-renders the page on the server, sending fully-formed HTML to the browser. This allows search engine crawlers to easily index the content and improves the perceived performance for users on initial load.",
+        "subjectId": "nextjs"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764745152751",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764745152751,
+    "score": 50,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A JavaScript library",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using props",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764745152552",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "react"
+    ],
+    "timestamp": 1764745152552,
+    "score": 50,
+    "questions": [
+      {
+        "questionId": "react1",
+        "userAnswer": "A JavaScript library",
+        "correctAnswer": "A syntax extension for JavaScript",
+        "questionText": "What is JSX?",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS preprocessor",
+          "A database query language"
+        ],
+        "explanation": "JSX stands for JavaScript XML. It's a syntax extension that allows you to write HTML-like code in your JavaScript files. Babel transpiles JSX into `React.createElement()` calls.",
+        "subjectId": "react"
+      },
+      {
+        "questionId": "react2",
+        "userAnswer": "Using props",
+        "correctAnswer": "Using props",
+        "questionText": "How do you pass data from a parent component to a child component in React?",
+        "options": [
+          "Using state",
+          "Using props",
+          "Using context",
+          "Using Redux"
+        ],
+        "explanation": "Props (short for properties) are the primary way to pass data from a parent component to a child component. Data flows one way in React, from parent to child.",
+        "subjectId": "react"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764745032874",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764745032874,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1764568557618",
+        "userAnswer": "Entamoeba coli",
+        "correctAnswer": "Entamoeba histolytica",
+        "questionText": "Which organism most commonly causes amoebic liver abscess?",
+        "options": [
+          "Giardia lamblia",
+          "Entamoeba coli",
+          "Entamoeba histolytica",
+          "Salmonella typhi",
+          "Escherichia coli"
+        ],
+        "explanation": "The name of the condition, \"amoebic liver abscess,\" points directly to its cause: an amoeba.\n**Entamoeba histolytica** is the pathogenic amoeba that causes amoebic dysentery (amebiasis). It can invade the wall of the colon, enter the portal bloodstream, and travel to the liver, where it forms a characteristic abscess.\n**Giardia lamblia** (a) is a protozoan that causes diarrhea (giardiasis) but does not typically invade the bloodstream or cause liver abscesses.\n**Entamoeba coli** (b) is a *non-pathogenic* amoeba that lives commensally in the gut.\n**Salmonella typhi** (d) and **Escherichia coli** (e) are bacteria. While bacteria can cause liver abscesses (pyogenic abscesses), they are not the cause of an *amoebic* abscess.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557623",
+        "userAnswer": "Hypoglycaemic",
+        "correctAnswer": "Asymptomatic",
+        "questionText": "People who have chronic hepatitis disease are usually",
+        "options": [
+          "Jaundiced",
+          "Lethargic",
+          "Febrile",
+          "Hypoglycaemic",
+          "Asymptomatic"
+        ],
+        "explanation": "Chronic hepatitis (both B and C) is often called a \"silent epidemic.\" The vast majority of individuals in the chronic phase of the infection have no symptoms at all. They are asymptomatic and often unaware they are infected.\n**Jaundice (a)**, **lethargy (b)**, and **hypoglycaemia (d)** are all signs of advanced liver disease, specifically decompensated cirrhosis, which is a *complication* of long-standing chronic hepatitis.\n**Fever (c)** is a classic sign of *acute* hepatitis, not the chronic phase.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557634",
+        "userAnswer": "Long term use of nasogastric tube",
+        "correctAnswer": "None of the above",
+        "questionText": "Which one of the following is not a risk factor for gastro-oesophageal reflux disease?",
+        "options": [
+          "Obesity",
+          "Pregnancy",
+          "Long term use of nasogastric tube",
+          "Hiatus hernia",
+          "None of the above"
+        ],
+        "explanation": "All the options listed (a-d) are well-established risk factors for GERD.\n**Obesity** and **Pregnancy** both increase intra-abdominal pressure, which forces stomach contents upward.\nA **long-term nasogastric tube** physically keeps the LES open, allowing free reflux of acid.\nA Hiatus hernia disrupts the normal junction between the esophagus and stomach, weakening the anti-reflux barrier.\nSince all listed options are indeed risk factors, the correct choice is \"None of the above.\"",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564261",
+        "userAnswer": "Renal failure",
+        "correctAnswer": "Irritable bowel syndrome",
+        "questionText": "All these conditions can cause ascites except",
+        "options": [
+          "Liver cirrhosis",
+          "Renal failure",
+          "Heart failure",
+          "Nephrotic syndrome",
+          "Irritable bowel syndrome"
+        ],
+        "explanation": "Ascites is the accumulation of fluid in the abdominal cavity. It's caused by high pressure in the veins (portal hypertension, as seen in liver cirrhosis (a)) or low protein in the blood (hypoalbuminemia, as seen in nephrotic syndrome (d) and severe renal failure (b)) or fluid overload (as seen in heart failure (c)). Irritable bowel syndrome (IBS) (e) is a functional gut disorder affecting motility and sensation; it does not cause the fluid or pressure imbalances that lead to ascites.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557645",
+        "userAnswer": "Absence of bowel sounds",
+        "correctAnswer": "All children presenting with constipation",
+        "questionText": "Indications for referral in a patient with constipation include the following except",
+        "options": [
+          "Absence of bowel sounds",
+          "Inability to pass flatus",
+          "Suspected surgical causes of constipation",
+          "Constipation resistant to medical treatment",
+          "All children presenting with constipation"
+        ],
+        "explanation": "This question asks for the one option that is *not* an indication for referral.\n**a, b, c:** Absence of bowel sounds, inability to pass flatus, and suspected surgical causes are all \"red flags\" pointing to a possible bowel obstruction, which is a surgical emergency requiring immediate referral.\n**d:** Constipation that doesn't respond to standard first-line medical treatment in a primary care setting is a valid reason for referral to a specialist (like a gastroenterologist) for further workup.\n**e:** This is the exception. Simple, functional constipation is extremely common in children and is routinely managed in primary care. It does *not* require an automatic referral. Only cases that are severe, resistant to treatment, or accompanied by red flags (like failure to thrive, severe abdominal distension, etc.) would be referred.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764745032662",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764745032662,
+    "score": 0,
+    "questions": [
+      {
+        "questionId": "q-1764568557618",
+        "userAnswer": "Entamoeba coli",
+        "correctAnswer": "Entamoeba histolytica",
+        "questionText": "Which organism most commonly causes amoebic liver abscess?",
+        "options": [
+          "Giardia lamblia",
+          "Entamoeba coli",
+          "Entamoeba histolytica",
+          "Salmonella typhi",
+          "Escherichia coli"
+        ],
+        "explanation": "The name of the condition, \"amoebic liver abscess,\" points directly to its cause: an amoeba.\n**Entamoeba histolytica** is the pathogenic amoeba that causes amoebic dysentery (amebiasis). It can invade the wall of the colon, enter the portal bloodstream, and travel to the liver, where it forms a characteristic abscess.\n**Giardia lamblia** (a) is a protozoan that causes diarrhea (giardiasis) but does not typically invade the bloodstream or cause liver abscesses.\n**Entamoeba coli** (b) is a *non-pathogenic* amoeba that lives commensally in the gut.\n**Salmonella typhi** (d) and **Escherichia coli** (e) are bacteria. While bacteria can cause liver abscesses (pyogenic abscesses), they are not the cause of an *amoebic* abscess.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557623",
+        "userAnswer": "Hypoglycaemic",
+        "correctAnswer": "Asymptomatic",
+        "questionText": "People who have chronic hepatitis disease are usually",
+        "options": [
+          "Jaundiced",
+          "Lethargic",
+          "Febrile",
+          "Hypoglycaemic",
+          "Asymptomatic"
+        ],
+        "explanation": "Chronic hepatitis (both B and C) is often called a \"silent epidemic.\" The vast majority of individuals in the chronic phase of the infection have no symptoms at all. They are asymptomatic and often unaware they are infected.\n**Jaundice (a)**, **lethargy (b)**, and **hypoglycaemia (d)** are all signs of advanced liver disease, specifically decompensated cirrhosis, which is a *complication* of long-standing chronic hepatitis.\n**Fever (c)** is a classic sign of *acute* hepatitis, not the chronic phase.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557634",
+        "userAnswer": "Long term use of nasogastric tube",
+        "correctAnswer": "None of the above",
+        "questionText": "Which one of the following is not a risk factor for gastro-oesophageal reflux disease?",
+        "options": [
+          "Obesity",
+          "Pregnancy",
+          "Long term use of nasogastric tube",
+          "Hiatus hernia",
+          "None of the above"
+        ],
+        "explanation": "All the options listed (a-d) are well-established risk factors for GERD.\n**Obesity** and **Pregnancy** both increase intra-abdominal pressure, which forces stomach contents upward.\nA **long-term nasogastric tube** physically keeps the LES open, allowing free reflux of acid.\nA Hiatus hernia disrupts the normal junction between the esophagus and stomach, weakening the anti-reflux barrier.\nSince all listed options are indeed risk factors, the correct choice is \"None of the above.\"",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564261",
+        "userAnswer": "Renal failure",
+        "correctAnswer": "Irritable bowel syndrome",
+        "questionText": "All these conditions can cause ascites except",
+        "options": [
+          "Liver cirrhosis",
+          "Renal failure",
+          "Heart failure",
+          "Nephrotic syndrome",
+          "Irritable bowel syndrome"
+        ],
+        "explanation": "Ascites is the accumulation of fluid in the abdominal cavity. It's caused by high pressure in the veins (portal hypertension, as seen in liver cirrhosis (a)) or low protein in the blood (hypoalbuminemia, as seen in nephrotic syndrome (d) and severe renal failure (b)) or fluid overload (as seen in heart failure (c)). Irritable bowel syndrome (IBS) (e) is a functional gut disorder affecting motility and sensation; it does not cause the fluid or pressure imbalances that lead to ascites.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557645",
+        "userAnswer": "Absence of bowel sounds",
+        "correctAnswer": "All children presenting with constipation",
+        "questionText": "Indications for referral in a patient with constipation include the following except",
+        "options": [
+          "Absence of bowel sounds",
+          "Inability to pass flatus",
+          "Suspected surgical causes of constipation",
+          "Constipation resistant to medical treatment",
+          "All children presenting with constipation"
+        ],
+        "explanation": "This question asks for the one option that is *not* an indication for referral.\n**a, b, c:** Absence of bowel sounds, inability to pass flatus, and suspected surgical causes are all \"red flags\" pointing to a possible bowel obstruction, which is a surgical emergency requiring immediate referral.\n**d:** Constipation that doesn't respond to standard first-line medical treatment in a primary care setting is a valid reason for referral to a specialist (like a gastroenterologist) for further workup.\n**e:** This is the exception. Simple, functional constipation is extremely common in children and is routinely managed in primary care. It does *not* require an automatic referral. Only cases that are severe, resistant to treatment, or accompanied by red flags (like failure to thrive, severe abdominal distension, etc.) would be referred.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764744952835",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764744952835,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1764568564259",
+        "userAnswer": "Anorexia",
+        "correctAnswer": "Anorexia",
+        "questionText": "Signs of hepatocellular carcinoma include the following except",
+        "options": [
+          "Hepatic bruit",
+          "Cachexia",
+          "Hepatomegaly",
+          "Anorexia",
+          "Ascites"
+        ],
+        "explanation": "This question distinguishes between objective signs (which the clinician observes) and subjective symptoms (which the patient reports).\n**Signs:** A hepatic bruit (a), cachexia (b), hepatomegaly (c), and ascites (e) are all objective findings that a clinician can detect on examination.\n**Symptom:** **Anorexia** (d), or loss of appetite, is a *symptom* that the patient *experiences and reports*. It is not an objective sign.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557594",
+        "userAnswer": "Paromomycin",
+        "correctAnswer": "Paromomycin",
+        "questionText": "All are drugs used in the management of chronic hepatitis C except",
+        "options": [
+          "Pegylated interferon alfa-2a",
+          "Pegylated interferon alfa-2b",
+          "Paromomycin",
+          "Ribavirin",
+          "None of the above"
+        ],
+        "explanation": "This question refers to the older, interferon-based treatment regimens for Hepatitis C.\nThese regimens combined **Pegylated interferon** (both alfa-2a and alfa-2b versions were used) with the oral antiviral drug **Ribavirin**.\n**Paromomycin** is an antibiotic/amoebicide used to treat intestinal infections like amebiasis and has no role in the management of Hepatitis C.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557596",
+        "userAnswer": "Hypokalaemia",
+        "correctAnswer": "Hypokalaemia",
+        "questionText": "The habitual use of laxative will most likely cause one of the following",
+        "options": [
+          "Hypokalaemia",
+          "Small bowel obstruction",
+          "Peptic ulcer disease",
+          "Hypercalcaemia",
+          "None of the above"
+        ],
+        "explanation": "Laxative abuse, particularly with stimulant or osmotic laxatives, leads to large volumes of fluid and electrolyte loss through the stool. Potassium is a major electrolyte in gastrointestinal fluid, and its excessive loss leads to **hypokalaemia** (low potassium in the blood). This can cause muscle weakness, fatigue, and cardiac arrhythmias.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557658",
+        "userAnswer": "Administration of herbal concoction",
+        "correctAnswer": "Administration of herbal concoction",
+        "questionText": "Which of the following is not an important component in the management of hepatitis?",
+        "options": [
+          "Adequate best rest",
+          "High calorie consumption",
+          "Avoidance of alcohol consumption",
+          "Administration of herbal concoction",
+          "Administration of intravenous fluid if volume is depleted"
+        ],
+        "explanation": "Supportive care is the mainstay of managing acute viral hepatitis.\n**a, b, c, and e** are all important components of this care. Rest (a) helps the body recover. High calorie intake (b) is crucial because patients are often anorexic, and good nutrition supports liver regeneration. Avoiding alcohol (c) is mandatory as alcohol is a hepatotoxin. IV fluids (e) are necessary if the patient is vomiting and cannot maintain hydration.\n**d. Administration of herbal concoction** is **not** part of standard medical management. Many herbal preparations are hepatotoxic (toxic to the liver) and can worsen liver damage, leading to acute liver failure.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564257",
+        "userAnswer": "Hepatocellular carcinoma",
+        "correctAnswer": "Hepatocellular carcinoma",
+        "questionText": "The primary malignancy of the liver is",
+        "options": [
+          "Cancer of the colon with metastasis to the liver",
+          "Cervical cancer with metastasis to the liver and lungs",
+          "Hepatocellular carcinoma",
+          "Lung cancer with metastasis to the liver",
+          "Breast cancer with metastasis to the liver"
+        ],
+        "explanation": "\"Primary malignancy\" means the cancer originates from the cells of that organ.\n**Hepatocellular carcinoma (HCC)** is the cancer that arises from the liver cells (hepatocytes).\nAll the other options (a, b, d, e) describe **metastatic cancer** (or secondary malignancy), which is cancer that started in another organ (like the colon, lung, or breast) and *spread* to the liver.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
+    "id": "attempt-1764744952590",
+    "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
+    "subjectIds": [
+      "internal-medicine"
+    ],
+    "timestamp": 1764744952591,
+    "score": 100,
+    "questions": [
+      {
+        "questionId": "q-1764568564259",
+        "userAnswer": "Anorexia",
+        "correctAnswer": "Anorexia",
+        "questionText": "Signs of hepatocellular carcinoma include the following except",
+        "options": [
+          "Hepatic bruit",
+          "Cachexia",
+          "Hepatomegaly",
+          "Anorexia",
+          "Ascites"
+        ],
+        "explanation": "This question distinguishes between objective signs (which the clinician observes) and subjective symptoms (which the patient reports).\n**Signs:** A hepatic bruit (a), cachexia (b), hepatomegaly (c), and ascites (e) are all objective findings that a clinician can detect on examination.\n**Symptom:** **Anorexia** (d), or loss of appetite, is a *symptom* that the patient *experiences and reports*. It is not an objective sign.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557594",
+        "userAnswer": "Paromomycin",
+        "correctAnswer": "Paromomycin",
+        "questionText": "All are drugs used in the management of chronic hepatitis C except",
+        "options": [
+          "Pegylated interferon alfa-2a",
+          "Pegylated interferon alfa-2b",
+          "Paromomycin",
+          "Ribavirin",
+          "None of the above"
+        ],
+        "explanation": "This question refers to the older, interferon-based treatment regimens for Hepatitis C.\nThese regimens combined **Pegylated interferon** (both alfa-2a and alfa-2b versions were used) with the oral antiviral drug **Ribavirin**.\n**Paromomycin** is an antibiotic/amoebicide used to treat intestinal infections like amebiasis and has no role in the management of Hepatitis C.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557596",
+        "userAnswer": "Hypokalaemia",
+        "correctAnswer": "Hypokalaemia",
+        "questionText": "The habitual use of laxative will most likely cause one of the following",
+        "options": [
+          "Hypokalaemia",
+          "Small bowel obstruction",
+          "Peptic ulcer disease",
+          "Hypercalcaemia",
+          "None of the above"
+        ],
+        "explanation": "Laxative abuse, particularly with stimulant or osmotic laxatives, leads to large volumes of fluid and electrolyte loss through the stool. Potassium is a major electrolyte in gastrointestinal fluid, and its excessive loss leads to **hypokalaemia** (low potassium in the blood). This can cause muscle weakness, fatigue, and cardiac arrhythmias.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568557658",
+        "userAnswer": "Administration of herbal concoction",
+        "correctAnswer": "Administration of herbal concoction",
+        "questionText": "Which of the following is not an important component in the management of hepatitis?",
+        "options": [
+          "Adequate best rest",
+          "High calorie consumption",
+          "Avoidance of alcohol consumption",
+          "Administration of herbal concoction",
+          "Administration of intravenous fluid if volume is depleted"
+        ],
+        "explanation": "Supportive care is the mainstay of managing acute viral hepatitis.\n**a, b, c, and e** are all important components of this care. Rest (a) helps the body recover. High calorie intake (b) is crucial because patients are often anorexic, and good nutrition supports liver regeneration. Avoiding alcohol (c) is mandatory as alcohol is a hepatotoxin. IV fluids (e) are necessary if the patient is vomiting and cannot maintain hydration.\n**d. Administration of herbal concoction** is **not** part of standard medical management. Many herbal preparations are hepatotoxic (toxic to the liver) and can worsen liver damage, leading to acute liver failure.",
+        "subjectId": "internal-medicine"
+      },
+      {
+        "questionId": "q-1764568564257",
+        "userAnswer": "Hepatocellular carcinoma",
+        "correctAnswer": "Hepatocellular carcinoma",
+        "questionText": "The primary malignancy of the liver is",
+        "options": [
+          "Cancer of the colon with metastasis to the liver",
+          "Cervical cancer with metastasis to the liver and lungs",
+          "Hepatocellular carcinoma",
+          "Lung cancer with metastasis to the liver",
+          "Breast cancer with metastasis to the liver"
+        ],
+        "explanation": "\"Primary malignancy\" means the cancer originates from the cells of that organ.\n**Hepatocellular carcinoma (HCC)** is the cancer that arises from the liver cells (hepatocytes).\nAll the other options (a, b, d, e) describe **metastatic cancer** (or secondary malignancy), which is cancer that started in another organ (like the colon, lung, or breast) and *spread* to the liver.",
+        "subjectId": "internal-medicine"
+      }
+    ]
+  },
+  {
     "id": "attempt-1764743684190",
     "userId": "SufMhAc8ABhFbS50O30iw91KKTO2",
     "subjectIds": [

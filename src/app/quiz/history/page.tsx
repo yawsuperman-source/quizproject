@@ -30,7 +30,10 @@ export default function HistoryPage() {
   if (loading) {
     return (
       <div className="container py-12">
-        <h1 className="text-3xl font-bold mb-6">Quiz History</h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold">Quiz History</h1>
+          <Skeleton className="h-10 w-32" />
+        </div>
         <div className="space-y-4">
           <Skeleton className="h-24 w-full" />
           <Skeleton className="h-24 w-full" />
@@ -42,14 +45,16 @@ export default function HistoryPage() {
 
   return (
     <div className="container py-12">
-      <h1 className="text-3xl font-bold mb-6">Quiz History</h1>
+        <div className="flex justify-between items-center mb-6">
+            <h1 className="text-3xl font-bold">Quiz History</h1>
+            <Button asChild>
+                <Link href="/quiz/select">Start New Quiz</Link>
+            </Button>
+        </div>
       {history.length === 0 ? (
         <Card>
           <CardContent className="pt-6 text-center">
             <p className="text-muted-foreground">You haven't completed any quizzes yet.</p>
-            <Button asChild className="mt-4">
-              <Link href="/quiz/select">Start a New Quiz</Link>
-            </Button>
           </CardContent>
         </Card>
       ) : (

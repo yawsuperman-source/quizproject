@@ -116,11 +116,11 @@
     },
     {
       "questionId": "q-1761189339727",
-      "isCorrect": false
+      "isCorrect": true
     },
     {
       "questionId": "q-1761189303399",
-      "isCorrect": false
+      "isCorrect": true
     },
     {
       "questionId": "react2",
@@ -374,6 +374,58 @@
     },
     {
       "questionId": "q-1761204734341",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764568564259",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764568557594",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764568557596",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764568557658",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764568564257",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1764568557618",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764568557623",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764568557634",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764568564261",
+      "isCorrect": false
+    },
+    {
+      "questionId": "q-1764568557645",
+      "isCorrect": false
+    },
+    {
+      "questionId": "css1",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1761189339727",
+      "isCorrect": true
+    },
+    {
+      "questionId": "q-1761189303399",
       "isCorrect": true
     }
   ]
